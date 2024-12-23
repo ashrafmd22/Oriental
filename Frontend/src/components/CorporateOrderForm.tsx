@@ -131,7 +131,7 @@ export function CorporateOrderForm() {
     if (validateForm()) {
       try {
         // Form data ko backend ke POST route pe bhejna
-        const response = await axios.post('http://localhost:5000/submit-corporate-order', formData);
+        const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/submit-corporate-order`, formData);
 
         if (response.status === 200) {
           // Agar response success ho to success message dikhaye
