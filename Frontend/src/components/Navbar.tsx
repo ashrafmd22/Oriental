@@ -32,7 +32,9 @@ export function Navbar() {
           {/* Logo Section */}
           <Link to="/" className="flex items-center group">
             <div className="relative">
-              <Gift className="h-8 w-8 sm:h-10 sm:w-10 text-indigo-600 transform transition-transform group-hover:scale-110 duration-300" />
+              <Gift
+                className={`h-8 w-8 sm:h-10 sm:w-10 text-indigo-600 transform transition-transform group-hover:scale-110 duration-300 ${isOpen ? '' : 'shadow-lg'}`}
+              />
               <div className="absolute -inset-1 bg-indigo-100 rounded-full blur opacity-0 group-hover:opacity-75 transition-opacity duration-300"></div>
             </div>
             <div className="ml-3">

@@ -4,7 +4,7 @@ export function WhatsAppButton() {
   return (
     <a
       href="https://wa.me/9899987779?text=Hello!%20I%20need%20assistance%20with%20your%20products."
-      className="fixed bottom-6 right-4 xs:bottom-8 xs:right-6 sm:bottom-10 sm:right-8 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-50 group"
+      className="fixed bottom-20 right-4 xs:bottom-22 xs:right-6 sm:bottom-24 sm:right-8 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-50 group"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Contact on WhatsApp"
