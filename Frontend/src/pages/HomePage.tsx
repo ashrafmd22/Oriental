@@ -1,8 +1,11 @@
 import React, { useEffect } from 'react';
 import { Hero } from '../components/Hero';
 import { FeaturedProducts } from '../components/FeaturedProducts';
-import { CorporateOrderForm } from '../components/CorporateOrderForm';
-import { ClientLogos } from '../components/ClientLogos';
+// import { CorporateOrderForm } from '../components/CorporateOrderForm';
+import { CorporateOrderForm } from '../components/CorporateOrderForm/Index';
+// import { ClientLogos } from '../components/ClientLogos';
+import { ClientLogos } from '../components/Clients/ClientLogos';
+
 import { About } from '../components/About';
 
 export function HomePage() {

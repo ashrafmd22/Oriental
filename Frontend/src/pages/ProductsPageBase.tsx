@@ -33,10 +33,10 @@ export function ProductsPageBase({ category }: { category: string }) {
 
   return (
     <div className="py-24 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+      <div className="max-w-7xl mx-auto px-2 sm:px-5 lg:px-6">
 
         {/* Category Filter Navigation */}
-        <div className="bg-gray-100 py-8 mb-8">
+        <div className="bg-gray-100 py-8 mb-12 mt-8"> {/* Added margin-top to separate from header */}
           <h2 className="text-2xl font-semibold text-gray-800 mb-4 text-center">Categories</h2>
           <div className="lg:flex justify-center gap-6 lg:gap-12">
             {/* Mobile Dropdown */}
@@ -80,15 +80,15 @@ export function ProductsPageBase({ category }: { category: string }) {
         <p className="text-center text-lg text-gray-700 mb-6">
           Showing {indexOfFirstProduct + 1}–{Math.min(indexOfLastProduct, totalProducts)} of {totalProducts} results
         </p>
-        <div className="bg-gradient-to-br from-gray-100 to-gray-300 p-8 rounded-lg shadow-lg">
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div className="bg-gradient-to-br from-gray-100 to-gray-300 p-6 rounded-lg shadow-lg">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {currentProducts.map((product) => (
               <div
                 key={product.id}
                 className="bg-white rounded-xl shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex flex-col items-center p-6"
               >
                 {/* Image Container */}
-                <div className="relative w-full aspect-square mb-4 rounded-lg overflow-hidden border border-gray-200 hover:border-blue-500">
+                <div className="relative w-full aspect-square mb-2 rounded-lg overflow-hidden border border-gray-200 hover:border-blue-500 p-2">
                   <img
                     src={product.images[0]}
                     alt={product.name}
@@ -137,7 +137,6 @@ export function ProductsPageBase({ category }: { category: string }) {
             Next &gt;
           </button>
         </div>
-
 
       </div>
     </div>

@@ -1,10 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Linkedin, Mail, MessageCircle } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, Mail } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa'; // Import WhatsApp icon from react-icons
 
-
-export function Footer() {
+export const Footer: React.FC = () => {
   return (
     <footer className="bg-gray-900 text-white pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -64,17 +63,14 @@ export function Footer() {
       </div>
 
       {/* WhatsApp Float Button */}
-      {/* WhatsApp Float Button */}
       <a
         href="https://wa.me/9899987779?text=Hello!%20I%20need%20assistance%20with%20your%20products."
         className="fixed bottom-24 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-colors duration-200 flex items-center justify-center z-50"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <FaWhatsapp size={28} />
+        <FaWhatsapp size={28} className="text-[1.75rem] sm:text-[1.5rem] md:text-[1.25rem] lg:text-[1.75rem]" />
       </a>
-
-
     </footer>
   );
 }

@@ -1,76 +1,74 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { PolicyLayout } from './Policy/PolicyLayout';
 
-const RefundAndCancellationPage: React.FC = () => {
-  useEffect(() => {
-    // Scroll to the top of the page when this component is loaded
-    window.scrollTo(0, 0);
-  }, []);
-
+export default function RefundPage() {
   return (
-    <div className="min-h-screen bg-gray-100 py-16 mt-16">
-      {/* Main Content Area with White Background */}
-      <div className="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg">
-        {/* Title and Image */}
-        <div className="flex items-center mb-8">
-          <img
-            src="https://cdn-icons-png.flaticon.com/128/2366/2366081.png"
-            alt="Refund and Cancellation Image"
-            className="w-24 h-24 object-contain mr-6" // Ensures the image is fully visible and maintains aspect ratio
-          />
-          <h1 className="text-4xl font-bold text-gray-800">Refund and Cancellation Policy</h1>
-        </div>
-
-        {/* Refund and Cancellation Content */}
-        <p className="text-xl mb-6 text-gray-700">
-          We want to ensure you have the best experience with our services. Our Refund and Cancellation Policy explains how we handle requests for refunds and cancellations.
+    <PolicyLayout
+      title="Refund & Cancellation Policy"
+      icon="https://cdn-icons-png.flaticon.com/512/2366/2366081.png"
+    >
+      <div className="space-y-8 overflow-x-hidden px-4 sm:px-6 lg:px-8">
+        <p className="text-xl text-gray-700 leading-relaxed">
+          We strive to ensure your complete satisfaction with our services. Our refund and cancellation policy is designed to be fair and transparent.
         </p>
 
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">1. Refund Policy</h2>
-        <p className="text-lg mb-6 text-gray-700">
-          Refund requests must be made within 30 days of your purchase. We will review your request and issue a refund if applicable, based on the nature of the product or service and our refund conditions.
-        </p>
+        <section className="space-y-4">
+          <h2 className="text-2xl font-semibold text-gray-800">1. Refund Policy</h2>
+          <div className="bg-blue-50 rounded-xl p-6">
+            <ul className="list-disc pl-6 space-y-3 text-gray-700">
+              <li>Refund requests must be made within 30 days of purchase</li>
+              <li>All refunds are subject to review and approval</li>
+              <li>Processing time: 5-7 business days</li>
+            </ul>
+          </div>
+        </section>
 
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">2. Cancellation Policy</h2>
-        <p className="text-lg mb-6 text-gray-700">
-          You can cancel your order before it is processed and shipped. Once an order has been processed or shipped, it cannot be canceled. Please contact our support team as soon as possible for any cancellation requests.
-        </p>
+        <section className="space-y-4">
+          <h2 className="text-2xl font-semibold text-gray-800">2. Cancellation Policy</h2>
+          <div className="bg-yellow-50 rounded-xl p-6">
+            <ul className="list-disc pl-6 space-y-3 text-gray-700">
+              <li>Cancellations must be requested within 24 hours of placing an order</li>
+              <li>If the order has already been processed or shipped, cancellation is not possible</li>
+              <li>Orders cancelled before shipment are eligible for a full refund</li>
+            </ul>
+          </div>
+        </section>
 
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">3. Refund Processing</h2>
-        <p className="text-lg mb-6 text-gray-700">
-          Once your refund request is approved, it may take up to 7 business days to process and reflect in your account, depending on the payment method used.
-        </p>
+        <section className="space-y-4">
+          <h2 className="text-2xl font-semibold text-gray-800">3. Refund Eligibility</h2>
+          <div className="bg-green-50 rounded-xl p-6">
+            <p className="text-gray-700">
+              To be eligible for a refund, the product must meet the following conditions:
+            </p>
+            <ul className="list-disc pl-6 space-y-3 text-gray-700">
+              <li>The product is defective or damaged upon arrival</li>
+              <li>The product was not as described on our website</li>
+              <li>Proof of purchase is required for all refund claims</li>
+            </ul>
+          </div>
+        </section>
 
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">4. Non-Refundable Items</h2>
-        <p className="text-lg mb-6 text-gray-700">
-          Some items, such as personalized or customized products, may not be eligible for a refund. Please check our product terms for more details on exclusions.
-        </p>
+        <section className="space-y-4">
+          <h2 className="text-2xl font-semibold text-gray-800">4. How to Request a Refund</h2>
+          <div className="bg-purple-50 rounded-xl p-6">
+            <ul className="list-decimal pl-6 space-y-3 text-gray-700">
+              <li>Contact our customer support team via email or phone</li>
+              <li>Provide your order number and the reason for your refund request</li>
+              <li>Submit any relevant documentation (e.g., images of the damaged product)</li>
+              <li>Our team will review your request and process it accordingly</li>
+            </ul>
+          </div>
+        </section>
 
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">5. Contact Us for Refunds or Cancellations</h2>
-        <p className="text-lg mb-6 text-gray-700">
-          If you have any questions or would like to request a refund or cancellation, please contact our support team. We are here to assist you.
-        </p>
-
-        {/* Contact Button */}
-        <div className="flex justify-center mt-8">
-          <Link
-            to="/contact"
-            className="bg-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200"
-          >
-            Contact Us for More Information
-          </Link>
-        </div>
-
-        {/* Additional Information */}
-        <div className="mt-12">
-          <h3 className="text-xl font-semibold text-gray-800 mb-6">Additional Information</h3>
-          <p className="text-lg text-gray-700">
-            By using our services, you agree to the terms outlined in this Refund and Cancellation Policy. Please review it periodically as it may change.
-          </p>
-        </div>
+        <section className="space-y-4">
+          <h2 className="text-2xl font-semibold text-gray-800">5. Refund Method</h2>
+          <div className="bg-red-50 rounded-xl p-6">
+            <p className="text-gray-700">
+              Refunds will be issued to the original payment method used during the purchase. If the payment was made via credit/debit card, the refund will be processed to the same card. For other payment methods, refunds will be issued according to the payment provider's policies.
+            </p>
+          </div>
+        </section>
       </div>
-    </div>
+    </PolicyLayout>
   );
-};
-
-export default RefundAndCancellationPage;
+}

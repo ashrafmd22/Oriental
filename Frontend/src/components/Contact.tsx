@@ -148,14 +148,15 @@ export function Contact() {
       <section className="relative h-[350px] bg-gradient-to-r from-blue-600 to-blue-800 text-white">
         <div className="absolute inset-0 bg-black opacity-40"></div>
         <div className="relative h-full max-w-7xl mx-auto px-4 flex items-center justify-center text-center">
-          <div>
-            <h1 className="text-6xl font-extrabold text-white mb-4">Get in Touch with Us</h1>
-            <p className="text-xl max-w-2xl mx-auto">
+          <div className="z-10">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 leading-tight tracking-wide">Get in Touch with Us</h1>
+            <p className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-8 opacity-90">
               We value our customers and are here to help. Reach out to us and let us assist you with your needs.
             </p>
           </div>
         </div>
       </section>
+
 
       {/* Contact Section */}
       <section className="py-4 sm:py-16 bg-gray-50">

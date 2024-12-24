@@ -189,9 +189,10 @@ export function CorporateOrderForm() {
     <section className="py-12 bg-gradient-to-r from-[#E7F0FF] to-[#F9F6F1]
     ">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
-        <h2 className="text-5xl sm:text-4xl font-extrabold text-center mb-4 text-blue-700">
+        <h2 className="text-4xl sm:text-3xl md:text-5xl font-extrabold text-center mb-4 text-blue-700">
           Corporate Order Form
         </h2>
+
 
         <p className="text-center text-gray-600 mb-4 text-sm sm:text-base">
           Let us know your requirements, and we’ll get back to you promptly.
@@ -274,25 +275,23 @@ export function CorporateOrderForm() {
             </div>
 
             <div>
-              <label className="block text-xs sm:text-sm font-semibold text-gray-700 mb-1">
-                Phone
-              </label>
-              <div className="flex items-center">
-                <div className="flex items-center w-1/5 rounded-md border border-gray-300 p-1 sm:p-2 bg-gray-200 text-gray-600 text-center">
+              <label className="block text-sm font-medium text-gray-700 mb-1">Phone</label>
+              <div className="flex items-center border rounded-md shadow-sm focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-blue-500">
+                <div className="flex items-center bg-gray-100 px-3 border-r border-gray-300">
                   <img
                     src="https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/1200px-Flag_of_India.svg.png"
                     alt="India Flag"
                     className="w-5 h-4 mr-1"
                   />
-                  +91
+                  <span className="text-gray-600 text-sm">+91</span>
                 </div>
                 <input
                   type="tel"
                   name="phone"
                   value={formData.phone}
-                  placeholder="Phone number"
-                  className={`w-4/5 rounded-md border p-2 sm:p-3 focus:border-blue-500 focus:ring-blue-500 transition duration-150 ${errors.phone ? 'border-red-500' : ''}`}
                   onChange={handleInputChange}
+                  placeholder="Enter your phone number"
+                  className={`flex-1 rounded-r-md border-0 p-2.5 text-sm focus:ring-0 ${phoneBorderColor}`}
                   required
                 />
               </div>

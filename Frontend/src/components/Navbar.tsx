@@ -1,140 +1,109 @@
-import React, { useState } from 'react';
-import { Gift, Menu, X } from 'lucide-react'; // Importing icons
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { Gift, Menu, X } from 'lucide-react';
 
 export function Navbar() {
-  const [isOpen, setIsOpen] = useState(false); // State to toggle the mobile menu
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  // Function to scroll to the top
-  const handleLinkClick = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to the top
-    setIsOpen(false); // Close the mobile menu if open
-  };
+  // Handle scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navLinks = [
+    { label: 'Home', path: '/' },
+    { label: 'About Us', path: '/about' },
+    { label: 'Products', path: '/products' },
+    { label: 'Contact Us', path: '/contact' },
+  ];
 
   return (
-    <nav className="bg-white shadow-lg fixed w-full z-50">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8">
-        <div className="flex justify-between h-20 items-center">
-          {/* Logo */}
-          <Link
-            to="/"
-            onClick={handleLinkClick}
-            className="flex items-center text-gray-800 group"
-          >
-            <Gift className="h-10 w-10 text-blue-600 group-hover:animate-spin-slow transition-transform duration-500" />
+    <nav
+      className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'shadow-lg' : ''
+        } bg-white`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-20">
+          {/* Logo Section */}
+          <Link to="/" className="flex items-center group">
+            <div className="relative">
+              <Gift className="h-8 w-8 sm:h-10 sm:w-10 text-indigo-600 transform transition-transform group-hover:scale-110 duration-300" />
+              <div className="absolute -inset-1 bg-indigo-100 rounded-full blur opacity-0 group-hover:opacity-75 transition-opacity duration-300"></div>
+            </div>
             <div className="ml-3">
-              {/* Company Name with Gradient */}
-              <span className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 group-hover:underline group-hover:underline-offset-4">
-                Oriental Enterprises
-              </span>
-              {/* Slogan */}
-              <div className="text-md sm:text-lg font-semibold text-gray-600 mt-1">
+              <h1 className="text-lg sm:text-xl md:text-2xl font-black tracking-tight">
+                <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">
+                  Oriental Enterprises
+                </span>
+              </h1>
+              <p className="text-xs sm:text-sm text-gray-600 font-medium tracking-wide">
                 Thoughtful Gifts, Exceptional Quality
-              </div>
+              </p>
             </div>
           </Link>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-10">
-            <Link
-              to="/"
-              className="relative text-gray-600 font-medium text-lg hover:text-blue-600 transition-all duration-300 hover:text-2xl"
-              onClick={handleLinkClick}
-            >
-              Home
-              <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-blue-600 transition-all duration-300 transform -translate-x-1/2 hover:w-full"></span>
-            </Link>
-            <Link
-              to="/about"
-              className="relative text-gray-600 font-medium text-lg hover:text-blue-600 transition-all duration-300 hover:text-2xl"
-              onClick={handleLinkClick}
-            >
-              About Us
-              <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-blue-600 transition-all duration-300 transform -translate-x-1/2 hover:w-full"></span>
-            </Link>
-            <Link
-              to="/products"
-              className="relative text-gray-600 font-medium text-lg hover:text-blue-600 transition-all duration-300 hover:text-2xl"
-              onClick={handleLinkClick}
-            >
-              All Products
-              <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-blue-600 transition-all duration-300 transform -translate-x-1/2 hover:w-full"></span>
-            </Link>
-            <Link
-              to="/contact"
-              className="relative text-gray-600 font-medium text-lg hover:text-blue-600 transition-all duration-300 hover:text-2xl"
-              onClick={handleLinkClick}
-            >
-              Contact Us
-              <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-blue-600 transition-all duration-300 transform -translate-x-1/2 hover:w-full"></span>
-            </Link>
-
-            {/* Catalogue Button */}
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center space-x-8">
+            {navLinks.map(({ label, path }) => (
+              <Link
+                key={label}
+                to={path}
+                className="relative group text-gray-700 hover:text-indigo-600 font-medium transition-colors duration-300"
+              >
+                <span>{label}</span>
+                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-indigo-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+              </Link>
+            ))}
             <a
-              href="https://drive.google.com/file/d/your-file-id/view" // Replace with your actual Drive file link
+              href="/catalogue"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-lg font-bold text-lg shadow-md hover:from-purple-600 hover:to-blue-600 transition-all duration-300"
+              className="px-6 py-2.5 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold hover:from-purple-600 hover:to-indigo-600 transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg text-sm"
             >
-              Catalogue
+              View Catalogue
             </a>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-600 hover:text-blue-600 focus:outline-none"
-            >
-              {isOpen ? <X className="h-8 w-8" /> : <Menu className="h-8 w-8" />}
-            </button>
-          </div>
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="lg:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors duration-200 focus:outline-none"
+          >
+            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
         </div>
 
-        {/* Mobile Menu */}
-        {isOpen && (
-          <div className="md:hidden">
-            <div className="flex flex-col space-y-4 mt-4 pb-4 border-t border-gray-200">
+        {/* Mobile Navigation */}
+        <div
+          className={`lg:hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100 visible' : 'max-h-0 opacity-0 invisible'
+            }`}
+        >
+          <div className="py-4 space-y-4 px-2">
+            {navLinks.map(({ label, path }) => (
               <Link
-                to="/"
-                className="text-gray-600 font-medium text-lg hover:text-blue-600 transition-colors duration-200 hover:text-xl"
-                onClick={handleLinkClick}
+                key={label}
+                to={path}
+                onClick={() => setIsOpen(false)}
+                className="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 rounded-lg transition-colors duration-200"
               >
-                Home
+                {label}
               </Link>
-              <Link
-                to="/about"
-                className="text-gray-600 font-medium text-lg hover:text-blue-600 transition-colors duration-200 hover:text-xl"
-                onClick={handleLinkClick}
-              >
-                About Us
-              </Link>
-              <Link
-                to="/products"
-                className="text-gray-600 font-medium text-lg hover:text-blue-600 transition-colors duration-200 hover:text-xl"
-                onClick={handleLinkClick}
-              >
-                All Products
-              </Link>
-              <Link
-                to="/contact"
-                className="text-gray-600 font-medium text-lg hover:text-blue-600 transition-colors duration-200 hover:text-xl"
-                onClick={handleLinkClick}
-              >
-                Contact Us
-              </Link>
-              {/* Catalogue Button in Mobile */}
-              <a
-                href="https://drive.google.com/file/d/your-file-id/view" // Replace with your actual Drive file link
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center px-6 py-2 rounded-lg font-bold text-lg shadow-md hover:from-purple-600 hover:to-blue-600 transition-all duration-300"
-              >
-                Catalogue
-              </a>
-            </div>
+            ))}
+            <a
+              href="/catalogue"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block px-4 py-2 text-center rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold hover:from-purple-600 hover:to-indigo-600 transition-all duration-300 shadow-md"
+            >
+              View Catalogue
+            </a>
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );

@@ -1,81 +1,89 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { PolicyLayout } from './Policy/PolicyLayout';
 
-const TermsAndConditionsPage: React.FC = () => {
-  useEffect(() => {
-    // Scroll to the top of the page when this component is loaded
-    window.scrollTo(0, 0);
-  }, []);
-
+export default function TermsPage() {
   return (
-    <div className="min-h-screen bg-gray-100 py-16 mt-16">
-      {/* Main Content Area with White Background */}
-      <div className="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg">
-        {/* Title and Image */}
-        <div className="flex items-center mb-8">
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjEHla3jGSCPLhR1UjGKruLlDiCk3xd2MwLg&s"
-            alt="Terms Image"
-            className="w-24 h-24 object-contain mr-6" // Ensures the image is fully visible and maintains aspect ratio
-          />
-          <h1 className="text-4xl font-bold text-gray-800">Terms and Conditions</h1>
-        </div>
-
-        {/* Terms and Conditions Content */}
-        <p className="text-xl mb-6 text-gray-700">
-          Please read these Terms and Conditions carefully before using our services. These terms outline the rules and regulations for the use of our services.
+    <PolicyLayout
+      title="Terms & Conditions"
+      icon="https://cdn-icons-png.flaticon.com/512/4300/4300059.png"
+    >
+      <div className="space-y-8 overflow-x-hidden px-4 sm:px-6 lg:px-8">
+        <p className="text-xl text-gray-700 leading-relaxed">
+          Please read these terms and conditions carefully before using our services. By accessing or using our platform, you agree to be bound by these terms.
         </p>
 
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">1. Acceptance of Terms</h2>
-        <p className="text-lg mb-6 text-gray-700">
-          By accessing or using our services, you agree to comply with these Terms and Conditions. If you do not agree to these terms, you should refrain from using our services.
-        </p>
+        <section className="space-y-4">
+          <h2 className="text-2xl font-semibold text-gray-800">1. Acceptance of Terms</h2>
+          <div className="bg-gray-50 rounded-xl p-6">
+            <p className="text-gray-700">
+              By accessing or using our services, you acknowledge that you have read, understood, and agree to be bound by these terms and conditions.
+            </p>
+          </div>
+        </section>
 
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">2. Use of Services</h2>
-        <p className="text-lg mb-6 text-gray-700">
-          You are granted a limited, non-exclusive, non-transferable license to access and use our services. You may not copy, distribute, or reverse engineer the services for unauthorized purposes.
-        </p>
+        <section className="space-y-4">
+          <h2 className="text-2xl font-semibold text-gray-800">2. User Responsibilities</h2>
+          <div className="bg-green-50 rounded-xl p-6">
+            <h3 className="font-semibold mb-3">Your Responsibilities:</h3>
+            <ul className="list-disc pl-6 space-y-2 text-gray-700">
+              <li>You agree to provide accurate and truthful information when using our platform.</li>
+              <li>You are responsible for maintaining the confidentiality of your account and password.</li>
+              <li>You must comply with all applicable laws and regulations while using our services.</li>
+            </ul>
+          </div>
+        </section>
 
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">3. Account Responsibility</h2>
-        <p className="text-lg mb-6 text-gray-700">
-          You are responsible for maintaining the confidentiality of your account information and are fully responsible for all activities under your account.
-        </p>
+        <section className="space-y-4">
+          <h2 className="text-2xl font-semibold text-gray-800">3. Account Termination</h2>
+          <div className="bg-yellow-50 rounded-xl p-6">
+            <h3 className="font-semibold mb-3">Termination of Account:</h3>
+            <p className="text-gray-700">
+              We reserve the right to suspend or terminate your account at our discretion if we believe that you have violated any of the terms and conditions, engaged in fraudulent activity, or misused our platform in any way.
+            </p>
+          </div>
+        </section>
 
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">4. Prohibited Uses</h2>
-        <p className="text-lg mb-6 text-gray-700">
-          You agree not to use our services for any unlawful or prohibited activities. This includes, but is not limited to, engaging in fraud, violating intellectual property rights, or interfering with the proper functioning of our services.
-        </p>
+        <section className="space-y-4">
+          <h2 className="text-2xl font-semibold text-gray-800">4. Privacy Policy</h2>
+          <div className="bg-blue-50 rounded-xl p-6">
+            <h3 className="font-semibold mb-3">Data Collection and Use:</h3>
+            <p className="text-gray-700">
+              We respect your privacy and are committed to protecting your personal information. Please refer to our <strong><a href="/privacy" className="text-blue-600">Privacy Policy</a></strong> for more details on how we collect, use, and protect your data.
+            </p>
+          </div>
+        </section>
 
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">5. Limitation of Liability</h2>
-        <p className="text-lg mb-6 text-gray-700">
-          In no event shall we be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the services.
-        </p>
+        <section className="space-y-4">
+          <h2 className="text-2xl font-semibold text-gray-800">5. Limitation of Liability</h2>
+          <div className="bg-red-50 rounded-xl p-6">
+            <h3 className="font-semibold mb-3">Limitation of Liability:</h3>
+            <p className="text-gray-700">
+              To the maximum extent permitted by law, we are not liable for any direct, indirect, incidental, special, consequential, or punitive damages arising from the use of our services or from any content, products, or services obtained through our platform.
+            </p>
+          </div>
+        </section>
 
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">6. Changes to Terms</h2>
-        <p className="text-lg mb-6 text-gray-700">
-          We reserve the right to update or modify these Terms and Conditions at any time. Any changes will be effective immediately upon posting on this page. It is your responsibility to review these terms periodically.
-        </p>
+        <section className="space-y-4">
+          <h2 className="text-2xl font-semibold text-gray-800">6. Changes to Terms</h2>
+          <div className="bg-purple-50 rounded-xl p-6">
+            <h3 className="font-semibold mb-3">Amendments to Terms:</h3>
+            <p className="text-gray-700">
+              We may update these terms and conditions from time to time. Any changes will be posted on this page, and the updated version will be effective immediately upon posting. Please review the terms periodically to stay informed about any updates.
+            </p>
+          </div>
+        </section>
 
-        {/* Contact Button */}
-        <div className="flex justify-center mt-8">
-          <Link
-            to="/contact"
-            className="bg-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200"
-          >
-            Contact Us for More Information
-          </Link>
-        </div>
+        <section className="space-y-4">
+          <h2 className="text-2xl font-semibold text-gray-800">7. Governing Law</h2>
+          <div className="bg-gray-50 rounded-xl p-6">
+            <h3 className="font-semibold mb-3">Jurisdiction:</h3>
+            <p className="text-gray-700">
+              These terms and conditions are governed by the laws of [Your Country/Region]. Any disputes arising from these terms will be resolved in the competent courts of [Your City/Region].
+            </p>
+          </div>
+        </section>
 
-        {/* Additional Information */}
-        <div className="mt-12">
-          <h3 className="text-xl font-semibold text-gray-800 mb-6">Additional Information</h3>
-          <p className="text-lg text-gray-700">
-            By using our services, you agree to the terms outlined in these Terms and Conditions. Please review them periodically as they may change.
-          </p>
-        </div>
       </div>
-    </div>
+    </PolicyLayout>
   );
-};
-
-export default TermsAndConditionsPage;
+}

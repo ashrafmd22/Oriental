@@ -1,11 +1,15 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
-import { Footer } from "./components/Footer";
+// import { Footer } from "./components/Footer";
+import { Footer } from "./components/Footer/Footer";
 import { HomePage } from "./pages/HomePage";
-import { AboutPage } from "./pages/AboutPage";
-import { ProductPage } from "./pages/ProductPage"; // Handles single product details
-import { ProductsPageBase } from "./pages/ProductsPageBase";
+// import { AboutPage } from "./pages/AboutPage";
+import { AboutPage } from "./pages/About/AboutPage";
+//import { ProductPage } from "./pages/ProductPage"; // Handles single product details
+import { ProductPage } from "./pages/Product/ProductPage";
+// import { ProductsPageBase } from "./pages/ProductsPageBase";
+import { ProductsPageBase } from "./pages/Products/ProductsPageBase";
 import { BagsPage } from './pages/BagsPage';
 import { CapsPage } from './pages/CapsPage';
 import { AccessoriesPage } from './pages/AccessoriesPage';
@@ -13,7 +17,8 @@ import { TshirtsPage } from './pages/TshirtsPage';
 import { JacketsPage } from './pages/JacketsPage';
 import { RaincoatsPage } from './pages/RaincoatsPage';
 import { TracksuitsPage } from './pages/TracksuitsPage';
-import { Contact } from "./components/Contact";
+// import { Contact } from "./components/Contact";
+import { Contact } from "./components/Contact/Contact";
 import PrivacyPage from "./pages/PrivacyPage";
 import TermsPage from "./pages/TermsPage";
 import RefundPage from "./pages/RefundPage";

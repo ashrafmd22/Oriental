@@ -1,77 +1,80 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Award, Users, Clock } from "lucide-react";
 
-export function About() {
-  // Scroll to the top when the About page is opened
-  useEffect(() => {
-    window.scrollTo(0, 0); // Scrolls to the top of the page
-  }, []);
+const features = [
+  {
+    icon: Award,
+    title: "Premium Quality",
+    description: "High-quality products that reflect your brand's excellence.",
+    color: "from-blue-500 to-blue-600",
+  },
+  {
+    icon: Users,
+    title: "Custom Solutions",
+    description: "Personalized gifts tailored to your brand's identity.",
+    color: "from-indigo-500 to-indigo-600",
+  },
+  {
+    icon: Clock,
+    title: "Timely Delivery",
+    description: "On-time delivery to meet your business deadlines.",
+    color: "from-purple-500 to-purple-600",
+  },
+];
 
+export function About() {
   return (
-    <section
-      id="about"
-      className="py-24 bg-gradient-to-r from-[#E3EBFF] to-[#ECE8EF]
-      "
-    >
-      {/* Container */}
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
-        {/* Section Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-5xl font-extrabold text-gray-900 mb-6 leading-tight tracking-wide">
-            Who We Are
+    <section className="relative py-16 sm:py-20 lg:py-24 overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#E3EBFF] to-[#ECE8EF]">
+        <div className="absolute inset-0 bg-grid-slate-100/[0.05] bg-[length:20px_20px]" />
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 lg:mb-20">
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
+            <span className="inline-block transform hover:scale-105 transition-transform duration-300">
+              Who We Are
+            </span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed font-medium">
+          <p className="text-base sm:text-lg text-gray-600 leading-relaxed font-medium">
             With over three decades of experience,{" "}
-            <span className="font-semibold text-blue-700">
+            <span className="relative inline-block font-semibold text-blue-700 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-blue-700/30">
               Oriental Enterprises
             </span>{" "}
-            specializes in premium corporate gifting solutions. We combine
-            quality, customization, and reliability to create gifts that leave
-            lasting impressions. Partner with us to elevate your brand and
-            build meaningful relationships.
+            specializes in premium corporate gifting solutions. We combine quality,
+            customization, and reliability to create gifts that leave lasting
+            impressions.
           </p>
         </div>
 
-        {/* Feature Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16">
-          {/* Feature 1 */}
-          <div className="group bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-            <div className="flex justify-center items-center mb-6">
-              <Award className="w-16 h-16 text-blue-600 group-hover:text-blue-800 transition-colors duration-300" />
-            </div>
-            <h3 className="text-3xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
-              Premium Quality
-            </h3>
-            <p className="text-gray-500 leading-relaxed text-lg">
-              High-quality products that reflect your brand's excellence.
-            </p>
-          </div>
+        {/* Features Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+          {features.map((feature, index) => (
+            <div
+              key={index}
+              className="group relative bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+            >
+              {/* Gradient Border */}
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-          {/* Feature 2 */}
-          <div className="group bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-            <div className="flex justify-center items-center mb-6">
-              <Users className="w-16 h-16 text-blue-600 group-hover:text-blue-800 transition-colors duration-300" />
-            </div>
-            <h3 className="text-3xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
-              Custom Solutions
-            </h3>
-            <p className="text-gray-500 leading-relaxed text-lg">
-              Personalized gifts tailored to your brand’s identity.
-            </p>
-          </div>
+              <div className="relative p-6 sm:p-8">
+                {/* Icon Container */}
+                <div className="mb-6">
+                  <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${feature.color} p-4 transform group-hover:scale-110 transition-transform duration-300`}>
+                    {React.createElement(feature.icon, { className: "w-full h-full text-white" })}
+                  </div>
+                </div>
 
-          {/* Feature 3 */}
-          <div className="group bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-            <div className="flex justify-center items-center mb-6">
-              <Clock className="w-16 h-16 text-blue-600 group-hover:text-blue-800 transition-colors duration-300" />
+                {/* Content */}
+                <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+              </div>
             </div>
-            <h3 className="text-3xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
-              Timely Delivery
-            </h3>
-            <p className="text-gray-500 leading-relaxed text-lg">
-              On-time delivery to meet your business deadlines.
-            </p>
-          </div>
+          ))}
         </div>
       </div>
     </section>
