@@ -82,6 +82,60 @@ export function CorporateOrderForm() {
     return isValid;
   };
 
+  const submitWithRetry = async (retryCount = 2, delay = 2000) => {
+    for (let attempt = 0; attempt <= retryCount; attempt++) {
+      try {
+        const controller = new AbortController();
+        // Increase timeout for first attempt to handle cold start
+        const timeout = attempt === 0 ? 20000 : 10000;
+        const timeoutId = setTimeout(() => controller.abort(), timeout);
+
+        const response = await axios.post(
+          `${import.meta.env.VITE_API_BASE_URL}/submit-corporate-order`,
+          formData,
+          {
+            signal: controller.signal,
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          }
+        );
+
+        clearTimeout(timeoutId);
+
+        if (response.status === 200) {
+          setFormData({
+            companyName: '',
+            contactPerson: '',
+            email: '',
+            phone: '',
+            productRequirements: '',
+          });
+          setNotification({
+            show: true,
+            type: 'success',
+            message: 'Your inquiry has been submitted successfully!',
+          });
+          return true;
+        }
+      } catch (error) {
+        if (attempt === retryCount) {
+          setNotification({
+            show: true,
+            type: 'error',
+            message: error instanceof Error && error.name === 'AbortError'
+              ? 'Request timed out. Please try again.'
+              : 'Failed to submit the form. Please try again.',
+          });
+          return false;
+        }
+        // If not the last attempt, wait before retrying
+        await new Promise(resolve => setTimeout(resolve, delay));
+      }
+    }
+    return false;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -95,47 +149,15 @@ export function CorporateOrderForm() {
     }
 
     setIsLoading(true);
-
     try {
-      // Create AbortController for timeout
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
-
-      const response = await axios.post(
-        `${import.meta.env.VITE_API_BASE_URL}/submit-corporate-order`,
-        formData,
-        {
-          signal: controller.signal,
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        }
-      );
-
-      clearTimeout(timeoutId);
-
-      if (response.status === 200) {
-        setFormData({
-          companyName: '',
-          contactPerson: '',
-          email: '',
-          phone: '',
-          productRequirements: '',
-        });
-        setNotification({
-          show: true,
-          type: 'success',
-          message: 'Your inquiry has been submitted successfully!',
-        });
-      }
-    } catch (error) {
+      // Show "warming up" message for first attempt
       setNotification({
         show: true,
-        type: 'error',
-        message: error instanceof Error && error.name === 'AbortError'
-          ? 'Request timed out. Please try again.'
-          : 'Failed to submit the form. Please try again.',
+        type: 'success',
+        message: 'Connecting to server...',
       });
+
+      await submitWithRetry();
     } finally {
       setIsLoading(false);
     }
