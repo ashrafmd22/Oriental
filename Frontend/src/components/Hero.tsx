@@ -1,143 +1,137 @@
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-
-const images = [
-  { url: "https://images.unsplash.com/photo-1547949003-9792a18a2601?auto=format&fit=crop&q=80" },
-  { url: "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&q=80" },
-  { url: "https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&q=80" },
-  { url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&q=80" },
-  { url: "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&q=80" },
-];
+import { Gift, Package, Award, Trophy, Star, Briefcase } from "lucide-react";
 
 export function Hero() {
   return (
-    <section id="home" className="relative w-full h-screen overflow-hidden">
-      {/* Image Slider */}
-      <div className="absolute inset-0">
-        <Swiper
-          modules={[Autoplay, Navigation, Pagination]}
-          slidesPerView={1}
-          navigation
-          pagination={{ clickable: true }}
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-          }}
-          speed={800}
-          loop={true}
-          className="w-full h-full"
-        >
-          {images.map((image, index) => (
-            <SwiperSlide key={index} className="w-full h-full">
-              <div className="w-full h-full relative slide-container overflow-hidden">
-                <img
-                  src={image.url}
-                  alt={`Slide ${index + 1}`}
-                  className="w-full h-full object-cover slide-image"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-40" />
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+    <section className="relative w-full min-h-screen overflow-hidden bg-gradient-to-br from-purple-900 via-indigo-900 to-fuchsia-900 pt-12">
+      {/* Animated Background Pattern */}
+      <div className="absolute inset-0 pattern-grid opacity-20" />
+
+      {/* Glowing Orbs */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-[128px] animate-blob" />
+      <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-[128px] animate-blob animation-delay-2000" />
+      <div className="absolute -bottom-8 left-1/2 w-96 h-96 bg-indigo-500 rounded-full mix-blend-multiply filter blur-[128px] animate-blob animation-delay-4000" />
+
+      {/* Floating Icons */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="floating-icons">
+          <Gift className="icon text-pink-200" size={32} style={{ left: '10%', top: '20%', animationDelay: '0s' }} />
+          <Package className="icon text-purple-200" size={40} style={{ left: '25%', top: '25%', animationDelay: '1.5s' }} />
+          <Award className="icon text-fuchsia-200" size={36} style={{ left: '45%', top: '22%', animationDelay: '1s' }} />
+          <Trophy className="icon text-indigo-200" size={44} style={{ left: '65%', top: '24%', animationDelay: '2s' }} />
+          <Star className="icon text-pink-200" size={32} style={{ left: '80%', top: '21%', animationDelay: '0.5s' }} />
+          <Briefcase className="icon text-purple-200" size={38} style={{ left: '90%', top: '23%', animationDelay: '1.8s' }} />
+        </div>
       </div>
 
-      {/* Text Content */}
-      <div className="absolute inset-0 w-full h-full flex items-center justify-center z-10 px-4">
+      {/* Content */}
+      <div className="relative z-10 min-h-screen flex items-center justify-center px-4">
         <div className="max-w-3xl text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 md:mb-6 animate-slideInLeft">
-            Premium Corporate Gift Solutions
+          <div className="mb-8 flex justify-center">
+            <div className="relative mt-4 sm:mt-0">
+              <div className="absolute inset-0 animate-ping-slow">
+                <Gift size={64} className="text-pink-400 opacity-50" />
+              </div>
+              <Gift size={64} className="text-white relative z-10" />
+            </div>
+          </div>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 tracking-tight">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-200 via-purple-200 to-indigo-200">
+              Premium Corporate
+            </span>
+            <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-200 via-pink-200 to-purple-200">
+              Gift Solutions
+            </span>
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-white mb-6 md:mb-8 animate-slideInLeft animation-delay-200">
-            Elevating your brand with exceptional corporate gifts since 1990
+          <p className="text-lg sm:text-xl text-purple-100 mb-8 max-w-2xl mx-auto font-light">
+            Elevate your brand with our exceptional collection of corporate gifts,
+            crafted to leave lasting impressions since 1990
           </p>
-          <a
-            href="/products"
-            className="inline-block bg-blue-600 text-white px-6 sm:px-8 py-2 sm:py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200 text-sm sm:text-base animate-slideInLeft animation-delay-400"
-          >
-            Explore Our Products
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a
+              href="/products"
+              className="px-8 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-lg font-semibold hover:from-pink-600 hover:to-purple-600 transition-all duration-200 w-full sm:w-auto"
+            >
+              Explore Products
+            </a>
+            <a
+              href="/contact"
+              className="px-8 py-3 border-2 border-purple-300 text-purple-100 rounded-lg font-semibold hover:bg-purple-900/30 transition-colors duration-200 w-full sm:w-auto"
+            >
+              Contact Us
+            </a>
+          </div>
         </div>
       </div>
 
       <style>{`
-        .slide-container {
-          transform: scale(1.02); /* Slightly larger to prevent edge gaps */
+        .pattern-grid {
+          background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0);
+          background-size: 48px 48px;
         }
 
-        .swiper-slide-active .slide-image {
-          animation: zoomAndSlide 3s ease-out forwards;
+        .floating-icons {
+          position: absolute;
+          width: 100%;
+          height: 100%;
         }
 
-        @keyframes zoomAndSlide {
-          0% {
-            transform: scale(1.2) translateX(0);
+        .icon {
+          position: absolute;
+          animation: floatUpDown 8s ease-in-out infinite;
+          opacity: 0.3;
+        }
+
+        @keyframes floatUpDown {
+          0%, 100% {
+            transform: translateY(0);
           }
-          100% {
-            transform: scale(1.05) translateX(-1%);
+          50% {
+            transform: translateY(-30px);
           }
         }
 
-        @keyframes slideInLeft {
-          0% {
-            transform: translateX(-100%);
+        @keyframes blob {
+          0%, 100% {
+            transform: translate(0, 0) scale(1);
+          }
+          25% {
+            transform: translate(20px, -50px) scale(1.1);
+          }
+          50% {
+            transform: translate(-20px, 20px) scale(0.9);
+          }
+          75% {
+            transform: translate(-40px, -20px) scale(1.05);
+          }
+        }
+
+        .animate-blob {
+          animation: blob 10s infinite;
+        }
+
+        .animation-delay-2000 {
+          animation-delay: 2s;
+        }
+
+        .animation-delay-4000 {
+          animation-delay: 4s;
+        }
+
+        .animate-ping-slow {
+          animation: ping 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+        }
+
+        @keyframes ping {
+          75%, 100% {
+            transform: scale(1.2);
             opacity: 0;
           }
-          100% {
-            transform: translateX(0);
-            opacity: 1;
-          }
-        }
-
-        .animate-slideInLeft {
-          opacity: 0;
-          animation: slideInLeft 1s ease-out forwards;
-        }
-
-        .animation-delay-200 {
-          animation-delay: 200ms;
-        }
-
-        .animation-delay-400 {
-          animation-delay: 400ms;
-        }
-
-        .swiper-button-next,
-        .swiper-button-prev {
-          color: white !important;
-        }
-
-        .swiper-pagination-bullet {
-          background: white !important;
-          opacity: 0.7;
-        }
-
-        .swiper-pagination-bullet-active {
-          opacity: 1;
         }
 
         @media (max-width: 640px) {
-          .swiper-button-next,
-          .swiper-button-prev {
-            transform: scale(0.7);
-          }
-        }
-
-        /* Responsive image handling */
-        @media (max-width: 475px) {
-          .slide-container {
-            height: 100vh;
-            width: 100vw;
-          }
-          
-          .slide-image {
-            height: 100%;
-            width: 100%;
-            object-position: center;
+          .floating-icons {
+            opacity: 0.15;
           }
         }
       `}</style>

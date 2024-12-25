@@ -6,7 +6,6 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -30,12 +29,16 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo Section */}
-          <Link to="/" className="flex items-center group">
-            <div className="relative">
+          <Link
+            to="/"
+            className="flex items-center select-none"
+            style={{ WebkitTapHighlightColor: 'transparent' }}
+          >
+            <div className="relative flex items-center justify-center">
               <Gift
-                className={`h-8 w-8 sm:h-10 sm:w-10 text-indigo-600 transform transition-transform group-hover:scale-110 duration-300 ${isOpen ? '' : 'shadow-lg'}`}
+                strokeWidth={2}
+                className="h-8 w-8 sm:h-10 sm:w-10 text-indigo-600 transition-transform hover:scale-110 duration-300"
               />
-              <div className="absolute -inset-1 bg-indigo-100 rounded-full blur opacity-0 group-hover:opacity-75 transition-opacity duration-300"></div>
             </div>
             <div className="ml-3">
               <h1 className="text-lg sm:text-xl md:text-2xl font-black tracking-tight">
