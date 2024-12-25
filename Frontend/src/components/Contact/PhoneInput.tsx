@@ -5,9 +5,10 @@ interface PhoneInputProps {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   error?: string;
   borderColor?: string;
+  disabled?: boolean;
 }
 
-export function PhoneInput({ value, onChange, error, borderColor }: PhoneInputProps) {
+export function PhoneInput({ value, onChange, error, borderColor, disabled }: PhoneInputProps) {
   return (
     <div>
       <label className="block text-sm font-medium text-gray-700 mb-1.5">Phone</label>
@@ -28,8 +29,9 @@ export function PhoneInput({ value, onChange, error, borderColor }: PhoneInputPr
           name="phone"
           value={value}
           onChange={onChange}
+          disabled={disabled}
           placeholder="Enter your phone number"
-          className={`flex-1 rounded-r-lg border-0 p-3 text-sm focus:ring-0 ${borderColor}`}
+          className={`flex-1 rounded-r-lg border-0 p-3 text-sm focus:ring-0 ${borderColor} disabled:bg-gray-50 disabled:cursor-not-allowed`}
         />
       </div>
       {error && <p className="text-red-500 text-xs mt-1">{error}</p>}

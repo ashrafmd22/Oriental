@@ -3,6 +3,7 @@ import axios from 'axios';
 import { FormField } from './FormField';
 import { Notification } from './Notification';
 import { ContactInfo } from './ContactInfo';
+import { SubmitButton } from './SubmitButton';
 import type { FormData, Errors } from './types';
 
 export function CorporateOrderForm() {
@@ -22,6 +23,7 @@ export function CorporateOrderForm() {
     productRequirements: '',
   });
 
+  const [isLoading, setIsLoading] = useState(false);
   const [notification, setNotification] = useState<{
     show: boolean;
     type: 'success' | 'error';
@@ -92,12 +94,25 @@ export function CorporateOrderForm() {
       return;
     }
 
+    setIsLoading(true);
+
     try {
+      // Create AbortController for timeout
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+
       const response = await axios.post(
         `${import.meta.env.VITE_API_BASE_URL}/submit-corporate-order`,
-        formData
+        formData,
+        {
+          signal: controller.signal,
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
       );
 
+      clearTimeout(timeoutId);
 
       if (response.status === 200) {
         setFormData({
@@ -117,8 +132,12 @@ export function CorporateOrderForm() {
       setNotification({
         show: true,
         type: 'error',
-        message: 'Failed to submit the form. Please try again.',
+        message: error instanceof Error && error.name === 'AbortError'
+          ? 'Request timed out. Please try again.'
+          : 'Failed to submit the form. Please try again.',
       });
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -154,8 +173,9 @@ export function CorporateOrderForm() {
                 name="companyName"
                 value={formData.companyName}
                 onChange={handleInputChange}
+                disabled={isLoading}
                 placeholder="Enter company name"
-                className="w-full px-3 py-2 sm:px-4 sm:py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200 text-sm sm:text-base"
+                className="w-full px-3 py-2 sm:px-4 sm:py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200 text-sm sm:text-base disabled:bg-gray-50 disabled:cursor-not-allowed"
               />
             </FormField>
 
@@ -165,8 +185,9 @@ export function CorporateOrderForm() {
                 name="contactPerson"
                 value={formData.contactPerson}
                 onChange={handleInputChange}
+                disabled={isLoading}
                 placeholder="Enter your name"
-                className="w-full px-3 py-2 sm:px-4 sm:py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200 text-sm sm:text-base"
+                className="w-full px-3 py-2 sm:px-4 sm:py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200 text-sm sm:text-base disabled:bg-gray-50 disabled:cursor-not-allowed"
               />
             </FormField>
 
@@ -176,8 +197,9 @@ export function CorporateOrderForm() {
                 name="email"
                 value={formData.email}
                 onChange={handleInputChange}
+                disabled={isLoading}
                 placeholder="Enter email address"
-                className="w-full px-3 py-2 sm:px-4 sm:py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200 text-sm sm:text-base"
+                className="w-full px-3 py-2 sm:px-4 sm:py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200 text-sm sm:text-base disabled:bg-gray-50 disabled:cursor-not-allowed"
               />
             </FormField>
 
@@ -199,8 +221,9 @@ export function CorporateOrderForm() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleInputChange}
+                  disabled={isLoading}
                   placeholder="Enter phone number"
-                  className="flex-1 px-3 py-2 sm:px-4 sm:py-3 rounded-r-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200 text-sm sm:text-base"
+                  className="flex-1 px-3 py-2 sm:px-4 sm:py-3 rounded-r-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200 text-sm sm:text-base disabled:bg-gray-50 disabled:cursor-not-allowed"
                 />
               </div>
             </FormField>
@@ -211,18 +234,14 @@ export function CorporateOrderForm() {
               name="productRequirements"
               value={formData.productRequirements}
               onChange={handleInputChange}
+              disabled={isLoading}
               placeholder="Please describe your requirements in detail..."
               rows={3}
-              className="w-full px-3 py-2 sm:px-4 sm:py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200 resize-none text-sm sm:text-base"
+              className="w-full px-3 py-2 sm:px-4 sm:py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200 resize-none text-sm sm:text-base disabled:bg-gray-50 disabled:cursor-not-allowed"
             />
           </FormField>
 
-          <button
-            type="submit"
-            className="w-full mt-6 sm:mt-8 px-6 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-lg font-medium text-sm sm:text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
-          >
-            Submit Inquiry
-          </button>
+          <SubmitButton isLoading={isLoading} />
         </form>
 
         <ContactInfo />

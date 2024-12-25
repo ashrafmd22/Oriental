@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { products } from '../../data/products';
-import { ImageGallery } from './ImageGallery';
+import { ImageGallery } from './ImageGallery/ImageGallery';
 import { ProductDetails } from './ProductDetails';
 
 export function ProductPage() {

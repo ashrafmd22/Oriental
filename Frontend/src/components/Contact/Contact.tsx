@@ -28,6 +28,7 @@ export function Contact() {
     message: '',
   });
 
+  const [isLoading, setIsLoading] = useState(false);
   const [notification, setNotification] = useState<NotificationState>({
     show: false,
     type: 'success',
@@ -62,8 +63,6 @@ export function Contact() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const validationErrors = validateForm(formData);
-
-    // Check if there are any non-empty error messages
     const hasErrors = Object.values(validationErrors).some(error => error !== '');
 
     if (hasErrors) {
@@ -73,19 +72,23 @@ export function Contact() {
         type: 'error',
         message: 'Please fix the errors in the form',
       });
-
-      setTimeout(() => {
-        setNotification(prev => ({ ...prev, show: false }));
-      }, 5000);
       return;
     }
 
+    setIsLoading(true);
+
     try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 10000);
+
       const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/submit-contact-form`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
+        signal: controller.signal,
       });
+
+      clearTimeout(timeoutId);
 
       if (response.ok) {
         setFormData({ fullName: '', email: '', phone: '', message: '' });
@@ -103,14 +106,23 @@ export function Contact() {
       setNotification({
         show: true,
         type: 'error',
-        message: 'Failed to send message. Please try again.',
+        message: error instanceof Error && error.name === 'AbortError'
+          ? 'Request timed out. Please try again.'
+          : 'Failed to send message. Please try again.',
       });
+    } finally {
+      setIsLoading(false);
     }
-
-    setTimeout(() => {
-      setNotification(prev => ({ ...prev, show: false }));
-    }, 5000);
   };
+
+  useEffect(() => {
+    if (notification.show) {
+      const timer = setTimeout(() => {
+        setNotification(prev => ({ ...prev, show: false }));
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [notification.show]);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -126,6 +138,7 @@ export function Contact() {
               handleSubmit={handleSubmit}
               emailBorderColor={emailBorderColor}
               phoneBorderColor={phoneBorderColor}
+              isLoading={isLoading}
             />
             <ContactInfo />
           </div>

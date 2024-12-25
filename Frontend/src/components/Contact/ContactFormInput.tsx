@@ -9,6 +9,7 @@ interface ContactFormInputProps {
   placeholder: string;
   error?: string;
   borderColor?: string;
+  disabled?: boolean; // Added disabled prop
 }
 
 export function ContactFormInput({
@@ -20,6 +21,7 @@ export function ContactFormInput({
   placeholder,
   error,
   borderColor,
+  disabled,
 }: ContactFormInputProps) {
   return (
     <div>
@@ -30,7 +32,8 @@ export function ContactFormInput({
         value={value}
         onChange={onChange}
         placeholder={placeholder}
-        className={`w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500 p-3 text-sm transition duration-200 ${borderColor}`}
+        disabled={disabled}
+        className={`w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500 p-3 text-sm transition duration-200 ${borderColor} disabled:bg-gray-50 disabled:cursor-not-allowed`}
       />
       {error && <p className="text-red-500 text-xs mt-1">{error}</p>}
     </div>

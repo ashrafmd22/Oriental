@@ -55,7 +55,7 @@ export const products: Product[] = [
       'Rust-resistant zippers',
     ],
     images: [
-      'https://images.unsplash.com/photo-1586327226963-9d3793497980?auto=format&fit=crop&q=80',
+      'https://addx.in/wp-content/uploads/2024/04/20230820130120_IMG_1270-copy1.jpg',
       'https://images.unsplash.com/photo-1597635738235-dca937b9c65f?auto=format&fit=crop&q=80',
     ]
   },
@@ -74,7 +74,7 @@ export const products: Product[] = [
       'Ideal for hiking or travel',
     ],
     images: [
-      'https://images.unsplash.com/photo-1506748686210-42e75dcb89a9?auto=format&fit=crop&q=80',
+      'https://addx.in/wp-content/uploads/2024/04/20230820130120_IMG_1270-copy1.jpg',
       'https://images.unsplash.com/photo-1565327198-54f1b9c88be3?auto=format&fit=crop&q=80',
     ]
   },
@@ -93,7 +93,7 @@ export const products: Product[] = [
       'Durable brass buckles',
     ],
     images: [
-      'https://images.unsplash.com/photo-1584961155942-e4d290b9b09f?auto=format&fit=crop&q=80',
+      'https://addx.in/wp-content/uploads/2024/04/20230820130120_IMG_1270-copy1.jpg',
       'https://images.unsplash.com/photo-1597968036673-0fcf2bb118b4?auto=format&fit=crop&q=80',
     ]
   },
@@ -112,7 +112,7 @@ export const products: Product[] = [
       'Gold hardware accents',
     ],
     images: [
-      'https://images.unsplash.com/photo-1595103659737-191b9c9e2e1d?auto=format&fit=crop&q=80',
+      'https://addx.in/wp-content/uploads/2024/04/BAGS-PHOTOS-BY-AADIL-TRANS4MER.jpg',
       'https://images.unsplash.com/photo-1580601204144-320b98f44597?auto=format&fit=crop&q=80',
     ]
   },
@@ -131,7 +131,7 @@ export const products: Product[] = [
       'Reflective strips for safety',
     ],
     images: [
-      'https://images.unsplash.com/photo-1595271610479-76ecbb8f2830?auto=format&fit=crop&q=80',
+      'https://addx.in/wp-content/uploads/2024/04/BAGS-PHOTOS-BY-AADIL-TRANS4MER.jpg',
       'https://images.unsplash.com/photo-1516238311519-1ad2010f6f9f?auto=format&fit=crop&q=80',
     ]
   },
@@ -150,7 +150,7 @@ export const products: Product[] = [
       'Durable polyester material',
     ],
     images: [
-      'https://images.unsplash.com/photo-1548194417-d2f3242fbcf9?auto=format&fit=crop&q=80',
+      'https://addx.in/wp-content/uploads/2024/04/BAGS-PHOTOS-BY-AADIL-TRANS4MER.jpg',
       'https://images.unsplash.com/photo-1602037483754-9132be30dbfa?auto=format&fit=crop&q=80',
     ]
   },
@@ -169,7 +169,7 @@ export const products: Product[] = [
       'Ergonomic design for comfort',
     ],
     images: [
-      'https://images.unsplash.com/photo-1579384245164-8338b7e9fc93?auto=format&fit=crop&q=80',
+      'https://addx.in/wp-content/uploads/2024/04/BAGS-PHOTOS-BY-AADIL-TRANS4MER.jpg',
       'https://images.unsplash.com/photo-1594795102795-2b8c3514f9ad?auto=format&fit=crop&q=80',
     ]
   },
@@ -188,7 +188,7 @@ export const products: Product[] = [
       'Water-resistant base',
     ],
     images: [
-      'https://images.unsplash.com/photo-1587600278856-87f3cfd1a3d5?auto=format&fit=crop&q=80',
+      'https://addx.in/wp-content/uploads/2024/04/BAGS-PHOTOS-BY-AADIL-TRANS4MER.jpg',
       'https://images.unsplash.com/photo-1574158623100-7f0d9f9fc5b3?auto=format&fit=crop&q=80',
     ]
   },
@@ -207,7 +207,7 @@ export const products: Product[] = [
       'High-quality zippers',
     ],
     images: [
-      'https://images.unsplash.com/photo-1570230497524-6d670f8f5d8d?auto=format&fit=crop&q=80',
+      'https://addx.in/wp-content/uploads/2024/05/20240424185516_IMG_2814-Photoroom-copy.jpg',
       'https://images.unsplash.com/photo-1559079299-bd66fbcdf9f1?auto=format&fit=crop&q=80',
     ]
   },
@@ -226,7 +226,7 @@ export const products: Product[] = [
       'Removable shoulder strap',
     ],
     images: [
-      'https://images.unsplash.com/photo-1600585154357-21b0ea4ad20b?auto=format&fit=crop&q=80',
+      'https://addx.in/wp-content/uploads/2024/05/20240424185516_IMG_2814-Photoroom-copy.jpg',
       'https://images.unsplash.com/photo-1587300180081-5bb9b3f4264e?auto=format&fit=crop&q=80',
     ]
   },
@@ -245,7 +245,7 @@ export const products: Product[] = [
       'Multiple colors available',
     ],
     images: [
-      'https://images.unsplash.com/photo-1582123912383-3ff82fadd8c3?auto=format&fit=crop&q=80',
+      'https://addx.in/wp-content/uploads/2024/05/20240424185516_IMG_2814-Photoroom-copy.jpg',
       'https://images.unsplash.com/photo-1574173152919-b9b8762d06c3?auto=format&fit=crop&q=80',
     ]
   },
@@ -264,7 +264,7 @@ export const products: Product[] = [
       'Multiple color options',
     ],
     images: [
-      'https://images.unsplash.com/photo-1552640505-9b2cc3798fc5?auto=format&fit=crop&q=80',
+      'https://addx.in/wp-content/uploads/2024/05/20240424185516_IMG_2814-Photoroom-copy.jpg',
       'https://images.unsplash.com/photo-1593759871612-1fa61ec1a4b0?auto=format&fit=crop&q=80',
     ]
   },
@@ -283,7 +283,7 @@ export const products: Product[] = [
       'Stylish design',
     ],
     images: [
-      'https://images.unsplash.com/photo-1560330422-bf0ec828b0e7?auto=format&fit=crop&q=80',
+      'https://addx.in/wp-content/uploads/2024/05/20240424185516_IMG_2814-Photoroom-copy.jpg',
       'https://images.unsplash.com/photo-1598263231052-47a5faeb290e?auto=format&fit=crop&q=80',
     ]
   },
