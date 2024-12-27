@@ -1,15 +1,14 @@
 import React from 'react';
-import { MessageCircle } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
+
 interface ProductDetailsProps {
   name: string;
-  price: string;
   description: string;
   features: string[];
   code: string;
 }
 
-export function ProductDetails({ name, price, description, features, code }: ProductDetailsProps) {
+export function ProductDetails({ name, description, features, code }: ProductDetailsProps) {
   const handleWhatsAppClick = () => {
     const text = `Hello! I'm interested in the following product:%0A%0AName: ${name}%0ACode: ${code}%0A%0AIf you have more details, please share.`;
     window.open(`https://wa.me/+918810418134?text=${text}`, '_blank');
@@ -19,8 +18,7 @@ export function ProductDetails({ name, price, description, features, code }: Pro
     <div className="flex flex-col h-full">
       <div className="space-y-6 flex-grow">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">{name}</h1>
-          <p className="text-xl sm:text-2xl font-semibold text-blue-600">{price}</p>
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">{name}</h1>
         </div>
 
         <div className="prose prose-gray max-w-none">
@@ -57,7 +55,7 @@ export function ProductDetails({ name, price, description, features, code }: Pro
           onClick={handleWhatsAppClick}
           className="w-full sm:w-auto bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition-all duration-200 flex items-center justify-center gap-3 hover:shadow-lg"
         >
-          <FaWhatsapp className="w-6 h-6" /> {/* Increased size */}
+          <FaWhatsapp className="w-6 h-6" />
           Contact on WhatsApp
         </button>
       </div>

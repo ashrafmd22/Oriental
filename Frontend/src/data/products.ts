@@ -18,8 +18,8 @@ export const products: Product[] = [
     ],
     "images": [
       "https://addx.in/wp-content/uploads/2024/04/20230813171604_IMG_0755-copy1-300x300.jpg",
-      "https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1553062407-98eeb64c6a45?auto=format&fit=crop&q=80"
+      "https://addx.in/wp-content/uploads/2024/04/IMG_6306-scaled.jpg",
+      "https://addx.in/wp-content/uploads/2024/04/IMG_6312-scaled.jpg"
     ]
   },
   {

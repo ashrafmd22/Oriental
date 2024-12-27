@@ -30,9 +30,23 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, category }) =
         </h3>
 
         <div className="mt-auto">
-          <p className="text-lg sm:text-xl font-bold text-blue-600 mb-3">
-            {product.price}
-          </p>
+          <div className="flex flex-col gap-2 mb-3">
+            <div className="flex items-center gap-2">
+              <span className="px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded">
+                {product.category}
+              </span>
+              <span className="px-2 py-1 bg-gray-100 text-gray-800 text-xs font-medium rounded">
+                Code: {product.code}
+              </span>
+            </div>
+            <div className="flex flex-wrap gap-1">
+              {product.features.slice(0, 2).map((feature, index) => (
+                <span key={index} className="px-2 py-1 bg-green-50 text-green-700 text-xs rounded">
+                  {feature}
+                </span>
+              ))}
+            </div>
+          </div>
 
           <button
             onClick={() => navigate(`/products/${category}/${product.id}`)}
