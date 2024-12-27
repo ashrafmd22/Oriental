@@ -16,11 +16,12 @@ export function Footer() {
     {
       title: 'Quick Links',
       links: [
-        { label: 'T-shirts', href: '/products/tshirts' },
         { label: 'Bags', href: '/products/bags' },
         { label: 'Caps', href: '/products/caps' },
-        { label: 'Track-suits', href: '/products/Diaries' },
         { label: 'Drinkware', href: '/products/Drinkware' },
+        { label: 'Diaries', href: '/products/Diaries' },
+        { label: 'Jackets', href: '/products/jackets' },
+        { label: 'T-shirts', href: '/products/tshirts' },
         { label: 'Accessories', href: '/products/accessories' },
       ],
     },
