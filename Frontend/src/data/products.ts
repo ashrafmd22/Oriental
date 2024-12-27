@@ -16,7 +16,7 @@ export const products: Product[] = [
       "Water-resist"
     ],
     "images": [
-      "assets/Bags/1.jpg",
+      "/assets/Bags/1.jpg",
       "/assets/Bags/2.jpg",
       "/assets/Bags/3.jpg"
     ]
@@ -37,7 +37,8 @@ export const products: Product[] = [
     ],
     "images": [
       "/assets/Bags/7.jpg",
-      "/assets/Bags//assets/Bags/9.jpg"
+      "/assets/Bags/8.jpg",
+      "/assets/Bags/9.jpg"
     ]
   },
   {
