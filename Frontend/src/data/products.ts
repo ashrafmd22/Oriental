@@ -1,5 +1,5 @@
 import { Product } from '../types/product';
-
+import BagImage2 from '/Public/assets/Bags/2.jpg';
 export const products: Product[] = [
 
   {
@@ -17,7 +17,7 @@ export const products: Product[] = [
       "Water-resistant"
     ],
     "images": [
-      "./assets/Bags/1.jpg",
+      BagImage2,
       "/Public/assets/Bags/2.jpg",
       "/assets/Bags/3.jpg"
     ]
