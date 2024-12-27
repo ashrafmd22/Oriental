@@ -1,5 +1,71 @@
 import { Product } from '../types/product';
+// import BagImage2 from '/Public/assets/Bags/2.jpg';
+import BagImage1 from '/Public/assets/Bags/1.jpg';
 import BagImage2 from '/Public/assets/Bags/2.jpg';
+import BagImage3 from '/Public/assets/Bags/3.jpg';
+
+import BagImage7 from '/Public/assets/Bags/7.jpg';
+import BagImage8 from '/Public/assets/Bags/8.jpg';
+import BagImage9 from '/Public/assets/Bags/9.jpg';
+import BagImage10 from '/Public/assets/Bags/10.jpg';
+import BagImage11 from '/Public/assets/Bags/11.jpg';
+import BagImage12 from '/Public/assets/Bags/12.jpg';
+import BagImage13 from '/Public/assets/Bags/13.jpg';
+import BagImage14 from '/Public/assets/Bags/14.jpg';
+import BagImage15 from '/Public/assets/Bags/15.jpg';
+import BagImage16 from '/Public/assets/Bags/16.jpg';
+import BagImage17 from '/Public/assets/Bags/17.jpg';
+import BagImage18 from '/Public/assets/Bags/18.jpg';
+import BagImage19 from '/Public/assets/Bags/19.jpg';
+import BagImage20 from '/Public/assets/Bags/20.jpg';
+import BagImage21 from '/Public/assets/Bags/21.jpg';
+import BagImage22 from '/Public/assets/Bags/22.jpg';
+import BagImage23 from '/Public/assets/Bags/23.jpg';
+import BagImage24 from '/Public/assets/Bags/24.jpg';
+import BagImage25 from '/Public/assets/Bags/25.jpg';
+import BagImage26 from '/Public/assets/Bags/26.jpg';
+import BagImage27 from '/Public/assets/Bags/27.jpg';
+import BagImage28 from '/Public/assets/Bags/28.jpg';
+import BagImage29 from '/Public/assets/Bags/29.jpg';
+import BagImage30 from '/Public/assets/Bags/30.jpg';
+import BagImage31 from '/Public/assets/Bags/31.jpg';
+import BagImage32 from '/Public/assets/Bags/32.jpg';
+import BagImage33 from '/Public/assets/Bags/33.jpg';
+import BagImage34 from '/Public/assets/Bags/34.jpg';
+import BagImage35 from '/Public/assets/Bags/35.jpg';
+import BagImage36 from '/Public/assets/Bags/36.jpg';
+import BagImage37 from '/Public/assets/Bags/37.jpg';
+import BagImage38 from '/Public/assets/Bags/38.jpg';
+import BagImage39 from '/Public/assets/Bags/39.jpg';
+import BagImage40 from '/Public/assets/Bags/40.jpg';
+import BagImage41 from '/Public/assets/Bags/41.jpg';
+import BagImage42 from '/Public/assets/Bags/42.jpg';
+import BagImage43 from '/Public/assets/Bags/43.jpg';
+import BagImage44 from '/Public/assets/Bags/44.jpg';
+import BagImage45 from '/Public/assets/Bags/45.jpg';
+import BagImage46 from '/Public/assets/Bags/46.jpg';
+import BagImage47 from '/Public/assets/Bags/47.jpg';
+import BagImage48 from '/Public/assets/Bags/48.jpg';
+import BagImage49 from '/Public/assets/Bags/49.jpg';
+import BagImage50 from '/Public/assets/Bags/50.jpg';
+import BagImage51 from '/Public/assets/Bags/51.jpg';
+import BagImage52 from '/Public/assets/Bags/52.jpg';
+import BagImage53 from '/Public/assets/Bags/53.jpg';
+import BagImage54 from '/Public/assets/Bags/54.jpg';
+import BagImage55 from '/Public/assets/Bags/55.jpg';
+import BagImage56 from '/Public/assets/Bags/56.jpg';
+import BagImage57 from '/Public/assets/Bags/57.jpg';
+import BagImage58 from '/Public/assets/Bags/58.jpg';
+import BagImage59 from '/Public/assets/Bags/59.jpg';
+import BagImage60 from '/Public/assets/Bags/60.jpg';
+import BagImage61 from '/Public/assets/Bags/61.jpg';
+import BagImage62 from '/Public/assets/Bags/62.jpg';
+import BagImage63 from '/Public/assets/Bags/63.jpg';
+import BagImage64 from '/Public/assets/Bags/64.jpg';
+import BagImage65 from '/Public/assets/Bags/65.jpg';
+import BagImage66 from '/Public/assets/Bags/66.jpg';
+import BagImage67 from '/Public/assets/Bags/67.jpg';
+
 export const products: Product[] = [
 
   {
@@ -17,9 +83,9 @@ export const products: Product[] = [
       "Water-resistant"
     ],
     "images": [
+      BagImage1,
       BagImage2,
-      "/Public/assets/Bags/2.jpg",
-      "/Public/assets/Bags/3.jpg"
+      BagImage3
     ]
   },
   {
@@ -37,8 +103,8 @@ export const products: Product[] = [
       "Rust-resistant zippers"
     ],
     "images": [
-      "/Public/assets/Bags/7.jpg",
-      "/Public/assets/Bags/9.jpg"
+      BagImage7,
+      BagImage9
     ]
   },
   {
@@ -56,9 +122,9 @@ export const products: Product[] = [
       "Durable brass buckles"
     ],
     "images": [
-      "/Public/assets/Bags/10.jpg",
-      "/Public/assets/Bags/11.jpg",
-      "/Public/assets/Bags/12.jpg"
+      BagImage10,
+      BagImage11,
+      BagImage12
     ]
   },
   {
@@ -76,9 +142,9 @@ export const products: Product[] = [
       "Gold hardware accents"
     ],
     "images": [
-      "/Public/assets/Bags/13.jpg",
-      "/Public/assets/Bags/14.jpg",
-      "/Public/assets/Bags/15.jpg"
+      BagImage13,
+      BagImage14,
+      BagImage15
     ]
   },
   {
@@ -96,9 +162,9 @@ export const products: Product[] = [
       "Durable polyester material"
     ],
     "images": [
-      "/Public/assets/Bags/16.jpg",
-      "/Public/assets/Bags/17.jpg",
-      "/Public/assets/Bags/18.jpg"
+      BagImage16,
+      BagImage17,
+      BagImage18
     ]
   },
   {
@@ -116,9 +182,9 @@ export const products: Product[] = [
       "Ergonomic design for comfort"
     ],
     "images": [
-      "/Public/assets/Bags/20.jpg",
-      "/Public/assets/Bags/19.jpg",
-      "/Public/assets/Bags/21.jpg"
+      BagImage19,
+      BagImage20,
+      BagImage21
     ]
   },
   {
@@ -136,8 +202,8 @@ export const products: Product[] = [
       "Water-resistant base"
     ],
     "images": [
-      "/Public/assets/Bags/22.jpg",
-      "/Public/assets/Bags/23.jpg"
+      BagImage22,
+      BagImage23
     ]
   },
   {
@@ -155,9 +221,9 @@ export const products: Product[] = [
       "Multiple colors available"
     ],
     "images": [
-      "/Public/assets/Bags/24.jpg",
-      "/Public/assets/Bags/25.jpg",
-      "/Public/assets/Bags/26.jpg"
+      BagImage24,
+      BagImage25,
+      BagImage26
     ]
   },
   {
@@ -175,9 +241,9 @@ export const products: Product[] = [
       "Multiple color options"
     ],
     "images": [
-      "/Public/assets/Bags/27.jpg",
-      "/Public/assets/Bags/28.jpg",
-      "/Public/assets/Bags/29.jpg"
+      BagImage27,
+      BagImage28,
+      BagImage29
     ]
   },
   {
@@ -195,9 +261,9 @@ export const products: Product[] = [
       "Multiple compartments"
     ],
     "images": [
-      "/Public/assets/Bags/30.jpg",
-      "/Public/assets/Bags/31.jpg",
-      "/Public/assets/Bags/32.jpg"
+      BagImage30,
+      BagImage31,
+      BagImage32
     ]
   },
   {
@@ -215,8 +281,8 @@ export const products: Product[] = [
       "Padded straps for comfort"
     ],
     "images": [
-      "/Public/assets/Bags/33.jpg",
-      "/Public/assets/Bags/34.jpg"
+      BagImage33,
+      BagImage34
     ]
   },
   {
@@ -233,7 +299,7 @@ export const products: Product[] = [
       "Padded straps for comfort",
       "Fits most laptops up to 15.6 inches"
     ],
-    "images": ["/Public/assets/Bags/35.jpg", "/Public/assets/Bags/36.jpg"]
+    "images": [BagImage35, BagImage36]
   },
   {
     "id": "934a57dc-c4d0-4fa6-8e92-c6f24b909f91",
@@ -248,7 +314,7 @@ export const products: Product[] = [
       "Weather-resistant material",
       "Dedicated 17-inch padded laptop compartment for secure gadget storage",
     ],
-    "images": ["/Public/assets/Bags/37.jpg", "/Public/assets/Bags/38.jpg"]
+    "images": [BagImage37, BagImage38]
   },
   {
     "id": "9a2d6f1e-9cda-4a18-8755-5de1b40d3469",
@@ -263,7 +329,7 @@ export const products: Product[] = [
       "Breathable mesh back panel",
       "Multiple front pockets for accessories"
     ],
-    "images": ["/Public/assets/Bags/39.jpg", "/Public/assets/Bags/40.jpg"]
+    "images": [BagImage39, BagImage40]
   },
   {
     "id": "7b548c5e-9600-48e4-b153-e1b618493b87",
@@ -278,7 +344,7 @@ export const products: Product[] = [
       "Padded straps for comfortable wear",
       "Stylish design suitable for all occasions"
     ],
-    "images": ["/Public/assets/Bags/41.jpg", "/Public/assets/Bags/42.jpg"]
+    "images": [BagImage41, BagImage42]
   },
   {
     "id": "2b8b6847-2ad5-4d3a-bf43-9f5da5ff6b28",
@@ -293,7 +359,7 @@ export const products: Product[] = [
       "Organized front pocket with compartments for pens, chargers, and more",
       "Elegant and modern design suitable for business trips"
     ],
-    "images": ["/Public/assets/Bags/43.jpg", "/Public/assets/Bags/44.jpg"]
+    "images": [BagImage43, BagImage44]
   },
   {
     "id": "a7c307e0-d7ae-4d62-b7e1-5242957f8998",
@@ -308,10 +374,10 @@ export const products: Product[] = [
       "Heavy-duty compression straps and buckles to secure items, along with padded shoulder straps for comfort.",
       "Elegant and modern design suitable for business trips"
     ],
-    "images": ["/Public/assets/Bags/45.jpg",
-      "/Public/assets/Bags/46.jpg",
-      "/Public/assets/Bags/47.jpg",
-      "/Public/assets/Bags/48.jpg"]
+    "images": [BagImage45,
+      BagImage46,
+      BagImage47,
+      BagImage48]
   },
   {
     "id": "fd4d4d65-27fe-409b-b174-bc6b7b85b9f6",
@@ -326,7 +392,7 @@ export const products: Product[] = [
       "Large front pocket for quick access",
       "Durable material for long-lasting use"
     ],
-    "images": ["/Public/assets/Bags/49.jpg", "/Public/assets/Bags/50.jpg"]
+    "images": [BagImage49, BagImage50]
   },
   {
     "id": "e60a6b1e-106d-487e-b4e0-cf4fbb8d0046",
@@ -341,7 +407,7 @@ export const products: Product[] = [
       "Stylish and modern appearance",
       "Padded laptop compartment for extra protection"
     ],
-    "images": ["/Public/assets/Bags/51.jpg", "/Public/assets/Bags/52.jpg", "/Public/assets/Bags/53.jpg", "/Public/assets/Bags/54.jpg"]
+    "images": [BagImage51, BagImage52, BagImage53, BagImage54]
   },
   {
     "id": "a7c307e0-d7ae-4d62-b7e1-5242957f89f3",
@@ -356,7 +422,7 @@ export const products: Product[] = [
       "Waterproof exterior material to keep your gear safe",
       "Ergonomic shoulder straps for all-day comfort"
     ],
-    "images": ["/Public/assets/Bags/55.jpg", "/Public/assets/Bags/56.jpg"]
+    "images": [BagImage55, BagImage56]
   },
   {
     "id": "3b99a0c9-78d3-47f7-a45e-5db0c767acdb",
@@ -371,7 +437,7 @@ export const products: Product[] = [
       "Comfortable back padding and straps",
       "Stylish design with modern aesthetics"
     ],
-    "images": ["/Public/assets/Bags/57.jpg", "/Public/assets/Bags/58.jpg"]
+    "images": [BagImage57, BagImage58]
   },
   {
     "id": "5152bfc4-85d4-4b8b-90bb-23b2c26c7d90",
@@ -386,7 +452,7 @@ export const products: Product[] = [
       "Multiple internal pockets for easy organization",
       "Comfortable, padded straps for all-day wear"
     ],
-    "images": ["/Public/assets/Bags/59.jpg", "/Public/assets/Bags/60.jpg"]
+    "images": [BagImage59, BagImage60]
   },
   {
     "id": "12b56e8a-f7c7-4a6d-b27a-c72a2f568973",
@@ -402,7 +468,7 @@ export const products: Product[] = [
       "Breathable back panel for added comfort",
       "Adjustable padded shoulder straps for ease of use"
     ],
-    "images": ["/Public/assets/Bags/61.jpg", "/Public/assets/Bags/62.jpg"]
+    "images": [BagImage61, BagImage62]
   },
   {
     "id": "42f8b8f7-8d52-4c70-b8e1-34c9c3bb1eae",
@@ -417,7 +483,7 @@ export const products: Product[] = [
       "Padded adjustable straps for comfort",
       "Modern design with business-friendly aesthetic"
     ],
-    "images": ["/Public/assets/Bags/63.jpg", "/Public/assets/Bags/64.jpg"]
+    "images": [BagImage63, BagImage64]
   },
   {
     "id": "52ef72ce-d190-4634-9f09-05ba264bb870",
@@ -433,7 +499,7 @@ export const products: Product[] = [
       "Fashionable and trendy"
     ],
     "images": [
-      "/Public/assets/Bags/65.jpg", "/Public/assets/Bags/66.jpg", "/Public/assets/Bags/67.jpg"
+      BagImage65, BagImage66, BagImage67
     ]
   },
   {
