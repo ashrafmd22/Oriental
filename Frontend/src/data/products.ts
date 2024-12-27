@@ -17,7 +17,7 @@ export const products: Product[] = [
       "Water-resistant"
     ],
     "images": [
-      "/Public/assets/Bags/1.jpg",
+      "/assets/Bags/1.jpg",
       "../../Public/assets/Bags/2.jpg",
       "../../Public/assets/Bags/3.jpg"
     ]
