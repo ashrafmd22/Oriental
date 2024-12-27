@@ -78,19 +78,27 @@ export function Contact() {
     setIsLoading(true);
 
     try {
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 10000);
-
-      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/submit-contact-form`, {
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-        signal: controller.signal,
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: `${import.meta.env.VITE_WEB3FORMS_KEY}`,
+          from_name: 'Contact Form',
+          subject: `New Contact Form Submission from ${formData.fullName}`,
+          replyto: formData.email,
+          full_name: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+        }),
       });
 
-      clearTimeout(timeoutId);
+      const result = await response.json();
 
-      if (response.ok) {
+      if (result.success) {
         setFormData({ fullName: '', email: '', phone: '', message: '' });
         setPhoneBorderColor('');
         setEmailBorderColor('');
@@ -106,9 +114,7 @@ export function Contact() {
       setNotification({
         show: true,
         type: 'error',
-        message: error instanceof Error && error.name === 'AbortError'
-          ? 'Request timed out. Please try again.'
-          : 'Failed to send message. Please try again.',
+        message: 'Failed to send message. Please try again.',
       });
     } finally {
       setIsLoading(false);

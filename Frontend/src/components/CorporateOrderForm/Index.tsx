@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { FormField } from './FormField';
 import { Notification } from './Notification';
 import { ContactInfo } from './ContactInfo';
@@ -82,60 +81,6 @@ export function CorporateOrderForm() {
     return isValid;
   };
 
-  const submitWithRetry = async (retryCount = 2, delay = 2000) => {
-    for (let attempt = 0; attempt <= retryCount; attempt++) {
-      try {
-        const controller = new AbortController();
-        // Increase timeout for first attempt to handle cold start
-        const timeout = attempt === 0 ? 20000 : 10000;
-        const timeoutId = setTimeout(() => controller.abort(), timeout);
-
-        const response = await axios.post(
-          `${import.meta.env.VITE_API_BASE_URL}/submit-corporate-order`,
-          formData,
-          {
-            signal: controller.signal,
-            headers: {
-              'Content-Type': 'application/json',
-            },
-          }
-        );
-
-        clearTimeout(timeoutId);
-
-        if (response.status === 200) {
-          setFormData({
-            companyName: '',
-            contactPerson: '',
-            email: '',
-            phone: '',
-            productRequirements: '',
-          });
-          setNotification({
-            show: true,
-            type: 'success',
-            message: 'Your inquiry has been submitted successfully!',
-          });
-          return true;
-        }
-      } catch (error) {
-        if (attempt === retryCount) {
-          setNotification({
-            show: true,
-            type: 'error',
-            message: error instanceof Error && error.name === 'AbortError'
-              ? 'Request timed out. Please try again.'
-              : 'Failed to submit the form. Please try again.',
-          });
-          return false;
-        }
-        // If not the last attempt, wait before retrying
-        await new Promise(resolve => setTimeout(resolve, delay));
-      }
-    }
-    return false;
-  };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -150,14 +95,47 @@ export function CorporateOrderForm() {
 
     setIsLoading(true);
     try {
-      // Show "warming up" message for first attempt
-      setNotification({
-        show: true,
-        type: 'success',
-        message: 'Connecting to server...',
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: `${import.meta.env.VITE_WEB3FORMS_KEY}`,
+          company_name: formData.companyName,
+          contact_person: formData.contactPerson,
+          email: formData.email,
+          phone: formData.phone,
+          product_requirements: formData.productRequirements,
+          subject: `New Corporate Order Inquiry from ${formData.companyName}`,
+        }),
       });
 
-      await submitWithRetry();
+      const result = await response.json();
+
+      if (result.success) {
+        setFormData({
+          companyName: '',
+          contactPerson: '',
+          email: '',
+          phone: '',
+          productRequirements: '',
+        });
+        setNotification({
+          show: true,
+          type: 'success',
+          message: 'Your inquiry has been submitted successfully!',
+        });
+      } else {
+        throw new Error('Failed to submit form');
+      }
+    } catch (error) {
+      setNotification({
+        show: true,
+        type: 'error',
+        message: 'Failed to submit the form. Please try again.',
+      });
     } finally {
       setIsLoading(false);
     }
