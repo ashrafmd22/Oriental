@@ -1,5 +1,198 @@
 import { Product } from '../types/product';
-import BagImage2 from '/Public/assets/Bags/2.jpg';
+import bag1 from '../../public/assets/Bags/1.jpg';
+import bag2 from '../../public/assets/Bags/2.jpg';
+import bag3 from '../../public/assets/Bags/3.jpg';
+import bag7 from '../../public/assets/Bags/7.jpg';
+import bag8 from '../../public/assets/Bags/8.jpg';
+import bag9 from '../../public/assets/Bags/9.jpg';
+import bag10 from '../../public/assets/Bags/10.jpg';
+import bag11 from '../../public/assets/Bags/11.jpg';
+import bag12 from '../../public/assets/Bags/12.jpg';
+import bag13 from '../../public/assets/Bags/13.jpg';
+import bag14 from '../../public/assets/Bags/14.jpg';
+import bag15 from '../../public/assets/Bags/15.jpg';
+import bag16 from '../../public/assets/Bags/16.jpg';
+import bag17 from '../../public/assets/Bags/17.jpg';
+import bag18 from '../../public/assets/Bags/18.jpg';
+import bag19 from '../../public/assets/Bags/19.jpg';
+import bag20 from '../../public/assets/Bags/20.jpg';
+import bag21 from '../../public/assets/Bags/21.jpg';
+import bag22 from '../../public/assets/Bags/22.jpg';
+import bag23 from '../../public/assets/Bags/23.jpg';
+import bag24 from '../../public/assets/Bags/24.jpg';
+import bag25 from '../../public/assets/Bags/25.jpg';
+import bag26 from '../../public/assets/Bags/26.jpg';
+import bag27 from '../../public/assets/Bags/27.jpg';
+import bag28 from '../../public/assets/Bags/28.jpg';
+import bag29 from '../../public/assets/Bags/29.jpg';
+import bag30 from '../../public/assets/Bags/30.jpg';
+import bag31 from '../../public/assets/Bags/31.jpg';
+import bag32 from '../../public/assets/Bags/32.jpg';
+import bag33 from '../../public/assets/Bags/33.jpg';
+import bag34 from '../../public/assets/Bags/34.jpg';
+import bag35 from '../../public/assets/Bags/35.jpg';
+import bag36 from '../../public/assets/Bags/36.jpg';
+import bag37 from '../../public/assets/Bags/37.jpg';
+import bag38 from '../../public/assets/Bags/38.jpg';
+import bag39 from '../../public/assets/Bags/39.jpg';
+import bag40 from '../../public/assets/Bags/40.jpg';
+import bag41 from '../../public/assets/Bags/41.jpg';
+import bag42 from '../../public/assets/Bags/42.jpg';
+import bag43 from '../../public/assets/Bags/43.jpg';
+import bag44 from '../../public/assets/Bags/44.jpg';
+import bag45 from '../../public/assets/Bags/45.jpg';
+import bag46 from '../../public/assets/Bags/46.jpg';
+import bag47 from '../../public/assets/Bags/47.jpg';
+import bag48 from '../../public/assets/Bags/48.jpg';
+import bag49 from '../../public/assets/Bags/49.jpg';
+import bag50 from '../../public/assets/Bags/50.jpg';
+import bag51 from '../../public/assets/Bags/51.jpg';
+import bag52 from '../../public/assets/Bags/52.jpg';
+import bag53 from '../../public/assets/Bags/53.jpg';
+import bag54 from '../../public/assets/Bags/54.jpg';
+import bag55 from '../../public/assets/Bags/55.jpg';
+import bag56 from '../../public/assets/Bags/56.jpg';
+import bag57 from '../../public/assets/Bags/57.jpg';
+import bag58 from '../../public/assets/Bags/58.jpg';
+import bag59 from '../../public/assets/Bags/59.jpg';
+import bag60 from '../../public/assets/Bags/60.jpg';
+import bag61 from '../../public/assets/Bags/61.jpg';
+import bag62 from '../../public/assets/Bags/62.jpg';
+import bag63 from '../../public/assets/Bags/63.jpg';
+import bag64 from '../../public/assets/Bags/64.jpg';
+import bag65 from '../../public/assets/Bags/65.jpg';
+import bag66 from '../../public/assets/Bags/66.jpg';
+import bag67 from '../../public/assets/Bags/67.jpg';
+
+import cap1 from '../../public/assets/Caps/1.jpg';
+import cap2 from '../../public/assets/Caps/2.jpg';
+import cap3 from '../../public/assets/Caps/3.jpg';
+import cap4 from '../../public/assets/Caps/4.jpg';
+import cap5 from '../../public/assets/Caps/5.jpg';
+import cap6 from '../../public/assets/Caps/6.jpg';
+import cap7 from '../../public/assets/Caps/7.jpg';
+import cap8 from '../../public/assets/Caps/8.jpg';
+import cap9 from '../../public/assets/Caps/9.jpg';
+import cap10 from '../../public/assets/Caps/10.jpg';
+import cap11 from '../../public/assets/Caps/11.jpg';
+import cap12 from '../../public/assets/Caps/12.jpg';
+import cap13 from '../../public/assets/Caps/13.jpg';
+import cap14 from '../../public/assets/Caps/14.jpg';
+import cap15 from '../../public/assets/Caps/15.jpg';
+import cap16 from '../../public/assets/Caps/16.jpg';
+import cap17 from '../../public/assets/Caps/17.jpg';
+import cap18 from '../../public/assets/Caps/18.jpg';
+
+
+import jacket1 from '../../public/assets/Jackets/1.jpg';
+import jacket2 from '../../public/assets/Jackets/2.jpg';
+import jacket3 from '../../public/assets/Jackets/3.jpg';
+import jacket4 from '../../public/assets/Jackets/4.jpg';
+import jacket5 from '../../public/assets/Jackets/5.jpg';
+import jacket6 from '../../public/assets/Jackets/6.jpg';
+import jacket7 from '../../public/assets/Jackets/7.jpg';
+import jacket8 from '../../public/assets/Jackets/8.jpg';
+import jacket9 from '../../public/assets/Jackets/9.jpg';
+import jacket10 from '../../public/assets/Jackets/10.jpg';
+import jacket11 from '../../public/assets/Jackets/11.jpg';
+import jacket12 from '../../public/assets/Jackets/12.jpg';
+import jacket13 from '../../public/assets/Jackets/13.jpg';
+import jacket14 from '../../public/assets/Jackets/14.jpg';
+import jacket15 from '../../public/assets/Jackets/15.jpg';
+import jacket16 from '../../public/assets/Jackets/16.jpg';
+import jacket17 from '../../public/assets/Jackets/17.jpg';
+import jacket18 from '../../public/assets/Jackets/18.jpg';
+import jacket19 from '../../public/assets/Jackets/19.jpg';
+import jacket20 from '../../public/assets/Jackets/20.jpg';
+
+
+import drinkware1 from '../../public/assets/Drinkware/1.jpg';
+import drinkware2 from '../../public/assets/Drinkware/2.jpg';
+import drinkware3 from '../../public/assets/Drinkware/3.jpg';
+import drinkware4 from '../../public/assets/Drinkware/4.jpg';
+import drinkware5 from '../../public/assets/Drinkware/5.jpg';
+import drinkware6 from '../../public/assets/Drinkware/6.jpg';
+import drinkware7 from '../../public/assets/Drinkware/7.jpg';
+import drinkware8 from '../../public/assets/Drinkware/8.jpg';
+import drinkware9 from '../../public/assets/Drinkware/9.jpg';
+import drinkware10 from '../../public/assets/Drinkware/10.jpg';
+import drinkware11 from '../../public/assets/Drinkware/11.jpg';
+import drinkware12 from '../../public/assets/Drinkware/12.jpg';
+import drinkware13 from '../../public/assets/Drinkware/13.jpg';
+import drinkware14 from '../../public/assets/Drinkware/14.jpg';
+import drinkware15 from '../../public/assets/Drinkware/15.jpg';
+import drinkware16 from '../../public/assets/Drinkware/16.jpg';
+
+
+import diary1 from '../../public/assets/Diaries/1.jpg';
+import diary2 from '../../public/assets/Diaries/2.jpg';
+import diary3 from '../../public/assets/Diaries/3.jpg';
+import diary4 from '../../public/assets/Diaries/4.jpg';
+import diary5 from '../../public/assets/Diaries/5.jpg';
+import diary6 from '../../public/assets/Diaries/6.jpg';
+import diary7 from '../../public/assets/Diaries/7.jpg';
+import diary8 from '../../public/assets/Diaries/8.jpg';
+import diary9 from '../../public/assets/Diaries/9.jpg';
+import diary10 from '../../public/assets/Diaries/10.jpg';
+import diary11 from '../../public/assets/Diaries/11.jpg';
+import diary12 from '../../public/assets/Diaries/12.jpg';
+
+
+
+import tshirt1 from '../../public/assets/Tshirts/1.jpg';
+import tshirt2 from '../../public/assets/Tshirts/2.jpg';
+import tshirt3 from '../../public/assets/Tshirts/3.jpg';
+import tshirt4 from '../../public/assets/Tshirts/4.jpg';
+import tshirt5 from '../../public/assets/Tshirts/5.jpg';
+import tshirt6 from '../../public/assets/Tshirts/6.jpg';
+import tshirt7 from '../../public/assets/Tshirts/7.jpg';
+import tshirt8 from '../../public/assets/Tshirts/8.jpg';
+import tshirt9 from '../../public/assets/Tshirts/9.jpg';
+import tshirt10 from '../../public/assets/Tshirts/10.jpg';
+import tshirt11 from '../../public/assets/Tshirts/11.jpg';
+import tshirt12 from '../../public/assets/Tshirts/12.jpg';
+import tshirt13 from '../../public/assets/Tshirts/13.jpg';
+import tshirt14 from '../../public/assets/Tshirts/14.jpg';
+import tshirt15 from '../../public/assets/Tshirts/15.jpg';
+import tshirt16 from '../../public/assets/Tshirts/16.jpg';
+import tshirt17 from '../../public/assets/Tshirts/17.jpg';
+import tshirt18 from '../../public/assets/Tshirts/18.jpg';
+import tshirt19 from '../../public/assets/Tshirts/19.jpg';
+import tshirt20 from '../../public/assets/Tshirts/20.jpg';
+import tshirt21 from '../../public/assets/Tshirts/21.jpg';
+import tshirt22 from '../../public/assets/Tshirts/22.jpg';
+import tshirt23 from '../../public/assets/Tshirts/23.jpg';
+import tshirt24 from '../../public/assets/Tshirts/24.jpg';
+import tshirt25 from '../../public/assets/Tshirts/25.jpg';
+import tshirt26 from '../../public/assets/Tshirts/26.jpg';
+import tshirt27 from '../../public/assets/Tshirts/27.jpg';
+import tshirt28 from '../../public/assets/Tshirts/28.jpg';
+import tshirt29 from '../../public/assets/Tshirts/29.jpg';
+import tshirt30 from '../../public/assets/Tshirts/30.jpg';
+import tshirt31 from '../../public/assets/Tshirts/31.jpg';
+import tshirt32 from '../../public/assets/Tshirts/32.jpg';
+import tshirt33 from '../../public/assets/Tshirts/33.jpg';
+import tshirt34 from '../../public/assets/Tshirts/34.jpg';
+import tshirt35 from '../../public/assets/Tshirts/35.jpg';
+import tshirt36 from '../../public/assets/Tshirts/36.jpg';
+import tshirt37 from '../../public/assets/Tshirts/37.jpg';
+import tshirt38 from '../../public/assets/Tshirts/38.jpg';
+
+import accessory1 from '../../public/assets/Accessories/1.jpg';
+import accessory2 from '../../public/assets/Accessories/2.jpg';
+import accessory3 from '../../public/assets/Accessories/3.jpg';
+import accessory4 from '../../public/assets/Accessories/4.jpg';
+import accessory5 from '../../public/assets/Accessories/5.jpg';
+import accessory6 from '../../public/assets/Accessories/6.jpg';
+import accessory7 from '../../public/assets/Accessories/7.jpg';
+import accessory8 from '../../public/assets/Accessories/8.jpg';
+import accessory9 from '../../public/assets/Accessories/9.jpg';
+import accessory10 from '../../public/assets/Accessories/10.jpg';
+import accessory11 from '../../public/assets/Accessories/11.jpg';
+import accessory12 from '../../public/assets/Accessories/12.jpg';
+import accessory13 from '../../public/assets/Accessories/13.jpg';
+import accessory14 from '../../public/assets/Accessories/14.jpg';
+
 export const products: Product[] = [
 
   {
@@ -17,9 +210,9 @@ export const products: Product[] = [
       "Water-resistant"
     ],
     "images": [
-      BagImage2,
-      "/Public/assets/Bags/2.jpg",
-      "/assets/Bags/3.jpg"
+      bag1,
+      bag2,
+      bag3
     ]
   },
   {
@@ -37,8 +230,9 @@ export const products: Product[] = [
       "Rust-resistant zippers"
     ],
     "images": [
-      "/assets/Bags/7.jpg",
-      "/assets/Bags//assets/Bags/9.jpg"
+      bag7,
+      bag8,
+      bag9
     ]
   },
   {
@@ -56,9 +250,9 @@ export const products: Product[] = [
       "Durable brass buckles"
     ],
     "images": [
-      "/assets/Bags/10.jpg",
-      "/assets/Bags/11.jpg",
-      "/assets/Bags/12.jpg"
+      bag10,
+      bag11,
+      bag12
     ]
   },
   {
@@ -76,9 +270,9 @@ export const products: Product[] = [
       "Gold hardware accents"
     ],
     "images": [
-      "/assets/Bags/13.jpg",
-      "/assets/Bags/14.jpg",
-      "/assets/Bags/15.jpg"
+      bag13,
+      bag14,
+      bag15
     ]
   },
   {
@@ -96,9 +290,9 @@ export const products: Product[] = [
       "Durable polyester material"
     ],
     "images": [
-      "/assets/Bags/16.jpg",
-      "/assets/Bags/17.jpg",
-      "/assets/Bags/18.jpg"
+      bag16,
+      bag17,
+      bag18
     ]
   },
   {
@@ -116,9 +310,9 @@ export const products: Product[] = [
       "Ergonomic design for comfort"
     ],
     "images": [
-      "/assets/Bags/20.jpg",
-      "/assets/Bags/19.jpg",
-      "/assets/Bags/21.jpg"
+      bag20,
+      bag19,
+      bag21
     ]
   },
   {
@@ -136,8 +330,8 @@ export const products: Product[] = [
       "Water-resistant base"
     ],
     "images": [
-      "/assets/Bags/22.jpg",
-      "/assets/Bags/23.jpg"
+      bag22,
+      bag23
     ]
   },
   {
@@ -155,9 +349,9 @@ export const products: Product[] = [
       "Multiple colors available"
     ],
     "images": [
-      "/assets/Bags/24.jpg",
-      "/assets/Bags/25.jpg",
-      "/assets/Bags/26.jpg"
+      bag24,
+      bag25,
+      bag26
     ]
   },
   {
@@ -175,9 +369,9 @@ export const products: Product[] = [
       "Multiple color options"
     ],
     "images": [
-      "/assets/Bags/27.jpg",
-      "/assets/Bags/28.jpg",
-      "/assets/Bags/29.jpg"
+      bag27,
+      bag28,
+      bag29
     ]
   },
   {
@@ -195,9 +389,9 @@ export const products: Product[] = [
       "Multiple compartments"
     ],
     "images": [
-      "/assets/Bags/30.jpg",
-      "/assets/Bags/31.jpg",
-      "/assets/Bags/32.jpg"
+      bag30,
+      bag31,
+      bag32
     ]
   },
   {
@@ -215,8 +409,8 @@ export const products: Product[] = [
       "Padded straps for comfort"
     ],
     "images": [
-      "/assets/Bags/33.jpg",
-      "/assets/Bags/34.jpg"
+      bag33,
+      bag34
     ]
   },
   {
@@ -233,7 +427,7 @@ export const products: Product[] = [
       "Padded straps for comfort",
       "Fits most laptops up to 15.6 inches"
     ],
-    "images": ["/assets/Bags/35.jpg", "/assets/Bags/36.jpg"]
+    "images": [bag35, bag36]
   },
   {
     "id": "934a57dc-c4d0-4fa6-8e92-c6f24b909f91",
@@ -248,7 +442,7 @@ export const products: Product[] = [
       "Weather-resistant material",
       "Dedicated 17-inch padded laptop compartment for secure gadget storage",
     ],
-    "images": ["/assets/Bags/37.jpg", "/assets/Bags/38.jpg"]
+    "images": [bag37, bag38]
   },
   {
     "id": "9a2d6f1e-9cda-4a18-8755-5de1b40d3469",
@@ -263,7 +457,7 @@ export const products: Product[] = [
       "Breathable mesh back panel",
       "Multiple front pockets for accessories"
     ],
-    "images": ["/assets/Bags/39.jpg", "/assets/Bags/40.jpg"]
+    "images": [bag39, bag40]
   },
   {
     "id": "7b548c5e-9600-48e4-b153-e1b618493b87",
@@ -278,7 +472,7 @@ export const products: Product[] = [
       "Padded straps for comfortable wear",
       "Stylish design suitable for all occasions"
     ],
-    "images": ["/assets/Bags/41.jpg", "/assets/Bags/42.jpg"]
+    "images": [bag41, bag42]
   },
   {
     "id": "2b8b6847-2ad5-4d3a-bf43-9f5da5ff6b28",
@@ -293,7 +487,7 @@ export const products: Product[] = [
       "Organized front pocket with compartments for pens, chargers, and more",
       "Elegant and modern design suitable for business trips"
     ],
-    "images": ["/assets/Bags/Bags/43.jpg", "/assets/Bags/44.jpg"]
+    "images": [bag43, bag44]
   },
   {
     "id": "a7c307e0-d7ae-4d62-b7e1-5242957f8998",
@@ -308,10 +502,10 @@ export const products: Product[] = [
       "Heavy-duty compression straps and buckles to secure items, along with padded shoulder straps for comfort.",
       "Elegant and modern design suitable for business trips"
     ],
-    "images": ["/assets/45.jpg",
-      "/assets/Bags/46.jpg",
-      "/assets/Bags/47.jpg",
-      "/assets/Bags/48.jpg"]
+    "images": [bag45,
+      bag46,
+      bag47,
+      bag48]
   },
   {
     "id": "fd4d4d65-27fe-409b-b174-bc6b7b85b9f6",
@@ -326,7 +520,7 @@ export const products: Product[] = [
       "Large front pocket for quick access",
       "Durable material for long-lasting use"
     ],
-    "images": ["/assets/Bags/49.jpg", "/assets/Bags/50.jpg"]
+    "images": [bag49, bag50]
   },
   {
     "id": "e60a6b1e-106d-487e-b4e0-cf4fbb8d0046",
@@ -341,7 +535,7 @@ export const products: Product[] = [
       "Stylish and modern appearance",
       "Padded laptop compartment for extra protection"
     ],
-    "images": ["/assets/Bags/51.jpg", "/assets/Bags/52.jpg", "/assets/Bags/53.jpg", "/assets/Bags/54.jpg"]
+    "images": [bag51, bag52, bag53, bag54]
   },
   {
     "id": "a7c307e0-d7ae-4d62-b7e1-5242957f89f3",
@@ -356,7 +550,7 @@ export const products: Product[] = [
       "Waterproof exterior material to keep your gear safe",
       "Ergonomic shoulder straps for all-day comfort"
     ],
-    "images": ["/assets/Bags/55.jpg", "/assets/Bags/56.jpg"]
+    "images": [bag55, bag56]
   },
   {
     "id": "3b99a0c9-78d3-47f7-a45e-5db0c767acdb",
@@ -371,7 +565,7 @@ export const products: Product[] = [
       "Comfortable back padding and straps",
       "Stylish design with modern aesthetics"
     ],
-    "images": ["/assets/Bags/57.jpg", "/assets/Bags/58.jpg"]
+    "images": [bag57, bag58]
   },
   {
     "id": "5152bfc4-85d4-4b8b-90bb-23b2c26c7d90",
@@ -386,7 +580,7 @@ export const products: Product[] = [
       "Multiple internal pockets for easy organization",
       "Comfortable, padded straps for all-day wear"
     ],
-    "images": ["/assets/Bags/59.jpg", "/assets/Bags/60.jpg"]
+    "images": [bag59, bag60]
   },
   {
     "id": "12b56e8a-f7c7-4a6d-b27a-c72a2f568973",
@@ -402,7 +596,7 @@ export const products: Product[] = [
       "Breathable back panel for added comfort",
       "Adjustable padded shoulder straps for ease of use"
     ],
-    "images": ["/assets/Bags/61.jpg", "/assets/Bags/62.jpg"]
+    "images": [bag61, bag62]
   },
   {
     "id": "42f8b8f7-8d52-4c70-b8e1-34c9c3bb1eae",
@@ -417,7 +611,7 @@ export const products: Product[] = [
       "Padded adjustable straps for comfort",
       "Modern design with business-friendly aesthetic"
     ],
-    "images": ["/assets/Bags/63.jpg", "/assets/Bags/64.jpg"]
+    "images": [bag63, bag64]
   },
   {
     "id": "52ef72ce-d190-4634-9f09-05ba264bb870",
@@ -433,7 +627,7 @@ export const products: Product[] = [
       "Fashionable and trendy"
     ],
     "images": [
-      "/assets/Bags/65.jpg", "/assets/Bags/66.jpg", "/assets/Bags/67.jpg"
+      bag65, bag66, bag67
     ]
   },
   {
@@ -451,7 +645,7 @@ export const products: Product[] = [
       "Durable and comfortable"
     ],
     "images": [
-      "/assets/Caps/1.jpg", "/assets/Caps/2.jpg",
+      cap1, cap2,
     ]
   },
   {
@@ -469,7 +663,7 @@ export const products: Product[] = [
       "UV protection"
     ],
     "images": [
-      "/assets/Caps/3.jpg", "/assets/Caps/4.jpg",
+      cap3, cap4,
     ]
   },
   {
@@ -487,7 +681,7 @@ export const products: Product[] = [
       "Comfortable for long wear"
     ],
     "images": [
-      "/assets/Caps/5.jpg", "/assets/Caps/6.jpg",
+      cap5, cap6,
     ]
   },
   {
@@ -505,7 +699,7 @@ export const products: Product[] = [
       "UV protective"
     ],
     "images": [
-      "/assets/Caps/7.jpg", "/assets/Caps/8.jpg",
+      cap7, cap8,
     ]
   },
   {
@@ -523,7 +717,7 @@ export const products: Product[] = [
       "Perfect for the beach or pool"
     ],
     "images": [
-      "/assets/Caps/9.jpg", "/assets/Caps/10.jpg",
+      cap9, cap10,
     ]
   },
   {
@@ -541,7 +735,7 @@ export const products: Product[] = [
       "Ideal for athletes"
     ],
     "images": [
-      "/assets/Caps/12.jpg", "/assets/Caps/11.jpg",
+      cap12, cap11,
     ]
   },
   {
@@ -559,7 +753,7 @@ export const products: Product[] = [
       "Perfect for beach days"
     ],
     "images": [
-      "/assets/Caps/13.jpg", "/assets/Caps/14.jpg",
+      cap13, cap14,
     ]
   },
   {
@@ -577,7 +771,7 @@ export const products: Product[] = [
       "Sporty and futuristic"
     ],
     "images": [
-      "/assets/Caps/15.jpg", "/assets/Caps/16.jpg",
+      cap15, cap16,
     ]
   },
   {
@@ -595,7 +789,7 @@ export const products: Product[] = [
       "Green design"
     ],
     "images": [
-      "/assets/Caps/17.jpg", "/assets/Caps/18.jpg",
+      cap17, cap18,
     ]
   },
   {
@@ -613,7 +807,7 @@ export const products: Product[] = [
       "Casual design"
     ],
     "images": [
-      "/assets/Jackets/1.jpg", "/assets/Jackets/2.jpg", "/assets/Jackets/3.jpg"]
+      jacket1, jacket2, jacket3]
   },
   {
     "id": "2b3c4d5e-6f7g-8h9i-10j11-k12l13m14n15",
@@ -630,7 +824,7 @@ export const products: Product[] = [
       "Available in various colors"
     ],
     "images": [
-      "/assets/Jackets/4.jpg", "/assets/Jackets/5.jpg", "/assets/Jackets/6.jpg"
+      jacket4, jacket5, jacket6
     ]
 
   },
@@ -649,7 +843,7 @@ export const products: Product[] = [
       "Perfect for mild weather"
     ],
     "images": [
-      "/assets/Jackets/7.jpg", "/assets/Jackets/8.jpg", "/assets/Jackets/9.jpg"
+      jacket7, jacket8, jacket9
     ]
   },
   {
@@ -667,7 +861,7 @@ export const products: Product[] = [
       "Great for casual outings"
     ],
     "images": [
-      "/assets/Jackets/10.jpg", "/assets/Jackets/11.jpg", "/assets/Jackets/12.jpg"
+      jacket10, jacket11, jacket12
     ]
   },
   {
@@ -685,7 +879,7 @@ export const products: Product[] = [
       "Two side pockets"
     ],
     "images": [
-      "/assets/Jackets/13.jpg", "/assets/Jackets/14.jpg", "/assets/Jackets/15.jpg"
+      jacket13, jacket14, jacket15
     ]
   },
 
@@ -704,7 +898,7 @@ export const products: Product[] = [
       "Available in multiple colors"
     ],
     "images": [
-      "/assets/Jackets/18.jpg", "/assets/Jackets/19.jpg", "/assets/Jackets/20.jpg"
+      jacket18, jacket19, jacket20
     ]
   },
   {
@@ -722,7 +916,7 @@ export const products: Product[] = [
       "Available in neutral tones"
     ],
     "images": [
-      "/assets/Jackets/16.jpg", "/assets/Jackets/17.jpg"
+      jacket16, jacket17
     ]
   },
   {
@@ -740,7 +934,7 @@ export const products: Product[] = [
       "Lightweight and easy to carry"
     ],
     "images": [
-      "/assets/Drinkware/1.jpg", "/assets/Drinkware/2.jpg"
+      drinkware1, drinkware2
     ]
   },
   {
@@ -758,7 +952,7 @@ export const products: Product[] = [
       "Leak-proof design for travel"
     ],
     "images": [
-      "/assets/Drinkware/3.jpg"
+      drinkware3
     ]
   },
   {
@@ -776,7 +970,7 @@ export const products: Product[] = [
       "Perfect for outdoor and indoor activities"
     ],
     "images": [
-      "/assets/Drinkware/4.jpg", "/assets/Drinkware/5.jpg"
+      drinkware4, drinkware5
     ]
   },
   {
@@ -794,7 +988,7 @@ export const products: Product[] = [
       "Ideal for active lifestyles"
     ],
     "images": [
-      "/assets/Drinkware/6.jpg"
+      drinkware6
     ]
   },
   {
@@ -812,7 +1006,7 @@ export const products: Product[] = [
       "Compact and easy to carry"
     ],
     "images": [
-      "/assets/Drinkware/7.jpg", "/assets/Drinkware/8.jpg"
+      drinkware7, drinkware8
     ]
   },
   {
@@ -830,7 +1024,7 @@ export const products: Product[] = [
       "Perfect for daily hydration"
     ],
     "images": [
-      "/assets/Drinkware/10.jpg", "/assets/Drinkware/9.jpg"
+      drinkware10, drinkware9
     ]
   },
   {
@@ -848,7 +1042,7 @@ export const products: Product[] = [
       "Durable and stylish"
     ],
     "images": [
-      "/assets/Drinkware/11.jpg", "/assets/Drinkware/12.jpg"
+      drinkware11, drinkware12
     ]
   },
   {
@@ -866,7 +1060,7 @@ export const products: Product[] = [
       "Rust-proof and easy to clean"
     ],
     "images": [
-      "/assets/Drinkware/13.jpg"
+      drinkware13
     ]
   },
   {
@@ -884,7 +1078,7 @@ export const products: Product[] = [
       "Keeps drinks hot or cold for hours"
     ],
     "images": [
-      "/assets/Drinkware/14.jpg"
+      drinkware14
     ]
   },
   {
@@ -902,7 +1096,7 @@ export const products: Product[] = [
       "Fits most car cup holders"
     ],
     "images": [
-      "/assets/Drinkware/15.jpg", "/assets/Drinkware/16.jpg"
+      drinkware15, drinkware16
     ]
   },
   {
@@ -920,7 +1114,7 @@ export const products: Product[] = [
       "Perfect for daily journaling or note-taking"
     ],
     "images": [
-      "/assets/Diaries/1.jpg", "/assets/Diaries/2.jpg"
+      diary1, diary2
     ]
   },
   {
@@ -938,7 +1132,7 @@ export const products: Product[] = [
       "Durable and long-lasting build quality"
     ],
     "images": [
-      "/assets/Diaries/3.jpg", "/assets/Diaries/4.jpg"
+      diary3, diary4
 
     ]
   },
@@ -957,7 +1151,7 @@ export const products: Product[] = [
       "Compact size, easy to carry"
     ],
     "images": [
-      "/assets/Diaries/5.jpg", "/assets/Diaries/6.jpg"
+      diary5, diary6
 
     ]
   },
@@ -976,7 +1170,7 @@ export const products: Product[] = [
       "Durable and eye-catching design"
     ],
     "images": [
-      "/assets/Diaries/7.jpg", "/assets/Diaries/8.jpg"
+      diary7, diary8
 
     ]
   },
@@ -995,7 +1189,7 @@ export const products: Product[] = [
       "Durable binding for long-term use"
     ],
     "images": [
-      "/assets/Diaries/9.jpg", "/assets/Diaries/10.jpg"
+      diary9, diary10
 
     ]
   },
@@ -1014,7 +1208,7 @@ export const products: Product[] = [
       "Perfect for journaling or planning"
     ],
     "images": [
-      "/assets/Diaries/11.jpg", "/assets/Diaries/12.jpg"
+      diary11, diary12
 
     ]
   },
@@ -1035,7 +1229,7 @@ export const products: Product[] = [
       "Perfect for casual or semi-formal looks"
     ],
     "images": [
-      "/assets/Tshirts/1.jpg", "/assets/Tshirts/2.jpg", "/assets/Tshirts/3.jpg"
+      tshirt1, tshirt2, tshirt3
     ]
   },
   {
@@ -1053,7 +1247,7 @@ export const products: Product[] = [
       "Available in various sizes"
     ],
     "images": [
-      "/assets/Tshirts/4.jpg", "/assets/Tshirts/5.jpg", "/assets/Tshirts/6.jpg"
+      tshirt4, tshirt5, tshirt6
     ]
   },
   {
@@ -1071,7 +1265,7 @@ export const products: Product[] = [
       "Comes in a variety of colors"
     ],
     "images": [
-      "/assets/Tshirts/7.jpg", "/assets/Tshirts/8.jpg", "/assets/Tshirts/9.jpg"
+      tshirt7, tshirt8, tshirt9
     ]
   },
   {
@@ -1089,7 +1283,7 @@ export const products: Product[] = [
       "Perfect for casual events"
     ],
     "images": [
-      "/assets/Tshirts/10.jpg", "/assets/Tshirts/11.jpg", "/assets/Tshirts/12.jpg"
+      tshirt10, tshirt11, tshirt12
     ]
   },
   {
@@ -1107,7 +1301,7 @@ export const products: Product[] = [
       "Available in multiple colors and sizes"
     ],
     "images": [
-      "/assets/Tshirts/13.jpg", "/assets/Tshirts/14.jpg", "/assets/Tshirts/15.jpg"
+      tshirt13, tshirt14, tshirt15
     ]
   },
   {
@@ -1125,7 +1319,7 @@ export const products: Product[] = [
       "Available in athletic cuts"
     ],
     "images": [
-      "/assets/Tshirts/16.jpg", "/assets/Tshirts/17.jpg", "/assets/Tshirts/18.jpg"
+      tshirt16, tshirt17, tshirt18
     ]
   },
   {
@@ -1143,7 +1337,7 @@ export const products: Product[] = [
       "Available in neutral colors"
     ],
     "images": [
-      "/assets/Tshirts/19.jpg", "/assets/Tshirts/20.jpg"
+      tshirt19, tshirt20
     ]
   },
   {
@@ -1161,7 +1355,7 @@ export const products: Product[] = [
       "Durable and long-lasting"
     ],
     "images": [
-      "/assets/Tshirts/21.jpg", "/assets/Tshirts/22.jpg", "/assets/Tshirts/23.jpg"
+      tshirt21, tshirt22, tshirt23
     ]
   },
   {
@@ -1179,7 +1373,7 @@ export const products: Product[] = [
       "Comfortable and easy to wear"
     ],
     "images": [
-      "/assets/Tshirts/24.jpg", "/assets/Tshirts/25.jpg", "/assets/Tshirts/26.jpg"
+      tshirt24, tshirt25, tshirt26
     ]
   },
   {
@@ -1197,7 +1391,7 @@ export const products: Product[] = [
       "Great for pairing with shorts or jeans"
     ],
     "images": [
-      "/assets/Tshirts/27.jpg", "/assets/Tshirts/28.jpg", "/assets/Tshirts/29.jpg"
+      tshirt27, tshirt28, tshirt29
     ]
   },
   {
@@ -1215,7 +1409,7 @@ export const products: Product[] = [
       "Available in multiple sizes and colors"
     ],
     "images": [
-      "/assets/Tshirts/30.jpg", "/assets/Tshirts/31.jpg", "/assets/Tshirts/32.jpg"
+      tshirt30, tshirt31, tshirt32
     ]
   },
   {
@@ -1233,7 +1427,7 @@ export const products: Product[] = [
       "Available in various colors and sizes"
     ],
     "images": [
-      "/assets/Tshirts/33.jpg", "/assets/Tshirts/34.jpg"]
+      tshirt33, tshirt34]
   },
   {
     "id": "13l14m15n-16o17p18q19r20s21t22u23v24w25",
@@ -1250,7 +1444,7 @@ export const products: Product[] = [
       "Variety of color options"
     ],
     "images": [
-      "/assets/Tshirts/35.jpg", "/assets/Tshirts/36.jpg"]
+      tshirt35, tshirt36]
   },
   {
     "id": "14m15n16o-17p18q19r20s21t22u23v24w25x26",
@@ -1266,7 +1460,7 @@ export const products: Product[] = [
       "Perfect for a more polished casual look",
       "Available in a range of sizes"
     ],
-    "images": ["/assets/Tshirts/37.jpg", "/assets/Tshirts/38.jpg"
+    "images": [tshirt37, tshirt38
     ]
   },
 
@@ -1285,7 +1479,7 @@ export const products: Product[] = [
       "Durable and eco-friendly design"
     ],
     "images": [
-      "/assets/Accessories/1.jpg", "/assets/Accessories/2.jpg"
+      accessory1, accessory2
     ]
   },
   {
@@ -1303,7 +1497,7 @@ export const products: Product[] = [
       "Perfect for office and study desks"
     ],
     "images": [
-      "/assets/Accessories/3.jpg", "/assets/Accessories/4.jpg"
+      accessory3, accessory4
 
     ]
   },
@@ -1322,7 +1516,7 @@ export const products: Product[] = [
       "Suitable for corporate gifting"
     ],
     "images": [
-      "/assets/Accessories/5.jpg", "/assets/Accessories/6.jpg"
+      accessory5, accessory6
 
     ]
   },
@@ -1341,7 +1535,7 @@ export const products: Product[] = [
       "Perfect for enhancing workspace aesthetics"
     ],
     "images": [
-      "/assets/Accessories/7.jpg", "/assets/Accessories/8.jpg"
+      accessory7, accessory8
 
     ]
   },
@@ -1360,7 +1554,7 @@ export const products: Product[] = [
       "Perfect for keeping desks neat and tidy"
     ],
     "images": [
-      "/assets/Accessories/9.jpg", "/assets/Accessories/10.jpg"
+      accessory9, accessory10
 
     ]
   },
@@ -1379,7 +1573,7 @@ export const products: Product[] = [
       "Stylish and durable"
     ],
     "images": [
-      "/assets/Accessories/11.jpg", "/assets/Accessories/12.jpg"
+      accessory11, accessory12
 
     ]
   },
@@ -1398,7 +1592,7 @@ export const products: Product[] = [
       "Durable and eco-friendly material"
     ],
     "images": [
-      "/assets/Accessories/13.jpg", "/assets/Accessories/14.jpg"
+      accessory13, accessory14
 
     ]
   },
