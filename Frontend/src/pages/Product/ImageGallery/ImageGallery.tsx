@@ -68,19 +68,29 @@ export function ImageGallery({ images, productName }: ImageGalleryProps) {
         >
           <div className={`w-full h-full ${!isMobile && 'cursor-zoom-in'}`}>
             {images.map((src, index) => (
-              <img
+              <div
                 key={src}
-                src={src}
-                alt={`${productName} - Image ${index + 1}`}
-                className="w-full h-full object-contain absolute inset-0 transition-opacity duration-200"
+                className="absolute inset-0 w-full h-full transition-opacity duration-200 flex items-center justify-center"
                 style={{
                   opacity: index === selectedImageIndex ? 1 : 0,
-                  transform: isZoomed ? 'scale(2)' : 'scale(1)',
-                  transformOrigin: `${zoomPosition.x}% ${zoomPosition.y}%`,
-                  transition: isZoomed ? 'none' : 'all 0.2s ease-out',
                   pointerEvents: index === selectedImageIndex ? 'auto' : 'none'
                 }}
-              />
+              >
+                <div
+                  className="relative w-full h-full"
+                  style={{
+                    transform: isZoomed ? 'scale(2)' : 'scale(1)',
+                    transformOrigin: `${zoomPosition.x}% ${zoomPosition.y}%`,
+                    transition: isZoomed ? 'none' : 'all 0.2s ease-out',
+                  }}
+                >
+                  <img
+                    src={src}
+                    alt={`${productName} - Image ${index + 1}`}
+                    className="absolute inset-0 w-full h-full object-contain"
+                  />
+                </div>
+              </div>
             ))}
           </div>
 

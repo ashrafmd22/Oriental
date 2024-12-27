@@ -14,13 +14,18 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, category }) =
     <div className="bg-white rounded-xl shadow-md hover:shadow-xl transform hover:scale-102 transition-all duration-300 
                     flex flex-col h-full overflow-hidden">
       {/* Image Container */}
-      <div className="relative aspect-square overflow-hidden group">
-        <img
-          src={product.images[0]}
-          alt={product.name}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="relative w-full pt-[100%]"> {/* Creates a square aspect ratio */}
+        <div className="absolute inset-0 overflow-hidden group">
+          <img
+            src={product.images[0]}
+            alt={product.name}
+            className="w-full h-full object-contain p-4 bg-gray-50"
+            style={{
+              aspectRatio: '1/1',
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        </div>
       </div>
 
       {/* Content */}

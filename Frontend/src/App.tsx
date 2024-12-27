@@ -15,8 +15,8 @@ import { CapsPage } from './pages/CapsPage';
 import { AccessoriesPage } from './pages/AccessoriesPage';
 import { TshirtsPage } from './pages/TshirtsPage';
 import { JacketsPage } from './pages/JacketsPage';
-import { RaincoatsPage } from './pages/RaincoatsPage';
-import { TracksuitsPage } from './pages/TracksuitsPage';
+import { DrinkwarePage } from './pages/DrinkwarePage';
+import { DiariesPage } from './pages/DiariesPage';
 // import { Contact } from "./components/Contact";
 import { Contact } from "./components/Contact/Contact";
 import PrivacyPage from "./pages/PrivacyPage";
@@ -44,9 +44,9 @@ export function App() {
             <Route path="/products" element={<ProductsPageBase category="All" />} />
             <Route path="/products/bags" element={<BagsPage />} />
             <Route path="/products/caps" element={<CapsPage />} />
-            <Route path="/products/raincoats" element={<RaincoatsPage />} />
+            <Route path="/products/Drinkware" element={<DrinkwarePage />} />
             <Route path="/products/jackets" element={<JacketsPage />} />
-            <Route path="/products/tracksuits" element={<TracksuitsPage />} />
+            <Route path="/products/Diaries" element={<DiariesPage />} />
             <Route path="/products/Tshirts" element={<TshirtsPage />} />
             <Route path="/products/accessories" element={<AccessoriesPage />} />
             <Route path="/products/:category" element={<ProductsPageBase category="All" />} /> {/* Dynamic category route */}

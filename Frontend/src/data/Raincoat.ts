@@ -4,7 +4,7 @@ export const products: Product[] = [
   {
     id: '1',
     name: 'Waterproof Hooded Raincoat',
-    category: 'Raincoats',
+    category: 'Drinkware',
     price: '₹2,099',
     code: 'RNC-001',
     description: 'Lightweight and breathable raincoat with a hood, perfect for rainy days.',
@@ -23,7 +23,7 @@ export const products: Product[] = [
   {
     id: '2',
     name: 'Packable Rain Poncho',
-    category: 'Raincoats',
+    category: 'Drinkware',
     price: '₹1,299',
     code: 'RNC-002',
     description: 'Compact rain poncho that packs into its own carrying pouch for convenience.',
@@ -42,7 +42,7 @@ export const products: Product[] = [
   {
     id: '3',
     name: 'Trench Raincoat',
-    category: 'Raincoats',
+    category: 'Drinkware',
     price: '₹3,999',
     code: 'RNC-003',
     description: 'Classic trench-style raincoat that combines elegance and functionality.',
@@ -61,7 +61,7 @@ export const products: Product[] = [
   {
     id: '4',
     name: 'Rainproof Anorak Jacket',
-    category: 'Raincoats',
+    category: 'Drinkware',
     price: '₹2,599',
     code: 'RNC-004',
     description: 'Stylish anorak jacket made with waterproof fabric and perfect for any rainy weather.',
@@ -80,7 +80,7 @@ export const products: Product[] = [
   {
     id: '5',
     name: 'Reflective Rain Jacket',
-    category: 'Raincoats',
+    category: 'Drinkware',
     price: '₹3,199',
     code: 'RNC-005',
     description: 'Reflective rain jacket designed for visibility and protection in rainy conditions.',
@@ -99,7 +99,7 @@ export const products: Product[] = [
   {
     id: '6',
     name: 'Long Rain Coat',
-    category: 'Raincoats',
+    category: 'Drinkware',
     price: '₹4,599',
     code: 'RNC-006',
     description: 'Full-length raincoat designed for maximum coverage and waterproof protection.',
@@ -118,7 +118,7 @@ export const products: Product[] = [
   {
     id: '7',
     name: 'Transparent Raincoat',
-    category: 'Raincoats',
+    category: 'Drinkware',
     price: '₹1,899',
     code: 'RNC-007',
     description: 'Modern and transparent raincoat for a stylish and functional look.',
@@ -137,7 +137,7 @@ export const products: Product[] = [
   {
     id: '8',
     name: 'Rain Poncho with Backpack Cover',
-    category: 'Raincoats',
+    category: 'Drinkware',
     price: '₹1,499',
     code: 'RNC-008',
     description: 'Waterproof rain poncho with an additional backpack cover for added convenience.',
@@ -156,7 +156,7 @@ export const products: Product[] = [
   {
     id: '9',
     name: 'Insulated Rain Jacket',
-    category: 'Raincoats',
+    category: 'Drinkware',
     price: '₹3,699',
     code: 'RNC-009',
     description: 'Insulated rain jacket perfect for chilly, wet weather.',
@@ -175,7 +175,7 @@ export const products: Product[] = [
   {
     id: '10',
     name: 'Kids’ Raincoat',
-    category: 'Raincoats',
+    category: 'Drinkware',
     price: '₹1,299',
     code: 'RNC-010',
     description: 'Bright and fun raincoat designed for kids to enjoy rainy days.',
@@ -194,7 +194,7 @@ export const products: Product[] = [
   {
     id: '11',
     name: 'Waterproof Hiking Raincoat',
-    category: 'Raincoats',
+    category: 'Drinkware',
     price: '₹2,799',
     code: 'RNC-011',
     description: 'Rugged raincoat designed for hikers and outdoor enthusiasts.',
@@ -213,7 +213,7 @@ export const products: Product[] = [
   {
     id: '12',
     name: 'Ultra-Light Rain Jacket',
-    category: 'Raincoats',
+    category: 'Drinkware',
     price: '₹1,799',
     code: 'RNC-012',
     description: 'Super lightweight rain jacket designed to pack down into a small pouch.',
@@ -232,7 +232,7 @@ export const products: Product[] = [
   {
     id: '13',
     name: 'Rain Jacket with Ventilation',
-    category: 'Raincoats',
+    category: 'Drinkware',
     price: '₹3,099',
     code: 'RNC-013',
     description: 'Rain jacket with mesh lining and side vents for enhanced ventilation.',
@@ -251,7 +251,7 @@ export const products: Product[] = [
   {
     id: '14',
     name: 'Full Coverage Rain Poncho',
-    category: 'Raincoats',
+    category: 'Drinkware',
     price: '₹1,699',
     code: 'RNC-014',
     description: 'Oversized rain poncho offering full coverage for protection from heavy rain.',
@@ -270,7 +270,7 @@ export const products: Product[] = [
   {
     id: '15',
     name: 'Windproof Raincoat',
-    category: 'Raincoats',
+    category: 'Drinkware',
     price: '₹2,299',
     code: 'RNC-015',
     description: 'Windproof and waterproof raincoat with an ergonomic fit.',

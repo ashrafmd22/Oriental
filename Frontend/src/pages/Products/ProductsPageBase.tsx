@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom'; // useNavigate for React Router v6
 import { CategoryFilter } from './CategoryFilter';
 import { ProductsHeader } from './ProductsHeader';
 import { ProductCard } from './ProductCard';
@@ -12,28 +13,47 @@ interface ProductsPageBaseProps {
 export function ProductsPageBase({ category }: ProductsPageBaseProps) {
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 12;
+  const navigate = useNavigate(); // Using useNavigate from React Router v6
+  const location = useLocation();
 
-  const categories = ['All', 'Bags', 'Caps', 'Raincoats', 'Tracksuits', 'Jackets', 'Tshirts', 'Accessories'];
+  const categories = ['All', 'Bags', 'Caps', 'Drinkware', 'Diaries', 'Jackets', 'Tshirts', 'Accessories'];
 
   const filteredProducts = category === 'All'
     ? products
     : products.filter((product) => product.category.toLowerCase() === category.toLowerCase());
 
   const totalProducts = filteredProducts.length;
+
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+
   const currentProducts = filteredProducts.slice(indexOfFirstProduct, indexOfLastProduct);
 
   useEffect(() => {
+    // Read the page number from the URL (query param)
+    const searchParams = new URLSearchParams(location.search);
+    const page = searchParams.get('page');
+    if (page) {
+      setCurrentPage(Number(page));
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [currentPage]);
+  }, [location]);
 
   const handlePageChange = (direction: 'next' | 'prev') => {
+    let newPage = currentPage;
     if (direction === 'next' && currentPage * productsPerPage < totalProducts) {
-      setCurrentPage(currentPage + 1);
+      newPage = currentPage + 1;
     } else if (direction === 'prev' && currentPage > 1) {
-      setCurrentPage(currentPage - 1);
+      newPage = currentPage - 1;
     }
+
+    setCurrentPage(newPage);
+
+    // Update the URL to reflect the new page
+    navigate({
+      pathname: location.pathname,
+      search: `?category=${category}&page=${newPage}`, // Update the URL query params
+    });
   };
 
   return (
@@ -52,7 +72,6 @@ export function ProductsPageBase({ category }: ProductsPageBaseProps) {
             productsPerPage={productsPerPage}
           />
 
-          {/* Products Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
             {currentProducts.map((product) => (
               <ProductCard

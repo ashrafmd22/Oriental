@@ -22,12 +22,14 @@ export function Thumbnails({ images, selectedIndex, productName, onSelect }: Thu
             }
           `}
         >
-          <img
-            src={image}
-            alt={`${productName} thumbnail ${index + 1}`}
-            className="w-full h-full object-cover"
-            loading="lazy"
-          />
+          <div className="absolute inset-0 w-full h-full flex items-center justify-center bg-gray-50">
+            <img
+              src={image}
+              alt={`${productName} thumbnail ${index + 1}`}
+              className="w-full h-full object-contain"
+              loading="lazy"
+            />
+          </div>
         </button>
       ))}
     </div>

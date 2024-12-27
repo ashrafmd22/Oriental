@@ -4,7 +4,7 @@ export const products: Product[] = [
   {
     id: '1',
     name: 'Athletic Tracksuit',
-    category: 'Tracksuits',
+    category: 'Diaries',
     price: '₹2,499',
     code: 'TKS-001',
     description: 'High-performance athletic tracksuit designed for comfort during workouts and training.',
@@ -23,7 +23,7 @@ export const products: Product[] = [
   {
     id: '2',
     name: 'Premium Fleece Tracksuit',
-    category: 'Tracksuits',
+    category: 'Diaries',
     price: '₹3,199',
     code: 'TKS-002',
     description: 'Soft fleece tracksuit designed to keep you warm and cozy during outdoor workouts.',
@@ -42,7 +42,7 @@ export const products: Product[] = [
   {
     id: '3',
     name: 'Slim Fit Tracksuit',
-    category: 'Tracksuits',
+    category: 'Diaries',
     price: '₹2,799',
     code: 'TKS-003',
     description: 'Modern slim-fit tracksuit for a sleek and stylish look while staying active.',
@@ -61,7 +61,7 @@ export const products: Product[] = [
   {
     id: '4',
     name: 'Jogging Tracksuit',
-    category: 'Tracksuits',
+    category: 'Diaries',
     price: '₹1,999',
     code: 'TKS-004',
     description: 'Comfortable tracksuit ideal for jogging and light fitness activities.',
@@ -80,7 +80,7 @@ export const products: Product[] = [
   {
     id: '5',
     name: 'Zip-Up Tracksuit',
-    category: 'Tracksuits',
+    category: 'Diaries',
     price: '₹2,199',
     code: 'TKS-005',
     description: 'Versatile zip-up tracksuit perfect for all-day wear, from gym to casual outings.',
@@ -99,7 +99,7 @@ export const products: Product[] = [
   {
     id: '6',
     name: 'Classic Tracksuit Set',
-    category: 'Tracksuits',
+    category: 'Diaries',
     price: '₹2,699',
     code: 'TKS-006',
     description: 'Timeless tracksuit set for everyday comfort and style.',
@@ -118,7 +118,7 @@ export const products: Product[] = [
   {
     id: '7',
     name: 'Sweatshirt Tracksuit',
-    category: 'Tracksuits',
+    category: 'Diaries',
     price: '₹1,899',
     code: 'TKS-007',
     description: 'Soft sweatshirt tracksuit ideal for light workouts or lounging.',
@@ -137,7 +137,7 @@ export const products: Product[] = [
   {
     id: '8',
     name: 'Sporty Tracksuit',
-    category: 'Tracksuits',
+    category: 'Diaries',
     price: '₹2,499',
     code: 'TKS-008',
     description: 'Sporty and functional tracksuit designed for high-impact activities and exercise.',
@@ -156,7 +156,7 @@ export const products: Product[] = [
   {
     id: '9',
     name: 'Lightweight Tracksuit',
-    category: 'Tracksuits',
+    category: 'Diaries',
     price: '₹1,799',
     code: 'TKS-009',
     description: 'Lightweight tracksuit made for everyday comfort and relaxed activities.',
@@ -175,7 +175,7 @@ export const products: Product[] = [
   {
     id: '10',
     name: 'Modern Tracksuit Set',
-    category: 'Tracksuits',
+    category: 'Diaries',
     price: '₹3,199',
     code: 'TKS-010',
     description: 'Sleek and modern tracksuit set designed for a fashionable yet functional look.',
@@ -194,7 +194,7 @@ export const products: Product[] = [
   {
     id: '11',
     name: 'Athleisure Tracksuit',
-    category: 'Tracksuits',
+    category: 'Diaries',
     price: '₹2,599',
     code: 'TKS-011',
     description: 'Stylish athleisure tracksuit perfect for both gym sessions and casual outings.',
@@ -213,7 +213,7 @@ export const products: Product[] = [
   {
     id: '12',
     name: 'Track Jacket and Pants Set',
-    category: 'Tracksuits',
+    category: 'Diaries',
     price: '₹2,899',
     code: 'TKS-012',
     description: 'Classic tracksuit set with a zippered jacket and matching pants for ultimate comfort.',
@@ -232,7 +232,7 @@ export const products: Product[] = [
   {
     id: '13',
     name: 'Performance Tracksuit',
-    category: 'Tracksuits',
+    category: 'Diaries',
     price: '₹3,499',
     code: 'TKS-013',
     description: 'Performance tracksuit designed for athletes who demand comfort and style.',
@@ -251,7 +251,7 @@ export const products: Product[] = [
   {
     id: '14',
     name: 'Relaxed Fit Tracksuit',
-    category: 'Tracksuits',
+    category: 'Diaries',
     price: '₹2,199',
     code: 'TKS-014',
     description: 'Relaxed fit tracksuit perfect for casual wear and comfort.',
@@ -270,7 +270,7 @@ export const products: Product[] = [
   {
     id: '15',
     name: 'Light Athletic Tracksuit',
-    category: 'Tracksuits',
+    category: 'Diaries',
     price: '₹1,999',
     code: 'TKS-015',
     description: 'Lightweight athletic tracksuit for both workouts and casual days.',

@@ -20,14 +20,14 @@ export const categories = [
     url: '/products/jackets'
   },
   {
-    name: 'Customized Raincoats',
+    name: 'Customized Drinkware',
     image: 'https://www.allextreme.in/media/catalog/product/2/2/22_1_1.jpg',
-    url: '/products/raincoats'
+    url: '/products/Drinkware'
   },
   {
-    name: 'Personalized Tracksuits',
-    image: 'https://www.jiomart.com/images/product/original/rvteevwxry/yha-men-s-regular-fit-tracksuits-product-images-rvteevwxry-0-202403211820.jpg?im=Resize=(500,630)',
-    url: '/products/tracksuits'
+    name: 'Personalized Diaries',
+    image: 'https://www.jiomart.com/images/product/original/rvteevwxry/yha-men-s-regular-fit-Diaries-product-images-rvteevwxry-0-202403211820.jpg?im=Resize=(500,630)',
+    url: '/products/Diaries'
   },
   {
     name: 'Corporate Accessories',

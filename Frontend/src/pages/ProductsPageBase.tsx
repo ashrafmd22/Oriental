@@ -6,7 +6,7 @@ export function ProductsPageBase({ category }: { category: string }) {
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 12;
 
-  const categories = ['All', 'Bags', 'Caps', 'Raincoats', 'Tracksuits', 'Jackets', 'Tshirts', 'Accessories'];
+  const categories = ['All', 'Bags', 'Caps', 'Drinkware', 'Diaries', 'Jackets', 'Tshirts', 'Accessories'];
 
   const filteredProducts = category === 'All'
     ? products

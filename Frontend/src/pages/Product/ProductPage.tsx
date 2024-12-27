@@ -40,7 +40,7 @@ export function ProductPage() {
             />
             <ProductDetails
               name={product.name}
-              price={product.price}
+              // price={product.price}
               description={product.description}
               features={product.features}
               code={product.code}
