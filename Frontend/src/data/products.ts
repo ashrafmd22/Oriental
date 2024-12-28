@@ -13,7 +13,7 @@ export const products: Product[] = [
       "Padded laptop compartment (fits up to 15.6\")",
       "Multiple organizer pockets",
       "Adjustable shoulder strap",
-      "Water-resist"
+      "Water-resistant"
     ],
     "images": [
       "/assets/Bags/1.jpg",
