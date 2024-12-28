@@ -137,8 +137,7 @@ export const products: Product[] = [
     ],
     "images": [
       "/assets/Bags/22.jpg",
-      "/assets/Bags/23.jpg"
-    ]
+      "/assets/Bags/23.jpg"]
   },
   {
     "id": "386de325-3d86-46ec-ab24-d3cd96eacc24",
@@ -233,7 +232,10 @@ export const products: Product[] = [
       "Padded straps for comfort",
       "Fits most laptops up to 15.6 inches"
     ],
-    "images": ["/assets/Bags/35.jpg", "/assets/Bags/36.jpg"]
+    "images": [
+      "/assets/Bags/35.jpg",
+      "/assets/Bags/36.jpg"
+    ]
   },
   {
     "id": "934a57dc-c4d0-4fa6-8e92-c6f24b909f91",
@@ -248,7 +250,10 @@ export const products: Product[] = [
       "Weather-resistant material",
       "Dedicated 17-inch padded laptop compartment for secure gadget storage",
     ],
-    "images": ["/assets/Bags/37.jpg", "/assets/Bags/38.jpg"]
+    "images": [
+      "/assets/Bags/37.jpg",
+      "/assets/Bags/38.jpg"
+    ]
   },
   {
     "id": "9a2d6f1e-9cda-4a18-8755-5de1b40d3469",
