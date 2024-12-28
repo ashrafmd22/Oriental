@@ -298,7 +298,7 @@ export const products: Product[] = [
       "Organized front pocket with compartments for pens, chargers, and more",
       "Elegant and modern design suitable for business trips"
     ],
-    "images": ["/assets/Bags/Bags/43.jpg", "/assets/Bags/44.jpg"]
+    "images": ["/assets/Bags/43.jpg", "/assets/Bags/44.jpg"]
   },
   {
     "id": "da6976df-7d25-4036-a316-517aecadbece",
@@ -313,7 +313,7 @@ export const products: Product[] = [
       "Heavy-duty compression straps and buckles to secure items, along with padded shoulder straps for comfort.",
       "Elegant and modern design suitable for business trips"
     ],
-    "images": ["/assets/45.jpg",
+    "images": ["/assets/Bags/45.jpg",
       "/assets/Bags/46.jpg",
       "/assets/Bags/47.jpg",
       "/assets/Bags/48.jpg"]
