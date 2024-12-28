@@ -1,12 +1,20 @@
 import React, { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import { products } from '../../data/products';
 import { ImageGallery } from './ImageGallery/ImageGallery';
 import { ProductDetails } from './ProductDetails';
 
 export function ProductPage() {
-  const { category, id } = useParams();
+  const { id } = useParams();
+  const location = useLocation();
   const product = products.find(p => p.id === id);
+
+  // Extract category from URL path
+  const category = location.pathname.split('/')[2];
+  // Format category for display (capitalize first letter, remove hyphens)
+  const displayCategory = category
+    ? category.charAt(0).toUpperCase() + category.slice(1)
+    : 'Products';
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -29,7 +37,9 @@ export function ProductPage() {
             <div className="lg:col-span-2 flex items-center space-x-2 text-sm text-gray-500 overflow-x-auto whitespace-nowrap">
               <span>Home</span>
               <span>/</span>
-              <span>{category}</span>
+              <span>Products</span>
+              <span>/</span>
+              <span>{displayCategory}</span>
               <span>/</span>
               <span className="text-gray-900">{product.name}</span>
             </div>
@@ -40,7 +50,6 @@ export function ProductPage() {
             />
             <ProductDetails
               name={product.name}
-              // price={product.price}
               description={product.description}
               features={product.features}
               code={product.code}
