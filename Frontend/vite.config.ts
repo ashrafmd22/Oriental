@@ -1,19 +1,15 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-// import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
-  base: './',
+  // Remove the base: './' as it can cause issues with client-side routing
   publicDir: 'public',
   resolve: {
-    alias: {
-      // '@': path.resolve(__dirname, './src'),
-      // '@public': path.resolve(__dirname, './public')
-    }
+    alias: {}
   },
-  assetsInclude: ['**/*.jpg', '**/*.JPG', '**/*.jpeg', '**/*.png'], // Add this line
+  assetsInclude: ['**/*.jpg', '**/*.JPG', '**/*.jpeg', '**/*.png'],
 });

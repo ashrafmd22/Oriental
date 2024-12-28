@@ -40,17 +40,16 @@ export function App() {
             {/* About */}
             <Route path="/about" element={<AboutPage />} />
 
-            {/* Products */}
-            <Route path="/products" element={<ProductsPageBase category="All" />} />
+            {/* Products - Important: Order matters! More specific routes first */}
             <Route path="/products/bags" element={<BagsPage />} />
             <Route path="/products/caps" element={<CapsPage />} />
-            <Route path="/products/Drinkware" element={<DrinkwarePage />} />
+            <Route path="/products/drinkware" element={<DrinkwarePage />} />
             <Route path="/products/jackets" element={<JacketsPage />} />
-            <Route path="/products/Diaries" element={<DiariesPage />} />
-            <Route path="/products/Tshirts" element={<TshirtsPage />} />
+            <Route path="/products/diaries" element={<DiariesPage />} />
+            <Route path="/products/tshirts" element={<TshirtsPage />} />
             <Route path="/products/accessories" element={<AccessoriesPage />} />
-            <Route path="/products/:category" element={<ProductsPageBase category="All" />} /> {/* Dynamic category route */}
-            <Route path="/products/:category/:id" element={<ProductPage />} /> {/* Single product detail */}
+            <Route path="/products/:id" element={<ProductPage />} />
+            <Route path="/products" element={<ProductsPageBase category="All" />} />
 
             {/* Contact */}
             <Route path="/contact" element={<Contact />} />
