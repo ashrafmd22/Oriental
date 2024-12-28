@@ -2,7 +2,7 @@ import { Product } from '../types/product';
 export const products: Product[] = [
 
   {
-    "id": "2c7d8fbd-76af-432a-9e3e-a8d25284648f",
+    "id": "1209fc1d-25c6-48cf-bc40-bcc872feeaa1",
     "name": "Executive Leather Laptop Bag",
     "category": "Bags",
     "price": "₹2,499",
@@ -22,7 +22,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "c7f86b3c-6047-4196-a7ad-7def79da3474",
+    "id": "e05b5258-1f7a-4e5b-9664-aa2de0dab72a",
     "name": "Leather Duffel Bag",
     "category": "Bags",
     "price": "₹4,199",
@@ -42,7 +42,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "be80ecdb-edd6-4d55-8a69-02839cc70824",
+    "id": "4a536777-c8f5-4ed6-ab42-52b2c7383e18",
     "name": "Vintage Messenger Bag",
     "category": "Bags",
     "price": "₹2,299",
@@ -62,7 +62,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "72e859ca-aa48-49a2-8035-9a46bf5c2912",
+    "id": "82bcd2ce-4da0-408d-be82-fa96b713ff9a",
     "name": "Luxury Black Tote Bag",
     "category": "Bags",
     "price": "₹3,599",
@@ -82,7 +82,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "c651d0eb-819a-4134-93d1-a92c38fc6334",
+    "id": "273496c6-30d5-4304-bbeb-5c47b44fd878",
     "name": "Compact Sling Bag",
     "category": "Bags",
     "price": "₹899",
@@ -102,7 +102,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "56e8883e-e105-4665-a595-21e5f908fdbb",
+    "id": "46918465-598b-422a-bbf8-c91e3ef8e579",
     "name": "Smart Backpack with USB Charging Port",
     "category": "Bags",
     "price": "₹3,199",
@@ -122,7 +122,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "017b0225-9c2a-464e-aff4-2e9b7525d15b",
+    "id": "d970f746-feb3-4a69-b0f3-c26145122b21",
     "name": "Canvas Laptop Backpack",
     "category": "Bags",
     "price": "₹1,799",
@@ -140,7 +140,7 @@ export const products: Product[] = [
       "/assets/Bags/23.jpg"]
   },
   {
-    "id": "386de325-3d86-46ec-ab24-d3cd96eacc24",
+    "id": "c63d6f33-6a1a-4446-8db7-7a517a45fda9",
     "name": "Foldable Gym Bag",
     "category": "Bags",
     "price": "₹1,199",
@@ -160,7 +160,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "513a8bf1-7b33-40e3-84c8-d8ab5fb8d58a",
+    "id": "7477efb9-5336-4af8-b0b9-c22fd23dd751",
     "name": "Classic Canvas Tote",
     "category": "Bags",
     "price": "₹899",
@@ -180,7 +180,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "a5d1d9f8-9b32-4ff4-8da5-5d44b63c25f5",
+    "id": "0d4e77b2-3c2c-4db2-8c2c-f4d5fb988566",
     "name": "Chic Crossbody Bag",
     "category": "Bags",
     "price": "₹999",
@@ -200,7 +200,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "9b424434-d77d-41dc-a670-041ac3216b66",
+    "id": "caf06003-0727-45e8-9012-b913b08d35b4",
     "name": "School Backpack",
     "category": "Bags",
     "price": "₹799",
@@ -219,7 +219,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "58be71a2-2d5f-4f85-9d54-4e2fd9e39911",
+    "id": "5c517ee9-0a0b-496a-9612-248cd6db7465",
     "name": "HP Backpack",
     "category": "Bags",
     "price": "₹799",
@@ -238,7 +238,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "934a57dc-c4d0-4fa6-8e92-c6f24b909f91",
+    "id": "7cd0c59b-1bba-4f81-9f42-566e71e68d57",
     "name": "American Tourister Backpack",
     "category": "Bags",
     "price": "₹799",
@@ -256,7 +256,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "9a2d6f1e-9cda-4a18-8755-5de1b40d3469",
+    "id": "85574378-d530-426b-a6ed-0c6a422bcd8b",
     "name": "Elite School Backpack",
     "category": "Bags",
     "price": "₹950",
@@ -271,7 +271,7 @@ export const products: Product[] = [
     "images": ["/assets/Bags/39.jpg", "/assets/Bags/40.jpg"]
   },
   {
-    "id": "7b548c5e-9600-48e4-b153-e1b618493b87",
+    "id": "6889e842-5218-47a2-8c36-84a09915ad3c",
     "name": "Durable Stylish Backpack",
     "category": "Bags",
     "price": "₹699",
@@ -286,7 +286,7 @@ export const products: Product[] = [
     "images": ["/assets/Bags/41.jpg", "/assets/Bags/42.jpg"]
   },
   {
-    "id": "2b8b6847-2ad5-4d3a-bf43-9f5da5ff6b28",
+    "id": "1dd0ff3f-6d09-4867-9c53-9942389ce269",
     "name": "Business Laptop Backpack",
     "category": "Bags",
     "price": "₹1,499",
@@ -301,7 +301,7 @@ export const products: Product[] = [
     "images": ["/assets/Bags/Bags/43.jpg", "/assets/Bags/44.jpg"]
   },
   {
-    "id": "a7c307e0-d7ae-4d62-b7e1-5242957f8998",
+    "id": "da6976df-7d25-4036-a316-517aecadbece",
     "name": "Safari Crew Overnighter Backpack",
     "category": "Bags",
     "price": "₹1,499",
@@ -319,7 +319,7 @@ export const products: Product[] = [
       "/assets/Bags/48.jpg"]
   },
   {
-    "id": "fd4d4d65-27fe-409b-b174-bc6b7b85b9f6",
+    "id": "74c48402-e38e-47cf-a223-cb6155522f1e",
     "name": "Ultimate Waterproof Backpack",
     "category": "Bags",
     "price": "₹1,199",
@@ -334,7 +334,7 @@ export const products: Product[] = [
     "images": ["/assets/Bags/49.jpg", "/assets/Bags/50.jpg"]
   },
   {
-    "id": "e60a6b1e-106d-487e-b4e0-cf4fbb8d0046",
+    "id": "6248e7c6-0eb2-4d37-8146-e7cde952f02c",
     "name": "BIGBERRY Newage leatherite/faux Backpack",
     "category": "Bags",
     "price": "₹1,100",
@@ -349,7 +349,7 @@ export const products: Product[] = [
     "images": ["/assets/Bags/51.jpg", "/assets/Bags/52.jpg", "/assets/Bags/53.jpg", "/assets/Bags/54.jpg"]
   },
   {
-    "id": "a7c307e0-d7ae-4d62-b7e1-5242957f89f3",
+    "id": "3e9f3673-a206-41c1-8af0-39cacbdbe073",
     "name": "Slim Laptop Backpack",
     "category": "Bags",
     "price": "₹1,099",
@@ -364,7 +364,7 @@ export const products: Product[] = [
     "images": ["/assets/Bags/55.jpg", "/assets/Bags/56.jpg"]
   },
   {
-    "id": "3b99a0c9-78d3-47f7-a45e-5db0c767acdb",
+    "id": "587c3ca2-ac8e-4789-8fa6-1140abb72609",
     "name": "Safari Hitech Backpack",
     "category": "Bags",
     "price": "₹699",
@@ -379,7 +379,7 @@ export const products: Product[] = [
     "images": ["/assets/Bags/57.jpg", "/assets/Bags/58.jpg"]
   },
   {
-    "id": "5152bfc4-85d4-4b8b-90bb-23b2c26c7d90",
+    "id": "fa51eb3b-f0c9-4427-91a4-9ea1e2410e25",
     "name": "Safari Seek Backpack",
     "category": "Bags",
     "price": "₹850",
@@ -394,7 +394,7 @@ export const products: Product[] = [
     "images": ["/assets/Bags/59.jpg", "/assets/Bags/60.jpg"]
   },
   {
-    "id": "12b56e8a-f7c7-4a6d-b27a-c72a2f568973",
+    "id": "9f172ddc-7c2f-41b7-87a4-391dbdc9994d",
     "name": "Multi-Compartment Waterproof Stylish Backpack",
     "category": "Bags",
     "price": "₹550",
@@ -410,7 +410,7 @@ export const products: Product[] = [
     "images": ["/assets/Bags/61.jpg", "/assets/Bags/62.jpg"]
   },
   {
-    "id": "42f8b8f7-8d52-4c70-b8e1-34c9c3bb1eae",
+    "id": "7250fb72-32ce-4c4d-b4a4-cf62d82c9e3d",
     "name": "Professional Laptop Backpack",
     "category": "Bags",
     "price": "₹1,799",
@@ -425,7 +425,7 @@ export const products: Product[] = [
     "images": ["/assets/Bags/63.jpg", "/assets/Bags/64.jpg"]
   },
   {
-    "id": "52ef72ce-d190-4634-9f09-05ba264bb870",
+    "id": "c1616971-581f-48be-b68c-47dd84d38610",
     "name": "Women's Designer Handbag",
     "category": "Bags",
     "price": "₹4,499",
@@ -442,7 +442,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "40dbd78d-f282-4e49-9dad-dab77a05ad92",
+    "id": "c7a0b196-14b0-4c2a-a4f7-d665389506d8",
     "name": "Baseball Cap",
     "category": "Caps",
     "price": "₹699",
@@ -460,7 +460,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "21dbf1fa-bf13-4729-b617-c4f4f9443025",
+    "id": "3d3a7779-3ba1-42a2-96ee-190a1c8e8278",
     "name": "Sporty Flex Cap",
     "category": "Caps",
     "price": "₹849",
@@ -478,7 +478,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "7e926055-942c-4df6-a935-30f941292639",
+    "id": "33181b00-d347-44c5-a214-8e59f2b00b68",
     "name": "Trucker Cap",
     "category": "Caps",
     "price": "₹749",
@@ -496,7 +496,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "42ed5f8f-c99b-4fa1-8541-223421d1df6f",
+    "id": "845f459e-43e4-4de0-a77f-c5a02aade447",
     "name": "Adventurer Hiking Cap",
     "category": "Caps",
     "price": "₹949",
@@ -514,7 +514,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "53bcf2a0-659f-47fb-b27d-e7d1111cc5c9",
+    "id": "474689ad-3015-4c61-a717-6ba4bece4891",
     "name": "Summer Breeze Cap",
     "category": "Caps",
     "price": "₹699",
@@ -532,7 +532,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "64de50ab-56b7-4c28-bb99-f52a3f009c8d",
+    "id": "de52e443-a088-4539-875e-77dd43f86789",
     "name": "Champion Pro Cap",
     "category": "Caps",
     "price": "₹1,199",
@@ -550,7 +550,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "73fc43e2-1fb6-49ff-8cb7-dff4e3e22322",
+    "id": "47e38cfe-3d05-4048-aedc-a0a8648f615e",
     "name": "Retro Vintage Cap",
     "category": "Caps",
     "price": "₹749",
@@ -568,7 +568,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "84ac42a7-c31a-4e7b-946b-2c5c8e4c22f3",
+    "id": "2df363ce-8810-4306-92e8-3bdcc94c4584",
     "name": "Classic Camo Cap",
     "category": "Caps",
     "price": "₹899",
@@ -586,7 +586,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "95bd61c9-12ad-4dff-bf25-888e905f4b02",
+    "id": "ac33e3ae-e701-46d5-9fc3-ac6c74553d92",
     "name": "Rockstar Snapback Cap",
     "category": "Caps",
     "price": "₹799",
@@ -604,7 +604,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "1a2b3c4d-5e6f-7g8h-9i10-j11k12l13m14",
+    "id": "c155c7a8-b705-443b-ae96-6a5ea322fc66",
     "name": "Classic Zip-Up Jacket",
     "category": "Jackets",
     "price": "₹799",
@@ -621,7 +621,7 @@ export const products: Product[] = [
       "/assets/Jackets/1.jpg", "/assets/Jackets/2.jpg", "/assets/Jackets/3.jpg"]
   },
   {
-    "id": "2b3c4d5e-6f7g-8h9i-10j11-k12l13m14n15",
+    "id": "d3eda742-a58c-49a2-b201-64b548aba4d5",
     "name": "Casual Bomber Jacket",
     "category": "Jackets",
     "price": "₹999",
@@ -640,7 +640,7 @@ export const products: Product[] = [
 
   },
   {
-    "id": "3c4d5e6f-7g8h-9i10-j11k12l13m14n15o16",
+    "id": "e9513728-0eb2-4c21-a243-f2938348790b",
     "name": "Lightweight Windbreaker Jacket",
     "category": "Jackets",
     "price": "₹699",
@@ -658,7 +658,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "4d5e6f7g-8h9i-10j11-k12l13m14n15o16p17",
+    "id": "f38fe6b3-e7bf-457d-bddb-ad7f6b5f1bfd",
     "name": "Everyday Zip Jacket",
     "category": "Jackets",
     "price": "₹799",
@@ -676,7 +676,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "5e6f7g8h-9i10-j11k12l13m14n15o16p17q18",
+    "id": "8c4f3b4d-3107-429d-8992-a64ac330cd27",
     "name": "Comfort Fit Fleece Jacket",
     "category": "Jackets",
     "price": "₹899",
@@ -695,7 +695,7 @@ export const products: Product[] = [
   },
 
   {
-    "id": "7g8h9i10-j11k12l13m14n15o16p17q18r19s20",
+    "id": "2ae80ae1-ad83-46b9-b2b8-92804c180aff",
     "name": "Simple Casual Jacket",
     "category": "Jackets",
     "price": "₹799",
@@ -713,7 +713,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "8h9i10j-11k12l13m14n15o16p17q18r19s20t21",
+    "id": "d8a555e4-f4f6-4649-8c84-30b0ee0d3128",
     "name": "Minimalist Hoodie Jacket",
     "category": "Jackets",
     "price": "₹999",
@@ -731,7 +731,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "1a2b3c4d-5e6f-7g8h-9i10-j11k12l13m14",
+    "id": "f3a4e299-c0b1-444d-9aa7-fce3ea867777",
     "name": "Bamboo Mug",
     "category": "Drinkware",
     "price": "₹699",
@@ -749,7 +749,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "2b3c4d5e-6f7g-8h9i-10j11-k12l13m14n15",
+    "id": "525ea7a2-284f-42e9-86c5-8d826140984e",
     "name": "Hot & Cold Flask (THANDA GARAM)",
     "category": "Drinkware",
     "price": "₹899",
@@ -767,7 +767,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "3c4d5e6f-7g8h-9i10-j11k12l13m14n15o16",
+    "id": "2fc7a66f-64a4-4149-9f44-bac655a40b19",
     "name": "Hot & Cold Sports Bottle – CLOUD",
     "category": "Drinkware",
     "price": "₹799",
@@ -785,7 +785,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "4d5e6f7g-8h9i-10j11-k12l13m14n15o16p17",
+    "id": "1b4492d8-619c-4f48-a45e-565482aad541",
     "name": "Hot & Cold Sports Bottle – ULTRA COLOR",
     "category": "Drinkware",
     "price": "₹899",
@@ -803,7 +803,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "5e6f7g8h-9i10-j11k12l13m14n15o16p17q18",
+    "id": "03114c5c-0ee2-437f-860f-4ba22bd0b940",
     "name": "Stainless Steel – TRENDY",
     "category": "Drinkware",
     "price": "₹749",
@@ -821,7 +821,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "6f7g8h9i-10j11-k12l13m14n15o16p17q18r19",
+    "id": "9659d169-d6f6-4f3f-bbb2-fc4e0bba0cc2",
     "name": "Stainless Steel Hot & Cold Bottle – COLA 750",
     "category": "Drinkware",
     "price": "₹999",
@@ -839,7 +839,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "7g8h9i10-j11k12l13m14n15o16p17q18r19s20",
+    "id": "b873b9f2-fbc7-4505-a334-3780f9cfe531",
     "name": "Stainless Steel Hot & Cold Bottle – GOTHIC",
     "category": "Drinkware",
     "price": "₹1,099",
@@ -857,7 +857,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "8h9i10j-11k12l13m14n15o16p17q18r19s20t21",
+    "id": "dcbedcb1-9ee9-4e3e-8614-f2d4cdefd705",
     "name": "Stainless Steel Sports Bottle – Magnum",
     "category": "Drinkware",
     "price": "₹849",
@@ -875,7 +875,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "9i10j11k-12l13m14n15o16p17q18r19s20t21u22",
+    "id": "2d990c74-0284-4330-913c-4812679236de",
     "name": "Stainless Steel Sports Bottle – Omega",
     "category": "Drinkware",
     "price": "₹899",
@@ -893,7 +893,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "10j11k12l-13m14n15o16p17q18r19s20t21u22v23",
+    "id": "64bb27aa-9d1d-49e1-99fe-7b78400f6a7c",
     "name": "Stainless Steel Travel Mug – TOBY",
     "category": "Drinkware",
     "price": "₹799",
@@ -911,7 +911,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "1d2c3b4a-5e6f-7g8h-9i10-j11k12l13m14",
+    "id": "0587748c-1328-4636-aa51-3c87bee893f9",
     "name": "Caran d’Ache Black Calfskin Leather A5",
     "category": "Diaries",
     "price": "₹1,599",
@@ -929,7 +929,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "2c3b4a5d-6e7f-8g9h-10j11-k12l13m14n15",
+    "id": "f72cb054-6582-4823-a5a3-e6ce8b3f9a5f",
     "name": "Caran d’Ache Cashmere Leather A5",
     "category": "Diaries",
     "price": "₹1,799",
@@ -948,7 +948,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "3b4a5d6c-7e8f-9g10-h11k12l13m14n15o16",
+    "id": "63904ad6-86f6-41ca-bcd7-f86a068b5fc4",
     "name": "Caran d’Ache Grey Leather A5",
     "category": "Diaries",
     "price": "₹1,699",
@@ -967,7 +967,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "4a5d6c7b-8e9f-10g11-h12k13l14m15n16o17",
+    "id": "a53e268a-9730-4309-b77e-b71c7c33e38f",
     "name": "Caran d’Ache Red Leather A5",
     "category": "Diaries",
     "price": "₹1,899",
@@ -986,7 +986,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "5d6c7b8a-9e10-f11g12-h13k14l15m16n17o18",
+    "id": "65794bb9-6d13-4e8d-a7c3-634aeed5162b",
     "name": "Caran d’Ache Turquoise Leather A5",
     "category": "Diaries",
     "price": "₹1,749",
@@ -1005,7 +1005,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "6c7b8a9d-10e11-f12g13-h14k15l16m17n18o19",
+    "id": "78ae59da-0883-4208-b445-58b7e980136c",
     "name": "Caran d’Ache White Leather A5",
     "category": "Diaries",
     "price": "₹1,649",
@@ -1026,7 +1026,7 @@ export const products: Product[] = [
 
 
   {
-    "id": "1a2b3c4d-5e6f-7g8h-9i10-j11k12l13m14",
+    "id": "3914fcec-30a6-43b3-bd5a-1fbf52a08441",
     "name": "Essential Comfort T-Shirt",
     "category": "Tshirts",
     "price": "₹599",
@@ -1044,7 +1044,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "2a3b4c5d-6e7f-8g9h-10i11-j12k13l14m15",
+    "id": "7b53bd9a-8077-44ca-85c3-d2176516fd23",
     "name": "Premium Daily Wear Tee",
     "category": "Tshirts",
     "price": "₹799",
@@ -1062,7 +1062,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "3b4c5d6e-7f8g-9h10-i11j12-k13l14m15n16",
+    "id": "6ed43e06-383a-4f1e-b5f0-4d6f09ab3a74",
     "name": "Urban Street Wear Tee",
     "category": "Tshirts",
     "price": "₹899",
@@ -1080,7 +1080,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "4c5d6e7f-8g9h-10i11-j12k13l14m15n16",
+    "id": "fcdb30e4-3683-478a-a1ef-5ddb3f2ff6cb",
     "name": "Classic Everyday Tee",
     "category": "Tshirts",
     "price": "₹649",
@@ -1098,7 +1098,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "5d6e7f8g-9h10-i11j12k13l14m15n16o17",
+    "id": "169e0434-f090-420a-a8ce-caf802e1cdd2",
     "name": "Trendy Casual Tee",
     "category": "Tshirts",
     "price": "₹699",
@@ -1116,7 +1116,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "6e7f8g9h-10i11-j12k13l14m15n16o17p18",
+    "id": "8af93d36-0d8a-4fdf-9115-24722b6b026a",
     "name": "Sports Performance T-Shirt",
     "category": "Tshirts",
     "price": "₹899",
@@ -1134,7 +1134,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "7f8g9h10-i11j12k13l14m15n16o17p18q19",
+    "id": "bae240c9-b592-4dfd-b6cf-70e5c0f18339",
     "name": "Minimalist Casual T-Shirt",
     "category": "Tshirts",
     "price": "₹749",
@@ -1152,7 +1152,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "8g9h10i-11j12k13l14m15n16o17p18q19r20",
+    "id": "53a80f0a-3ac0-434c-8288-361b8b84096a",
     "name": "Premium Comfort Fit Tee",
     "category": "Tshirts",
     "price": "₹999",
@@ -1170,7 +1170,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "9h10i11j-12k13l14m15n16o17p18q19r20s21",
+    "id": "b094ffd7-55b6-49bb-a27f-b7deac154059",
     "name": "Fashion Forward T-Shirt",
     "category": "Tshirts",
     "price": "₹799",
@@ -1188,7 +1188,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "10i11j12k-13l14m15n16o17p18q19r20s21t22",
+    "id": "c8b62f16-1573-42f3-a96b-811fad321cfc",
     "name": "Casual Weekend Tee",
     "category": "Tshirts",
     "price": "₹649",
@@ -1206,7 +1206,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "11j12k13l-14m15n16o17p18q19r20s21t22u23",
+    "id": "662f57bd-3a4b-41d6-abe9-8a856d99fe57",
     "name": "Classic Crew Neck T-Shirt",
     "category": "Tshirts",
     "price": "₹599",
@@ -1224,7 +1224,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "12k13l14m-15n16o17p18q19r20s21t22u23v24",
+    "id": "23cb99dd-3f68-4fc2-af8c-1ce8465c077e",
     "name": "Relaxed Fit T-Shirt",
     "category": "Tshirts",
     "price": "₹799",
@@ -1241,7 +1241,7 @@ export const products: Product[] = [
       "/assets/Tshirts/33.jpg", "/assets/Tshirts/34.jpg"]
   },
   {
-    "id": "13l14m15n-16o17p18q19r20s21t22u23v24w25",
+    "id": "699892f0-ebe4-47fd-a380-25a9515af0f9",
     "name": "Comfy Loose Fit Tee",
     "category": "Tshirts",
     "price": "₹699",
@@ -1258,7 +1258,7 @@ export const products: Product[] = [
       "/assets/Tshirts/35.jpg", "/assets/Tshirts/36.jpg"]
   },
   {
-    "id": "14m15n16o-17p18q19r20s21t22u23v24w25x26",
+    "id": "523479c5-2b19-4db8-b107-937bb46fbd82",
     "name": "Signature Fit T-Shirt",
     "category": "Tshirts",
     "price": "₹899",
@@ -1276,7 +1276,7 @@ export const products: Product[] = [
   },
 
   {
-    "id": "f1a2b3c4-d5e6-7f8g-9h10-i11j12k13l14",
+    "id": "4733a663-8d7a-4b1c-9cf0-4d8923dc8324",
     "name": "Enchanted Wood Desk Calendar",
     "category": "Accessories",
     "price": "₹1,499",
@@ -1294,7 +1294,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "g1h2i3j4-k5l6-m7n8-o9p10-q11r12s13t14",
+    "id": "6441898d-f146-40d3-b684-113d952b33f5",
     "name": "Anchorite Desktop Organiser",
     "category": "Accessories",
     "price": "₹1,999",
@@ -1313,7 +1313,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "h1i2j3k4-l5m6-n7o8-p9q10-r11s12t13u14",
+    "id": "271a9be3-270a-4ed6-a051-2c81824082fe",
     "name": "Paragon Desktop Organiser",
     "category": "Accessories",
     "price": "₹2,499",
@@ -1332,7 +1332,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "i1j2k3l4-m5n6-o7p8-q9r10-s11t12u13v14",
+    "id": "6fcf9a8f-69e8-4277-b52f-b487033d11bf",
     "name": "Log Desktop Organiser",
     "category": "Accessories",
     "price": "₹1,799",
@@ -1351,7 +1351,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "j1k2l3m4-n5o6-p7q8-r9s10-t11u12v13w14",
+    "id": "66f2e774-6ff7-439b-abb0-6062912fddea",
     "name": "Santose Desktop Organiser",
     "category": "Accessories",
     "price": "₹1,849",
@@ -1370,7 +1370,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "k1l2m3n4-o5p6-q7r8-s9t10-u11v12w13x14",
+    "id": "11b38dd9-2765-4572-91de-247ac4990f4a",
     "name": "Akasa Desktop Organiser",
     "category": "Accessories",
     "price": "₹2,099",
@@ -1389,7 +1389,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "l1m2n3o4-p5q6-r7s8-t9u10-v11w12x13y14",
+    "id": "cf36881b-007f-4d13-bb69-b0b6eabdf46b",
     "name": "Ako Desktop Organiser",
     "category": "Accessories",
     "price": "₹1,699",
