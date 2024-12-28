@@ -1,52 +1,65 @@
 export const clients = [
   {
-    name: 'Paytm',
-    logo: 'https://1000logos.net/wp-content/uploads/2021/03/Paytm_Logo.jpg',
-    testimonial: 'Paytm has revolutionized digital payments and made them seamless for us.',
+    name: 'Aakash Institute',
+    logo: '/assets/Clients/1.jpeg',
+    testimonial: {
+      text: "The corporate gifting solutions provided have significantly boosted our employee engagement initiatives. The quality and thoughtfulness of the gifts truly reflect our company's values.",
+      author: "Abhishek Kumar",
+      designation: "HR Director, Aakash Institute"
+    }
   },
   {
-    name: 'DS Group',
-    logo: 'https://addx.in/wp-content/uploads/2024/04/5.png',
-    testimonial: 'Our experience with DS Group has been exceptional, and they are a valuable partner.',
-  },
-  {
-    name: 'Star Sports',
-    logo: 'https://addx.in/wp-content/uploads/2024/04/10.png',
-    testimonial: 'Star Sports consistently delivers quality and has been a cornerstone in our branding.',
-  },
-  {
-    name: 'FIITJEE',
-    logo: 'https://addx.in/wp-content/uploads/2024/04/6.png',
-    testimonial: 'The collaboration with FIITJEE has helped us achieve educational excellence.',
+    name: 'Physics Wallah',
+    logo: '/assets/Clients/2.jpeg',
+    testimonial: {
+      text: "The customized gift packages for our teaching staff were a huge hit. The attention to detail and timely delivery made our recognition program a great success.",
+      author: "Priya Singh",
+      designation: "Operations Head, Physics Wallah"
+    }
   },
   {
     name: 'Ultratech Cement',
-    logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/9/96/Ultratech_Cement_Logo.svg/1200px-Ultratech_Cement_Logo.svg.png',
-    testimonial: 'Ultratech Cement has brought strength and durability to our construction projects.',
+    logo: '/assets/Clients/3.jpeg',
+    testimonial: {
+      text: "The industrial-themed corporate gifts were perfect for our annual employee appreciation event. The service was professional and the products were of exceptional quality.",
+      author: "Rajesh Mehta",
+      designation: "General Manager, Ultratech Cement"
+    }
   },
   {
-    name: 'Reliance',
-    logo: 'https://rilstaticasset.akamaized.net/sites/default/files/2023-02/L.1.jpg',
-    testimonial: 'Reliance has been a game-changer for us with its innovative solutions.',
+    name: 'Tata Steel',
+    logo: '/assets/Clients/4.jpeg',
+    testimonial: {
+      text: "Our long-term partnership has consistently delivered outstanding corporate gifting solutions. The innovative ideas and quality products have helped strengthen our employee relations.",
+      author: "Sunil Patel",
+      designation: "HR Head, Tata Steel"
+    }
   },
   {
-    name: 'Tata Motors',
-    logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVfTSEgAJMQfItAPgWrbJQNQLL1Ad2i65PJg&s',
-    testimonial: 'Tata Motors consistently delivers reliable vehicles that drive our business forward.',
+    name: 'TCS',
+    logo: '/assets/Clients/5.jpeg',
+    testimonial: {
+      text: "The tech-themed gift collections were perfectly aligned with our company culture. The customization options and quick turnaround time exceeded our expectations.",
+      author: "Anita Sharma",
+      designation: "Employee Experience Lead, TCS"
+    }
   },
   {
-    name: 'HDFC Bank',
-    logo: 'https://e7.pngegg.com/pngimages/257/159/png-clipart-hdfc-logo-thumbnail-bank-logos-thumbnail.png',
-    testimonial: 'HDFC Bank has provided us with unparalleled banking services and support.',
+    name: 'ITC Limited',
+    logo: '/assets/Clients/6.jpeg',
+    testimonial: {
+      text: "The sustainable and eco-friendly gift options provided aligned perfectly with our corporate values. The presentation and packaging were exceptional.",
+      author: "Vikram Malhotra",
+      designation: "Corporate Relations Manager, ITC Limited"
+    }
   },
   {
-    name: 'Amazon',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1280px-Amazon_logo.svg.png',
-    testimonial: 'Amazons e- commerce platform has helped us reach millions of customers worldwide.',
-  },
-  {
-    name: 'Microsoft',
-    logo: 'https://download.logo.wine/logo/Microsoft/Microsoft-Logo.wine.png',
-    testimonial: 'Microsofts tools have boosted our productivity and streamlined operations.',
-  },
+    name: 'Hindustan Unilever',
+    logo: '/assets/Clients/7.jpeg',
+    testimonial: {
+      text: "The diverse range of gift options and the ability to customize them according to different occasions has made our employee recognition programs more meaningful.",
+      author: "Meera Kapoor",
+      designation: "Employee Engagement Director, HUL"
+    }
+  }
 ];

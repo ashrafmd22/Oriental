@@ -3,62 +3,77 @@ import { Helmet } from 'react-helmet-async';
 import { Award, Users, Clock, CheckCircle, Target, Heart } from 'lucide-react';
 import Slider from 'react-infinite-logo-slider';
 import 'swiper/css';
+
 // Client Data
 const clients = [
   {
-    name: 'Paytm',
-    logo: 'https://1000logos.net/wp-content/uploads/2021/03/Paytm_Logo.jpg',
-    testimonial: 'Paytm has revolutionized digital payments and made them seamless for us.',
+    name: 'Aakash Institute',
+    logo: '/assets/Clients/1.jpeg',
+    testimonial: {
+      text: "The corporate gifting solutions provided have significantly boosted our employee engagement initiatives. The quality and thoughtfulness of the gifts truly reflect our company's values.",
+      author: "Abhishek Kumar",
+      designation: "HR Director, Aakash Institute"
+    }
   },
   {
-    name: 'DS Group',
-    logo: 'https://addx.in/wp-content/uploads/2024/04/5.png',
-    testimonial: 'Our experience with DS Group has been exceptional, and they are a valuable partner.',
-  },
-  {
-    name: 'Star Sports',
-    logo: 'https://addx.in/wp-content/uploads/2024/04/10.png',
-    testimonial: 'Star Sports consistently delivers quality and has been a cornerstone in our branding.',
-  },
-  {
-    name: 'FIITJEE',
-    logo: 'https://addx.in/wp-content/uploads/2024/04/6.png',
-    testimonial: 'The collaboration with FIITJEE has helped us achieve educational excellence.',
+    name: 'Physics Wallah',
+    logo: '/assets/Clients/2.jpeg',
+    testimonial: {
+      text: "The customized gift packages for our teaching staff were a huge hit. The attention to detail and timely delivery made our recognition program a great success.",
+      author: "Priya Singh",
+      designation: "Operations Head, Physics Wallah"
+    }
   },
   {
     name: 'Ultratech Cement',
-    logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/9/96/Ultratech_Cement_Logo.svg/1200px-Ultratech_Cement_Logo.svg.png',
-    testimonial: 'Ultratech Cement has brought strength and durability to our construction projects.',
+    logo: '/assets/Clients/3.jpeg',
+    testimonial: {
+      text: "The industrial-themed corporate gifts were perfect for our annual employee appreciation event. The service was professional and the products were of exceptional quality.",
+      author: "Rajesh Mehta",
+      designation: "General Manager, Ultratech Cement"
+    }
   },
   {
-    name: 'Reliance',
-    logo: 'https://rilstaticasset.akamaized.net/sites/default/files/2023-02/L.1.jpg',
-    testimonial: 'Reliance has been a game-changer for us with its innovative solutions.',
+    name: 'Tata Steel',
+    logo: '/assets/Clients/4.jpeg',
+    testimonial: {
+      text: "Our long-term partnership has consistently delivered outstanding corporate gifting solutions. The innovative ideas and quality products have helped strengthen our employee relations.",
+      author: "Sunil Patel",
+      designation: "HR Head, Tata Steel"
+    }
   },
   {
-    name: 'Tata Motors',
-    logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVfTSEgAJMQfItAPgWrbJQNQLL1Ad2i65PJg&s',
-    testimonial: 'Tata Motors consistently delivers reliable vehicles that drive our business forward.',
+    name: 'TCS',
+    logo: '/assets/Clients/5.jpeg',
+    testimonial: {
+      text: "The tech-themed gift collections were perfectly aligned with our company culture. The customization options and quick turnaround time exceeded our expectations.",
+      author: "Anita Sharma",
+      designation: "Employee Experience Lead, TCS"
+    }
   },
   {
-    name: 'HDFC Bank',
-    logo: 'https://e7.pngegg.com/pngimages/257/159/png-clipart-hdfc-logo-thumbnail-bank-logos-thumbnail.png',
-    testimonial: 'HDFC Bank has provided us with unparalleled banking services and support.',
+    name: 'ITC Limited',
+    logo: '/assets/Clients/6.jpeg',
+    testimonial: {
+      text: "The sustainable and eco-friendly gift options provided aligned perfectly with our corporate values. The presentation and packaging were exceptional.",
+      author: "Vikram Malhotra",
+      designation: "Corporate Relations Manager, ITC Limited"
+    }
   },
   {
-    name: 'Amazon',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1280px-Amazon_logo.svg.png',
-    testimonial: 'Amazon’s e-commerce platform has helped us reach millions of customers worldwide.',
-  },
-  {
-    name: 'Microsoft',
-    logo: 'https://download.logo.wine/logo/Microsoft/Microsoft-Logo.wine.png',
-    testimonial: 'Microsoft’s tools have boosted our productivity and streamlined operations.',
-  },
+    name: 'Hindustan Unilever',
+    logo: '/assets/Clients/7.jpeg',
+    testimonial: {
+      text: "The diverse range of gift options and the ability to customize them according to different occasions has made our employee recognition programs more meaningful.",
+      author: "Meera Kapoor",
+      designation: "Employee Engagement Director, HUL"
+    }
+  }
 ];
+
 interface CounterProps {
-  target: number; // the target number to count up to
-  duration: number; // duration for counting animation in milliseconds
+  target: number;
+  duration: number;
 }
 
 const Counter: React.FC<CounterProps> = ({ target, duration }) => {
@@ -66,7 +81,7 @@ const Counter: React.FC<CounterProps> = ({ target, duration }) => {
 
   useEffect(() => {
     let start = 0;
-    const increment = target / (duration / 50); // Update every 50ms
+    const increment = target / (duration / 50);
     const timer = setInterval(() => {
       start += increment;
       if (start >= target) {
@@ -160,7 +175,7 @@ export function AboutPage() {
                   Since 1990, Oriental Enterprises has been revolutionizing the corporate gifting industry with innovative solutions and an unwavering commitment to quality. With decades of experience, we have established ourselves as a trusted name in providing premium gifts tailored to meet the diverse needs of businesses across the country.
                 </p>
                 <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6">
-                  From our humble beginnings as a small family-run business, we have grown into one of India’s most respected suppliers of corporate gifts. Our mission has always been to deliver exceptional quality, creativity, and client-centric service, making us the preferred partner for over 1000+ esteemed clients.
+                  From our humble beginnings as a small family-run business, we have grown into one of India's most respected suppliers of corporate gifts. Our mission has always been to deliver exceptional quality, creativity, and client-centric service, making us the preferred partner for over 1000+ esteemed clients.
                 </p>
                 <div className="grid grid-cols-2 gap-8 mt-8">
                   <div className="text-center">
@@ -205,7 +220,6 @@ export function AboutPage() {
           </div>
         </section>
 
-
         {/* Core Values Section */}
         <section className="py-20 bg-gradient-to-r from-blue-50 to-blue-100">
           <div className="max-w-7xl mx-auto px-6">
@@ -249,31 +263,27 @@ export function AboutPage() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center text-gray-800 mb-12">
               What Our Clients Say
             </h2>
-            <Slider
-              width="250px"
-              duration={60}
-              pauseOnHover={true}
-              blurBorders={false}
-              blurBorderColor="#fff"
-            >
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {clients.map((client, index) => (
-                <Slider.Slide key={index}>
-                  <div className="bg-white p-8 rounded-xl shadow-lg transform transition duration-300 hover:scale-105 min-h-[350px]">
-                    <div className="flex justify-center">
-                      <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-gray-200">
-                        <img
-                          src={client.logo}
-                          alt={client.name}
-                          className="w-full h-full object-contain"
-                        />
-                      </div>
+                <div key={index} className="bg-white p-8 rounded-xl shadow-lg transform transition duration-300 hover:scale-105">
+                  <div className="flex items-center mb-6">
+                    <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-gray-200 flex-shrink-0">
+                      <img
+                        src={client.logo}
+                        alt={client.name}
+                        className="w-full h-full object-contain"
+                      />
                     </div>
-                    <p className="text-gray-600 italic mb-6 text-center">{client.testimonial}</p>
-                    <h3 className="font-semibold text-center text-xl">{client.name}</h3>
+                    <div className="ml-4">
+                      <h3 className="font-semibold text-lg">{client.name}</h3>
+                      <p className="text-gray-600 text-sm">{client.testimonial.designation}</p>
+                    </div>
                   </div>
-                </Slider.Slide>
+                  <blockquote className="text-gray-600 italic mb-4">"{client.testimonial.text}"</blockquote>
+                  <p className="text-blue-600 font-medium">- {client.testimonial.author}</p>
+                </div>
               ))}
-            </Slider>
+            </div>
           </div>
         </section>
       </div>

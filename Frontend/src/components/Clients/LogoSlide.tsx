@@ -8,12 +8,14 @@ interface LogoSlideProps {
 export function LogoSlide({ client }: LogoSlideProps) {
   return (
     <div className="flex items-center justify-center px-2 sm:px-4 py-2 mx-1 sm:mx-2">
-      <img
-        src={client.logo}
-        alt={client.name}
-        className={`${client.width || 'w-16 sm:w-24 md:w-28 lg:w-32'} object-contain h-8 sm:h-12 md:h-16 lg:h-20 filter grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-105`}
-        loading="lazy"
-      />
+      <div className="w-[120px] sm:w-[150px] md:w-[180px] h-[60px] sm:h-[80px] md:h-[100px] relative flex items-center justify-center">
+        <img
+          src={client.logo}
+          alt={client.name}
+          className={`max-w-full max-h-full w-auto h-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-105 ${client.width || ''}`}
+          loading="lazy"
+        />
+      </div>
     </div>
   );
 }

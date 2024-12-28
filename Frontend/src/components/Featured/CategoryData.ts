@@ -1,37 +1,37 @@
 export const categories = [
   {
     name: 'Custom Bags',
-    image: 'https://m.media-amazon.com/images/I/81iDb4-nuoL._AC_UY1000_.jpg',
+    image: '/assets/Featured/1.jpeg',
     url: '/products/bags'
   },
   {
     name: 'Personalized Caps',
-    image: 'https://www.iconicindia.com/cdn/shop/files/GMS24-9900223130_1.jpg?v=1707816435',
+    image: '/assets/Featured/2.jpeg',
     url: '/products/caps'
   },
   {
     name: 'Branded T-Shirts',
-    image: 'https://printmytee.in/wp-content/uploads/2021/07/Product-Your-Design-Here-01-1.jpg',
+    image: '/assets/Featured/3.jpeg',
     url: '/products/tshirts'
   },
   {
     name: 'Engraved Jackets',
-    image: 'https://d1pdzcnm6xgxlz.cloudfront.net/tops/8905875043669-18.jpg',
+    image: '/assets/Featured/4.jpeg',
     url: '/products/jackets'
   },
   {
     name: 'Customized Drinkware',
-    image: 'https://www.allextreme.in/media/catalog/product/2/2/22_1_1.jpg',
+    image: '/assets/Featured/5.jpeg',
     url: '/products/Drinkware'
   },
   {
     name: 'Personalized Diaries',
-    image: 'https://www.jiomart.com/images/product/original/rvteevwxry/yha-men-s-regular-fit-Diaries-product-images-rvteevwxry-0-202403211820.jpg?im=Resize=(500,630)',
+    image: '/assets/Featured/6.jpeg',
     url: '/products/Diaries'
   },
   {
     name: 'Corporate Accessories',
-    image: 'https://www.zestpics.com/cdn/shop/files/BangkokWallet.jpg?v=1696305619&width=1080',
+    image: '/assets/Featured/7.jpeg',
     url: '/products/accessories'
   }
 ];
