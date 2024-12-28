@@ -42,6 +42,7 @@ export function App() {
 
             {/* Products routes - Order matters! */}
             <Route path="/products" element={<ProductsPageBase category="All" />} />
+            <Route path="/products/:id" element={<ProductPage />} />
             <Route path="/products/bags" element={<BagsPage />} />
             <Route path="/products/bags/:id" element={<ProductPage />} />
             <Route path="/products/caps" element={<CapsPage />} />
