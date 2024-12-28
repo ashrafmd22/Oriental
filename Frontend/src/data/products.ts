@@ -1,8 +1,9 @@
 import { Product } from '../types/product';
-export const products: Product[] = [
+import { v4 as uuidv4 } from 'uuid';
 
+export const products: Product[] = [
   {
-    "id": "1209fc1d-25c6-48cf-bc40-bcc872feeaa1",
+    "id": "ad1dc37d-6c37-4374-afc0-4dc60ebdece4",
     "name": "Executive Leather Laptop Bag",
     "category": "Bags",
     "price": "₹2,499",
@@ -22,7 +23,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "e05b5258-1f7a-4e5b-9664-aa2de0dab72a",
+    "id": "2f461a58-848e-426a-85fe-002e3d474def",
     "name": "Leather Duffel Bag",
     "category": "Bags",
     "price": "₹4,199",
@@ -42,7 +43,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "82bcd2ce-4da0-408d-be82-fa96b713ff9a",
+    "id": "270a5f31-97d5-426a-87c1-e1f708c3a93a",
     "name": "Luxury Black Tote Bag",
     "category": "Bags",
     "price": "₹3,599",
@@ -62,7 +63,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "273496c6-30d5-4304-bbeb-5c47b44fd878",
+    "id": "e5f7bf80-f16a-4abb-b78e-2383ccf823f1",
     "name": "Compact Sling Bag",
     "category": "Bags",
     "price": "₹899",
@@ -82,7 +83,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "46918465-598b-422a-bbf8-c91e3ef8e579",
+    "id": "bc63fa59-6119-4fee-b6c2-dfdef47c9253",
     "name": "Smart Backpack with USB Charging Port",
     "category": "Bags",
     "price": "₹3,199",
@@ -102,7 +103,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "d970f746-feb3-4a69-b0f3-c26145122b21",
+    "id": "0420b760-8ada-49f5-8288-bed07dd14a23",
     "name": "Canvas Laptop Backpack",
     "category": "Bags",
     "price": "₹1,799",
@@ -120,7 +121,7 @@ export const products: Product[] = [
       "/assets/Bags/23.jpg"]
   },
   {
-    "id": "c63d6f33-6a1a-4446-8db7-7a517a45fda9",
+    "id": "06483cee-470b-4b6d-9933-ce38979cbad3",
     "name": "Foldable Gym Bag",
     "category": "Bags",
     "price": "₹1,199",
@@ -140,7 +141,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "7477efb9-5336-4af8-b0b9-c22fd23dd751",
+    "id": "77cf95b0-dffd-4f2b-b3a7-4fd1b0bef3ae",
     "name": "Classic Canvas Tote",
     "category": "Bags",
     "price": "₹899",
@@ -160,7 +161,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "0d4e77b2-3c2c-4db2-8c2c-f4d5fb988566",
+    "id": "07d88414-5307-479e-9451-e62b7b2df77e",
     "name": "Chic Crossbody Bag",
     "category": "Bags",
     "price": "₹999",
@@ -180,7 +181,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "caf06003-0727-45e8-9012-b913b08d35b4",
+    "id": "fd608e50-71e9-48fa-9bc4-9c3c8d8f45ef",
     "name": "School Backpack",
     "category": "Bags",
     "price": "₹799",
@@ -199,7 +200,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "5c517ee9-0a0b-496a-9612-248cd6db7465",
+    "id": "9e2c0071-bee1-4095-85f8-3669e0f082b2",
     "name": "HP Backpack",
     "category": "Bags",
     "price": "₹799",
@@ -218,7 +219,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "7cd0c59b-1bba-4f81-9f42-566e71e68d57",
+    "id": "0ead6345-5ea5-42dc-a5c5-ea1c4882d6a1",
     "name": "American Tourister Backpack",
     "category": "Bags",
     "price": "₹799",
@@ -236,7 +237,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "85574378-d530-426b-a6ed-0c6a422bcd8b",
+    "id": "24303775-6ed5-4cd0-9448-b7608051f9fb",
     "name": "Elite School Backpack",
     "category": "Bags",
     "price": "₹950",
@@ -251,7 +252,7 @@ export const products: Product[] = [
     "images": ["/assets/Bags/39.jpg", "/assets/Bags/40.jpg"]
   },
   {
-    "id": "6889e842-5218-47a2-8c36-84a09915ad3c",
+    "id": "f3023878-650a-4cc9-afcf-763c526bd850",
     "name": "Durable Stylish Backpack",
     "category": "Bags",
     "price": "₹699",
@@ -266,7 +267,7 @@ export const products: Product[] = [
     "images": ["/assets/Bags/41.jpg", "/assets/Bags/42.jpg"]
   },
   {
-    "id": "1dd0ff3f-6d09-4867-9c53-9942389ce269",
+    "id": "3df9d7d9-a3e7-414b-ae46-4db31153f7c0",
     "name": "Business Laptop Backpack",
     "category": "Bags",
     "price": "₹1,499",
@@ -281,7 +282,7 @@ export const products: Product[] = [
     "images": ["/assets/Bags/43.jpg", "/assets/Bags/44.jpg"]
   },
   {
-    "id": "da6976df-7d25-4036-a316-517aecadbece",
+    "id": "612542fd-265c-4ac7-952c-bf7f42f19675",
     "name": "Safari Crew Overnighter Backpack",
     "category": "Bags",
     "price": "₹1,499",
@@ -299,7 +300,7 @@ export const products: Product[] = [
       "/assets/Bags/48.jpg"]
   },
   {
-    "id": "74c48402-e38e-47cf-a223-cb6155522f1e",
+    "id": "d8fe87f9-644e-4977-ab34-dfd52602d5aa",
     "name": "Ultimate Waterproof Backpack",
     "category": "Bags",
     "price": "₹1,199",
@@ -314,7 +315,7 @@ export const products: Product[] = [
     "images": ["/assets/Bags/49.jpg", "/assets/Bags/50.jpg"]
   },
   {
-    "id": "6248e7c6-0eb2-4d37-8146-e7cde952f02c",
+    "id": "6cde0736-75de-4ca7-8bea-ff188d1efec9",
     "name": "BIGBERRY Newage leatherite/faux Backpack",
     "category": "Bags",
     "price": "₹1,100",
@@ -329,7 +330,7 @@ export const products: Product[] = [
     "images": ["/assets/Bags/51.jpg", "/assets/Bags/52.jpg", "/assets/Bags/53.jpg", "/assets/Bags/54.jpg"]
   },
   {
-    "id": "3e9f3673-a206-41c1-8af0-39cacbdbe073",
+    "id": "68ce2f61-c8a7-45e9-b2c9-dd89d071f204",
     "name": "Slim Laptop Backpack",
     "category": "Bags",
     "price": "₹1,099",
@@ -344,7 +345,7 @@ export const products: Product[] = [
     "images": ["/assets/Bags/55.jpg", "/assets/Bags/56.jpg"]
   },
   {
-    "id": "587c3ca2-ac8e-4789-8fa6-1140abb72609",
+    "id": "d25c727e-1416-412e-9755-f7222e2cc681",
     "name": "Safari Hitech Backpack",
     "category": "Bags",
     "price": "₹699",
@@ -359,7 +360,7 @@ export const products: Product[] = [
     "images": ["/assets/Bags/57.jpg", "/assets/Bags/58.jpg"]
   },
   {
-    "id": "fa51eb3b-f0c9-4427-91a4-9ea1e2410e25",
+    "id": "ac75e788-8acd-4419-b453-db884f9907e1",
     "name": "Safari Seek Backpack",
     "category": "Bags",
     "price": "₹850",
@@ -374,7 +375,7 @@ export const products: Product[] = [
     "images": ["/assets/Bags/59.jpg", "/assets/Bags/60.jpg"]
   },
   {
-    "id": "9f172ddc-7c2f-41b7-87a4-391dbdc9994d",
+    "id": "323438d2-46ff-4aea-a17b-d4b153d71441",
     "name": "Multi-Compartment Waterproof Stylish Backpack",
     "category": "Bags",
     "price": "₹550",
@@ -390,7 +391,7 @@ export const products: Product[] = [
     "images": ["/assets/Bags/61.jpg", "/assets/Bags/62.jpg"]
   },
   {
-    "id": "7250fb72-32ce-4c4d-b4a4-cf62d82c9e3d",
+    "id": "bc46008f-aa21-4ab9-a028-6f63d57b0889",
     "name": "Professional Laptop Backpack",
     "category": "Bags",
     "price": "₹1,799",
@@ -405,7 +406,7 @@ export const products: Product[] = [
     "images": ["/assets/Bags/63.jpg", "/assets/Bags/64.jpg"]
   },
   {
-    "id": "c1616971-581f-48be-b68c-47dd84d38610",
+    "id": "f5f41f17-f4da-4579-8959-91e6ef8bff4d",
     "name": "Women's Designer Handbag",
     "category": "Bags",
     "price": "₹4,499",
@@ -422,7 +423,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "c7a0b196-14b0-4c2a-a4f7-d665389506d8",
+    "id": "2306e33f-1d20-4706-a831-162daf7bd10a",
     "name": "Baseball Cap",
     "category": "Caps",
     "price": "₹699",
@@ -440,7 +441,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "3d3a7779-3ba1-42a2-96ee-190a1c8e8278",
+    "id": "fb17c8d0-4b22-4827-835c-986077017175",
     "name": "Sporty Flex Cap",
     "category": "Caps",
     "price": "₹849",
@@ -458,7 +459,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "33181b00-d347-44c5-a214-8e59f2b00b68",
+    "id": "cbd94488-ef8d-4837-a6e3-e7793cedf4e3",
     "name": "Trucker Cap",
     "category": "Caps",
     "price": "₹749",
@@ -476,7 +477,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "845f459e-43e4-4de0-a77f-c5a02aade447",
+    "id": "6356c35f-4e16-4d18-82b0-2147d0a4c6ba",
     "name": "Adventurer Hiking Cap",
     "category": "Caps",
     "price": "₹949",
@@ -494,7 +495,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "474689ad-3015-4c61-a717-6ba4bece4891",
+    "id": "158ea24a-4c62-4de3-adc3-3b554d5067c2",
     "name": "Summer Breeze Cap",
     "category": "Caps",
     "price": "₹699",
@@ -512,7 +513,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "de52e443-a088-4539-875e-77dd43f86789",
+    "id": "61f8de8c-b3d3-45ad-b597-c7e283039a8f",
     "name": "Champion Pro Cap",
     "category": "Caps",
     "price": "₹1,199",
@@ -530,7 +531,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "47e38cfe-3d05-4048-aedc-a0a8648f615e",
+    "id": "8ed80b90-6ccc-4597-883d-6c8f67ae00f6",
     "name": "Retro Vintage Cap",
     "category": "Caps",
     "price": "₹749",
@@ -548,7 +549,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "2df363ce-8810-4306-92e8-3bdcc94c4584",
+    "id": "f8d10ac6-d32d-4ac7-bf81-13f91884d88c",
     "name": "Classic Camo Cap",
     "category": "Caps",
     "price": "₹899",
@@ -566,7 +567,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "ac33e3ae-e701-46d5-9fc3-ac6c74553d92",
+    "id": "02200f1f-8abb-46a7-b6c7-4a6ffc30078b",
     "name": "Rockstar Snapback Cap",
     "category": "Caps",
     "price": "₹799",
@@ -584,7 +585,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "c155c7a8-b705-443b-ae96-6a5ea322fc66",
+    "id": "e125ab43-0e15-46a3-b01f-b27c0a12950f",
     "name": "Classic Zip-Up Jacket",
     "category": "Jackets",
     "price": "₹799",
@@ -601,7 +602,7 @@ export const products: Product[] = [
       "/assets/Jackets/1.jpg", "/assets/Jackets/2.jpg", "/assets/Jackets/3.jpg"]
   },
   {
-    "id": "d3eda742-a58c-49a2-b201-64b548aba4d5",
+    "id": "c99dd6ad-014c-418d-b95f-2de4b2fda508",
     "name": "Casual Bomber Jacket",
     "category": "Jackets",
     "price": "₹999",
@@ -620,7 +621,7 @@ export const products: Product[] = [
 
   },
   {
-    "id": "e9513728-0eb2-4c21-a243-f2938348790b",
+    "id": "39dc881a-c3fa-45a6-abc7-f0e1f1bd2582",
     "name": "Lightweight Windbreaker Jacket",
     "category": "Jackets",
     "price": "₹699",
@@ -638,7 +639,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "f38fe6b3-e7bf-457d-bddb-ad7f6b5f1bfd",
+    "id": "c1b6c08d-20cf-4c09-8bc4-86e6c3589b65",
     "name": "Everyday Zip Jacket",
     "category": "Jackets",
     "price": "₹799",
@@ -656,7 +657,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "8c4f3b4d-3107-429d-8992-a64ac330cd27",
+    "id": "56d7786d-6ed6-422e-b168-4f0a7279fd39",
     "name": "Comfort Fit Fleece Jacket",
     "category": "Jackets",
     "price": "₹899",
@@ -675,7 +676,7 @@ export const products: Product[] = [
   },
 
   {
-    "id": "2ae80ae1-ad83-46b9-b2b8-92804c180aff",
+    "id": "ac5b3621-6e98-477a-b033-11004a95b459",
     "name": "Simple Casual Jacket",
     "category": "Jackets",
     "price": "₹799",
@@ -693,7 +694,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "d8a555e4-f4f6-4649-8c84-30b0ee0d3128",
+    "id": "92d03194-2542-442a-824f-4710018f27ae",
     "name": "Minimalist Hoodie Jacket",
     "category": "Jackets",
     "price": "₹999",
@@ -711,7 +712,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "f3a4e299-c0b1-444d-9aa7-fce3ea867777",
+    "id": "82686c17-c01c-4149-8b6d-fe12f36e5f55",
     "name": "Bamboo Mug",
     "category": "Drinkware",
     "price": "₹699",
@@ -729,7 +730,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "525ea7a2-284f-42e9-86c5-8d826140984e",
+    "id": "3a48974b-6d8a-4d19-83f7-ea770067edf0",
     "name": "Hot & Cold Flask (THANDA GARAM)",
     "category": "Drinkware",
     "price": "₹899",
@@ -747,7 +748,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "2fc7a66f-64a4-4149-9f44-bac655a40b19",
+    "id": "8575fcd9-579f-4101-8d2e-6aeda933014f",
     "name": "Hot & Cold Sports Bottle – CLOUD",
     "category": "Drinkware",
     "price": "₹799",
@@ -765,7 +766,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "1b4492d8-619c-4f48-a45e-565482aad541",
+    "id": "2fd123b0-d092-475e-9375-0a5c80846416",
     "name": "Hot & Cold Sports Bottle – ULTRA COLOR",
     "category": "Drinkware",
     "price": "₹899",
@@ -783,7 +784,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "03114c5c-0ee2-437f-860f-4ba22bd0b940",
+    "id": "c8f608fb-e82b-452d-9c5a-03fda6e25697",
     "name": "Stainless Steel – TRENDY",
     "category": "Drinkware",
     "price": "₹749",
@@ -801,7 +802,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "9659d169-d6f6-4f3f-bbb2-fc4e0bba0cc2",
+    "id": "79e2e8f4-2eb3-4ba2-a9b1-9c9b9b71370d",
     "name": "Stainless Steel Hot & Cold Bottle – COLA 750",
     "category": "Drinkware",
     "price": "₹999",
@@ -819,7 +820,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "b873b9f2-fbc7-4505-a334-3780f9cfe531",
+    "id": "83af7882-633d-479c-a0b2-2f030842d73c",
     "name": "Stainless Steel Hot & Cold Bottle – GOTHIC",
     "category": "Drinkware",
     "price": "₹1,099",
@@ -837,7 +838,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "dcbedcb1-9ee9-4e3e-8614-f2d4cdefd705",
+    "id": "4b8bd1df-628d-40a7-9d33-7fa5f3e718f2",
     "name": "Stainless Steel Sports Bottle – Magnum",
     "category": "Drinkware",
     "price": "₹849",
@@ -855,7 +856,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "2d990c74-0284-4330-913c-4812679236de",
+    "id": "61ae8ab5-d701-400d-9d38-981bccc82b40",
     "name": "Stainless Steel Sports Bottle – Omega",
     "category": "Drinkware",
     "price": "₹899",
@@ -873,7 +874,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "64bb27aa-9d1d-49e1-99fe-7b78400f6a7c",
+    "id": "2d467078-0fd9-47ed-9321-c5a1be3a92ee",
     "name": "Stainless Steel Travel Mug – TOBY",
     "category": "Drinkware",
     "price": "₹799",
@@ -891,7 +892,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "0587748c-1328-4636-aa51-3c87bee893f9",
+    "id": "928e21e6-6683-40ff-afdd-f882e4f963ed",
     "name": "Caran d’Ache Black Calfskin Leather A5",
     "category": "Diaries",
     "price": "₹1,599",
@@ -909,7 +910,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "f72cb054-6582-4823-a5a3-e6ce8b3f9a5f",
+    "id": "1b82fc24-780e-4b1e-a074-8c145a8260cc",
     "name": "Caran d’Ache Cashmere Leather A5",
     "category": "Diaries",
     "price": "₹1,799",
@@ -928,7 +929,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "63904ad6-86f6-41ca-bcd7-f86a068b5fc4",
+    "id": "019f057f-73ff-48a8-a2a3-3f7ff5075072",
     "name": "Caran d’Ache Grey Leather A5",
     "category": "Diaries",
     "price": "₹1,699",
@@ -947,7 +948,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "a53e268a-9730-4309-b77e-b71c7c33e38f",
+    "id": "df6332ed-aa58-4682-8d3b-b4e0a503d3be",
     "name": "Caran d’Ache Red Leather A5",
     "category": "Diaries",
     "price": "₹1,899",
@@ -966,7 +967,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "65794bb9-6d13-4e8d-a7c3-634aeed5162b",
+    "id": "85802c85-58f6-4045-827c-3835b54cc4ba",
     "name": "Caran d’Ache Turquoise Leather A5",
     "category": "Diaries",
     "price": "₹1,749",
@@ -985,7 +986,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "78ae59da-0883-4208-b445-58b7e980136c",
+    "id": "2b7e465d-6fac-4096-a590-f92c179439a4",
     "name": "Caran d’Ache White Leather A5",
     "category": "Diaries",
     "price": "₹1,649",
@@ -1004,9 +1005,155 @@ export const products: Product[] = [
     ]
   },
 
+  {
+    "id": "ba7bd4a8-f85a-4bff-b469-ed68f8c2ca83",
+    "name": "Suede Diaries",
+    "category": "Diaries",
+    "price": "₹699",
+    "code": "DIA-007",
+    "description": "Crafted with vegan suede for a professional touch, this diary is ideal for executive gifting and daily productivity.",
+    "features": [
+      "192 ruled pages with 14 pages for monthly planner",
+      "Case-bound cover in velvet-touch vegan suede",
+      "Custom branding with engraving on cover or acrylic sheet",
+      "Portable A5 size (220mm x 150mm)",
+      "Ribbon bookmark with metal tag",
+      "Available in six colors: Blue, Beige, Turquoise, Grey, Olive & Green"
+    ],
+    "images": [
+      "/assets/Diaries/13.jpg", "/assets/Diaries/14.jpg", "/assets/Diaries/15.jpg"
+    ]
+  },
+  {
+    "id": "377e9dd2-dbaa-4786-8b3c-2d0821864421",
+    "name": "Softbound Diaries",
+    "category": "Diaries",
+    "price": "₹599",
+    "code": "DIA-008",
+    "description": "A classic everyday diary, perfect for quick note-taking, corporate meetings, and executive gifting.",
+    "features": [
+      "192 ruled pages with 14 pages for monthly planner",
+      "Flexible A5 size (220mm x 150mm)",
+      "Custom branding with engraving on cover or IP sheet",
+      "Available in three colors: Coffee, Tan, and Black"
+    ],
+    "images": [
+      "/assets/Diaries/16.jpg", "/assets/Diaries/17.jpg", "/assets/Diaries/18.jpg"
+    ]
+  },
+  {
+    "id": "a5d26c76-bffe-447c-a4b5-c341085e83da",
+    "name": "Matt Diaries",
+    "category": "Diaries",
+    "price": "₹799",
+    "code": "DIA-008",
+    "description": "Premium PU-covered diaries with a velvet touch, perfect for corporate gifting and daily productivity.",
+    "features": [
+      "Durable case-bound design with 192 ruled pages",
+      "Portable A5 size (220mm x 150mm)",
+      "Custom branding via UV printing",
+      "Elegant ribbon bookmark with metal tag",
+      "Available in blue, black, and stone-washed black"
+    ],
+    "images": [
+      "/assets/Diaries/19.jpg", "/assets/Diaries/20.jpg", "/assets/Diaries/21.jpg"
+
+    ]
+  },
+  {
+    "id": "c7770fd0-f386-493e-a17e-c82aa6989b04",
+    "name": "Office Orbit - Tan",
+    "category": "Diaries",
+    "price": "₹1,299",
+    "code": "DIA-009",
+    "description": "A premium diary set featuring a PU-bound tan diary, leatherette keychain, and metallic pen, perfect for executive gifting.",
+    "features": [
+      "200 pre-printed pages with customizable cover",
+      "Includes a leatherette keychain and metallic pen",
+      "Custom branding with UV printing or engraving",
+      "Packaged in a sleek gift box"
+    ],
+    "images": [
+      "/assets/Diaries/22.jpg", "/assets/Diaries/23.jpg"
+
+    ]
+  },
+  {
+    "id": "266a76a0-75e4-43c7-b613-8e57724569c7",
+    "name": "Retrova Set - Black",
+    "category": "Diaries",
+    "price": "₹1,499",
+    "code": "DIA-010",
+    "description": "Stylish and functional black PU leather diary with a metallic pen, ideal for corporate events and gifting.",
+    "features": [
+      "A5 size diary with soft-touch cover and magnetic closure",
+      "200 premium pages with custom branding options",
+      "Includes a lightweight metallic pen",
+      "Packaged in a sturdy black gift box"
+    ],
+    "images": [
+      "/assets/Diaries/24.jpg"
+
+    ]
+  },
+  {
+    "id": "5647dcc1-0fe0-4795-9634-26ba7d95e887",
+    "name": "Retrova Set - Tan",
+    "category": "Diaries",
+    "price": "₹1,499",
+    "code": "DIA-011",
+    "description": "Elegant tan PU leather diary with a metallic pen, perfect for client giveaways and festive gifts.",
+    "features": [
+      "Soft-touch tan cover with magnetic closure",
+      "200 premium pages with customizable branding",
+      "Includes a metallic pen with polished finish",
+      "Packaged in a premium gift box"
+    ],
+    "images": [
+      "/assets/Diaries/25.jpg", "/assets/Diaries/26.jpg", "/assets/Diaries/27.jpg"
+
+    ]
+  },
+  {
+    "id": "ffc9b15c-efd7-42e1-99d8-5a37888830cc",
+    "name": "Camel Tan Leatherette Diaries",
+    "category": "Diaries",
+    "price": "₹849",
+    "code": "DIA-012",
+    "description": "Portable camel tan leatherette diary with eco-friendly paper, perfect for corporate gifting and productivity.",
+    "features": [
+      "178 pre-printed pages with 14 pages for calendars and notes",
+      "Customizable engraving on the cover",
+      "Portable size: 216mm x 145mm",
+      "Eco-friendly paper for sustainable use"
+    ],
+    "images": [
+      "/assets/Diaries/28.jpg", "/assets/Diaries/29.jpg", "/assets/Diaries/30.jpg"
+
+    ]
+  },
+  {
+    "id": "8e1bb70d-02bd-4b64-a549-85113638d13a",
+    "name": "Retro Tan Diaries",
+    "category": "Diaries",
+    "price": "₹799",
+    "code": "DIA-013",
+    "description": "Retro tan diaries with a textured soft-touch finish and magnetic lock, perfect for professionals.",
+    "features": [
+      "Magnetic closure for secure use",
+      "192 ruled pages with 14 planner pages",
+      "Custom branding options",
+      "Portable A5 size (220mm x 150mm)"
+    ],
+    "images": [
+      "/assets/Diaries/31.jpg", "/assets/Diaries/32.jpg"
+
+    ]
+  },
+
 
   {
-    "id": "3914fcec-30a6-43b3-bd5a-1fbf52a08441",
+    "id": "ded9ff36-9d91-479c-9410-893882dabb6d",
     "name": "Essential Comfort T-Shirt",
     "category": "Tshirts",
     "price": "₹599",
@@ -1024,7 +1171,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "7b53bd9a-8077-44ca-85c3-d2176516fd23",
+    "id": "0440291b-8d7b-4ede-a6f3-7b0ede25900d",
     "name": "Premium Daily Wear Tee",
     "category": "Tshirts",
     "price": "₹799",
@@ -1042,7 +1189,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "6ed43e06-383a-4f1e-b5f0-4d6f09ab3a74",
+    "id": "68f3d2f8-fb3f-46e3-bc71-b4f585c33df3",
     "name": "Urban Street Wear Tee",
     "category": "Tshirts",
     "price": "₹899",
@@ -1060,7 +1207,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "fcdb30e4-3683-478a-a1ef-5ddb3f2ff6cb",
+    "id": "902c8ed9-9664-4079-8498-3750bce726a5",
     "name": "Classic Everyday Tee",
     "category": "Tshirts",
     "price": "₹649",
@@ -1078,7 +1225,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "169e0434-f090-420a-a8ce-caf802e1cdd2",
+    "id": "14001443-6e4d-4c8c-b762-4be151a308d0",
     "name": "Trendy Casual Tee",
     "category": "Tshirts",
     "price": "₹699",
@@ -1096,7 +1243,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "8af93d36-0d8a-4fdf-9115-24722b6b026a",
+    "id": "0450aab0-a5d3-42c0-91d5-aff59e018ff4",
     "name": "Sports Performance T-Shirt",
     "category": "Tshirts",
     "price": "₹899",
@@ -1114,7 +1261,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "bae240c9-b592-4dfd-b6cf-70e5c0f18339",
+    "id": "6b173455-c457-4d51-a02c-f3c6a935ba0a",
     "name": "Minimalist Casual T-Shirt",
     "category": "Tshirts",
     "price": "₹749",
@@ -1132,7 +1279,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "53a80f0a-3ac0-434c-8288-361b8b84096a",
+    "id": "a02e3b44-4bec-4da1-9b8b-8739bb84cf70",
     "name": "Premium Comfort Fit Tee",
     "category": "Tshirts",
     "price": "₹999",
@@ -1150,7 +1297,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "b094ffd7-55b6-49bb-a27f-b7deac154059",
+    "id": "86921903-f20e-495e-a500-806fa21627fc",
     "name": "Fashion Forward T-Shirt",
     "category": "Tshirts",
     "price": "₹799",
@@ -1168,7 +1315,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "c8b62f16-1573-42f3-a96b-811fad321cfc",
+    "id": "40775fe7-d1bd-4e35-8b8a-7728ddcf858e",
     "name": "Casual Weekend Tee",
     "category": "Tshirts",
     "price": "₹649",
@@ -1186,7 +1333,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "662f57bd-3a4b-41d6-abe9-8a856d99fe57",
+    "id": "431dd428-7080-4f37-944a-167cf82835b8",
     "name": "Classic Crew Neck T-Shirt",
     "category": "Tshirts",
     "price": "₹599",
@@ -1204,7 +1351,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "23cb99dd-3f68-4fc2-af8c-1ce8465c077e",
+    "id": "cac1cd12-9ccc-4241-bec3-4fa58e795328",
     "name": "Relaxed Fit T-Shirt",
     "category": "Tshirts",
     "price": "₹799",
@@ -1221,7 +1368,7 @@ export const products: Product[] = [
       "/assets/Tshirts/33.jpg", "/assets/Tshirts/34.jpg"]
   },
   {
-    "id": "699892f0-ebe4-47fd-a380-25a9515af0f9",
+    "id": "523e9087-9d72-47cb-bc50-155e987e488f",
     "name": "Comfy Loose Fit Tee",
     "category": "Tshirts",
     "price": "₹699",
@@ -1238,7 +1385,7 @@ export const products: Product[] = [
       "/assets/Tshirts/35.jpg", "/assets/Tshirts/36.jpg"]
   },
   {
-    "id": "523479c5-2b19-4db8-b107-937bb46fbd82",
+    "id": "cc656933-f04e-4e9f-b31f-715d86bce0ff",
     "name": "Signature Fit T-Shirt",
     "category": "Tshirts",
     "price": "₹899",
@@ -1256,7 +1403,7 @@ export const products: Product[] = [
   },
 
   {
-    "id": "4733a663-8d7a-4b1c-9cf0-4d8923dc8324",
+    "id": "62fcb365-c16f-4cf8-85c5-1f008f07ad7e",
     "name": "Enchanted Wood Desk Calendar",
     "category": "Accessories",
     "price": "₹1,499",
@@ -1274,7 +1421,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "6441898d-f146-40d3-b684-113d952b33f5",
+    "id": "62505149-2654-4bef-8390-16260fc96b5d",
     "name": "Anchorite Desktop Organiser",
     "category": "Accessories",
     "price": "₹1,999",
@@ -1293,7 +1440,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "271a9be3-270a-4ed6-a051-2c81824082fe",
+    "id": "029791fb-78e7-4e48-9a2c-983b5f3af311",
     "name": "Paragon Desktop Organiser",
     "category": "Accessories",
     "price": "₹2,499",
@@ -1312,7 +1459,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "6fcf9a8f-69e8-4277-b52f-b487033d11bf",
+    "id": "e85b34cb-1309-41af-b0bf-257eefe6298c",
     "name": "Log Desktop Organiser",
     "category": "Accessories",
     "price": "₹1,799",
@@ -1331,7 +1478,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "66f2e774-6ff7-439b-abb0-6062912fddea",
+    "id": "d3041561-05fc-4829-b3c8-54279910ad4b",
     "name": "Santose Desktop Organiser",
     "category": "Accessories",
     "price": "₹1,849",
@@ -1350,7 +1497,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "11b38dd9-2765-4572-91de-247ac4990f4a",
+    "id": "247310ee-f71a-45f4-9ac0-5ac2dc04cad8",
     "name": "Akasa Desktop Organiser",
     "category": "Accessories",
     "price": "₹2,099",
@@ -1369,7 +1516,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "cf36881b-007f-4d13-bb69-b0b6eabdf46b",
+    "id": "afd0e7f0-c556-4aea-9608-4a0f2494b981",
     "name": "Ako Desktop Organiser",
     "category": "Accessories",
     "price": "₹1,699",
