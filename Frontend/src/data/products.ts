@@ -42,26 +42,6 @@ export const products: Product[] = [
     ]
   },
   {
-    "id": "4a536777-c8f5-4ed6-ab42-52b2c7383e18",
-    "name": "Vintage Messenger Bag",
-    "category": "Bags",
-    "price": "₹2,299",
-    "code": "BAG-005",
-    "description": "Classic leather messenger bag with adjustable strap, ideal for work or travel.",
-    "features": [
-      "High-quality leather",
-      "Adjustable shoulder strap",
-      "Multiple interior and exterior pockets",
-      "Retro style design",
-      "Durable brass buckles"
-    ],
-    "images": [
-      "/assets/Bags/10.jpg",
-      "/assets/Bags/11.jpg",
-      "/assets/Bags/12.jpg"
-    ]
-  },
-  {
     "id": "82bcd2ce-4da0-408d-be82-fa96b713ff9a",
     "name": "Luxury Black Tote Bag",
     "category": "Bags",
