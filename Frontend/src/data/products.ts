@@ -1074,7 +1074,7 @@ export const products: Product[] = [
       "Packaged in a sleek gift box"
     ],
     "images": [
-      "/assets/Diaries/22.jpg", "/assets/Diaries/23.jpg"
+      "/assets/Diaries/22.jpg"
 
     ]
   },
@@ -1092,7 +1092,7 @@ export const products: Product[] = [
       "Packaged in a sturdy black gift box"
     ],
     "images": [
-      "/assets/Diaries/24.jpg"
+      "/assets/Diaries/23.jpg"
 
     ]
   },
@@ -1110,7 +1110,7 @@ export const products: Product[] = [
       "Packaged in a premium gift box"
     ],
     "images": [
-      "/assets/Diaries/25.jpg", "/assets/Diaries/26.jpg", "/assets/Diaries/27.jpg"
+      "/assets/Diaries/24.jpg"
 
     ]
   },

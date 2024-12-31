@@ -16,7 +16,7 @@ export function ContactInfo() {
           <span className="font-medium text-sm sm:text-base">+91 98999 87779</span>
         </a>
         <a
-          href="mailto:info@orientalenterprises.com"
+          href="mailto:orientalgifting@gmail.com"
           className="flex items-center justify-center text-gray-700 hover:text-blue-600 transition-colors group"
         >
           <FiMail className="mr-2 group-hover:animate-bounce text-sm sm:text-base" />

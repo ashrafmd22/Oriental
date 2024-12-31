@@ -32,7 +32,7 @@ export function ContactInfo() {
         </ContactItem>
 
         <ContactItem icon={<Phone className="w-5 h-5" />} title="Call Us">
-          <a href="tel:+919876543210" className="hover:text-blue-600 transition-colors">
+          <a href="tel:+919899987779" className="hover:text-blue-600 transition-colors">
             +91 98999 87779
           </a>
         </ContactItem>
@@ -45,8 +45,8 @@ export function ContactInfo() {
 
         <ContactItem icon={<Clock className="w-5 h-5" />} title="Business Hours">
           <p>
-            Monday - Friday: 9:00 AM - 6:00 PM<br />
-            Saturday: 10:00 AM - 4:00 PM
+            Monday - Friday: 9:00 AM - 7:00 PM<br />
+            Saturday: 10:00 AM - 6:00 PM
           </p>
         </ContactItem>
       </div>
