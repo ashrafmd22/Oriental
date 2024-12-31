@@ -407,7 +407,7 @@ export const products: Product[] = [
   },
   {
     "id": "f5f41f17-f4da-4579-8959-91e6ef8bff4d",
-    "name": "Women's Designer Handbag",
+    "name": "Women's Designer Bag",
     "category": "Bags",
     "price": "₹4,499",
     "code": "BAG-022",

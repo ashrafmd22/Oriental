@@ -10,11 +10,11 @@ export function AboutPage() {
   }, []);
 
   return (
-    <div className="pt-16 sm:pt-20">
+    <div className="pt-16 sm:pt-20  scroll-smooth" >
       <HeroSection />
       <LegacySection />
       <CoreValuesSection />
       <TestimonialsSection />
-    </div>
+    </div >
   );
 }

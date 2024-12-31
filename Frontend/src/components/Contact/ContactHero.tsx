@@ -1,6 +1,14 @@
 import React from 'react';
 
 export function ContactHero() {
+  const scrollToContactForm = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+      contactForm.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative h-[400px] bg-gradient-to-r from-blue-700 to-blue-900 text-white mt-17">
       {/* Overlay */}
@@ -17,6 +25,7 @@ export function ContactHero() {
           </p>
           <a
             href="#contact-form"
+            onClick={scrollToContactForm}
             className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium text-lg hover:bg-blue-700 transition-colors duration-300"
           >
             Contact Us Now

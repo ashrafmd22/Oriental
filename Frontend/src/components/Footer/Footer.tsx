@@ -10,6 +10,7 @@ export function Footer() {
       links: [
         { label: 'About Us', href: '/about' },
         { label: 'All Products', href: '/products' },
+        { label: 'Branded Collection', href: '/branded-collection' },
         { label: 'Contact Us', href: '/contact' },
       ],
     },
@@ -50,8 +51,8 @@ export function Footer() {
               Oriental Enterprises - Your trusted partner for premium corporate gifting solutions since 1990.
             </p>
             <address className="text-gray-400 not-italic">
-              123 Business District<br />
-              New Delhi, India 110001
+              8769/14-B, Shidipura Karol Bagh <br />
+              New Delhi, India 110005
             </address>
           </div>
 

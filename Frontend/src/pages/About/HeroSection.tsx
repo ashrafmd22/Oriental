@@ -1,6 +1,14 @@
 import React from 'react';
 
 export const HeroSection: React.FC = () => {
+  const scrollToLegacy = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const legacySection = document.getElementById('legacy');
+    if (legacySection) {
+      legacySection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative h-[300px] sm:h-[350px] md:h-[400px] bg-gradient-to-r from-blue-700 to-blue-900 text-white">
       <div className="absolute inset-0 bg-black opacity-40"></div>
@@ -14,6 +22,7 @@ export const HeroSection: React.FC = () => {
           </p>
           <a
             href="#legacy"
+            onClick={scrollToLegacy}
             className="inline-block bg-blue-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-sm sm:text-base md:text-lg font-medium hover:bg-blue-700 transition-colors duration-300"
           >
             Discover Our Journey

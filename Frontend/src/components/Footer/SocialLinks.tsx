@@ -5,7 +5,7 @@ export function SocialLinks() {
     { icon: Facebook, href: '#', label: 'Facebook' },
     { icon: Instagram, href: '#', label: 'Instagram' },
     { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Mail, href: '#', label: 'Email' },
+    { icon: Mail, href: 'mailto:orientalgifting@gmail.com', label: 'Email' },
   ];
 
   return (

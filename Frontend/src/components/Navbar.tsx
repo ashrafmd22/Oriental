@@ -18,6 +18,7 @@ export function Navbar() {
     { label: 'Home', path: '/' },
     { label: 'About Us', path: '/about' },
     { label: 'Products', path: '/products' },
+    { label: 'Branded Collection', path: '/branded-collection' },
     { label: 'Contact Us', path: '/contact' },
   ];
 

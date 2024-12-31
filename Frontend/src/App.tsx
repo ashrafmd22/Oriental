@@ -17,6 +17,8 @@ import { TshirtsPage } from './pages/TshirtsPage';
 import { JacketsPage } from './pages/JacketsPage';
 import { DrinkwarePage } from './pages/DrinkwarePage';
 import { DiariesPage } from './pages/DiariesPage';
+
+import { BrandedCollection } from './pages/Branded Collection/BrandedCollection';
 // import { Contact } from "./components/Contact";
 import { Contact } from "./components/Contact/Contact";
 import PrivacyPage from "./pages/PrivacyPage";
@@ -58,6 +60,9 @@ export function App() {
             <Route path="/products/tshirts/:id" element={<ProductPage />} />
             <Route path="/products/accessories" element={<AccessoriesPage />} />
             <Route path="/products/accessories/:id" element={<ProductPage />} />
+
+            {/* Branded Collection */}
+            <Route path="/branded-collection" element={<BrandedCollection />} />
 
             {/* Contact */}
             <Route path="/contact" element={<Contact />} />

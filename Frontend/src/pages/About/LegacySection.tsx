@@ -38,12 +38,12 @@ export const LegacySection: React.FC = () => {
           </div>
           <div className="grid grid-cols-1 gap-4 sm:gap-6 mt-8 md:mt-0">
             <img
-              src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80"
+              src="/assets/About/1.jpg"
               alt="Team"
               className="w-full rounded-xl shadow-xl transform transition duration-300 hover:scale-105"
             />
             <img
-              src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80"
+              src="/assets/About/2.jpg"
               alt="Office"
               className="w-full rounded-xl shadow-xl transform transition duration-300 hover:scale-105"
             />

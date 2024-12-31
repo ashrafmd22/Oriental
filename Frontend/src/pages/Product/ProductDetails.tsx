@@ -11,7 +11,7 @@ interface ProductDetailsProps {
 export function ProductDetails({ name, description, features, code }: ProductDetailsProps) {
   const handleWhatsAppClick = () => {
     const text = `Hello! I'm interested in the following product:%0A%0AName: ${name}%0ACode: ${code}%0A%0AIf you have more details, please share.`;
-    window.open(`https://wa.me/+918810418134?text=${text}`, '_blank');
+    window.open(`https://wa.me/+919899987779?text=${text}`, '_blank');
   };
 
   return (

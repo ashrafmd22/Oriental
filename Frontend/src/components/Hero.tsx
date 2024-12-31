@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 import { Gift, Package, Award, Trophy, Star, Briefcase } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative w-full min-h-screen overflow-hidden bg-gradient-to-br from-purple-900 via-indigo-900 to-fuchsia-900 pt-12">
+    <div className="relative bg-gradient-to-br from-purple-900 via-indigo-900 to-fuchsia-900 overflow-hidden">
       {/* Animated Background Pattern */}
       <div className="absolute inset-0 pattern-grid opacity-20" />
 
@@ -24,45 +24,69 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 min-h-screen flex items-center justify-center px-4">
-        <div className="max-w-3xl text-center">
-          <div className="mb-8 flex justify-center">
-            <div className="relative mt-4 sm:mt-0">
-              <div className="absolute inset-0 animate-ping-slow">
-                <Gift size={64} className="text-pink-400 opacity-50" />
-              </div>
-              <Gift size={64} className="text-white relative z-10" />
+      {/* Header */}
+      <header className="relative z-10">
+        <div className="px-4 mx-auto sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-14 lg:h-20">
+            <div className="hidden lg:flex lg:items-center lg:justify-center lg:space-x-10">
+              <a href="#" title="" className="text-base text-purple-100 transition-all duration-200 hover:text-white">Products</a>
+              <a href="#" title="" className="text-base text-purple-100 transition-all duration-200 hover:text-white">Solutions</a>
+              <a href="#" title="" className="text-base text-purple-100 transition-all duration-200 hover:text-white">About Us</a>
+              <a href="#" title="" className="text-base text-purple-100 transition-all duration-200 hover:text-white">Contact</a>
             </div>
-          </div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 tracking-tight">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-200 via-purple-200 to-indigo-200">
-              Premium Corporate
-            </span>
-            <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-200 via-pink-200 to-purple-200">
-              Gift Solutions
-            </span>
-          </h1>
-          <p className="text-lg sm:text-xl text-purple-100 mb-8 max-w-2xl mx-auto font-light">
-            Elevate your brand with our exceptional collection of corporate gifts,
-            crafted to leave lasting impressions since 1990
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a
-              href="/products"
-              className="px-8 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-lg font-semibold hover:from-pink-600 hover:to-purple-600 transition-all duration-200 w-full sm:w-auto"
-            >
-              Explore Products
-            </a>
-            <a
-              href="/contact"
-              className="px-8 py-3 border-2 border-purple-300 text-purple-100 rounded-lg font-semibold hover:bg-purple-900/30 transition-colors duration-200 w-full sm:w-auto"
-            >
-              Contact Us
+
+            <a href="#" title="" className="hidden lg:inline-flex items-center justify-center px-5 py-2.5 text-base transition-all duration-200 bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white rounded-full" role="button">
+              Get Started
             </a>
           </div>
         </div>
-      </div>
+      </header>
+
+      {/* Hero Section - Added more top padding */}
+      <section className="relative z-10 py-6 sm:py-16 lg:py-24 mt-8 sm:mt-12 lg:mt-16">
+        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div className="grid items-center grid-cols-1 gap-6 lg:gap-12 lg:grid-cols-2">
+            <div>
+              <div className="flex items-center gap-2">
+                <Gift className="w-6 h-6 sm:w-8 sm:h-8 text-pink-300" />
+                <p className="text-base sm:text-lg lg:text-2xl font-semibold tracking-wider text-pink-300 uppercase">Premium Corporate</p>
+              </div>
+              <h1 className="mt-3 sm:mt-4 text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-200 via-purple-200 to-indigo-200">
+                  Gift Solutions
+                </span>
+              </h1>
+              <p className="mt-3 sm:mt-4 text-sm sm:text-base lg:text-xl text-purple-100">
+                Elevate your brand with our exceptional collection of corporate gifts, crafted to leave lasting impressions since 1990.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8 lg:mt-12">
+                <a
+                  href="/products"
+                  className="inline-flex items-center justify-center px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base font-semibold text-white transition-all duration-200 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full hover:from-pink-600 hover:to-purple-600"
+                  role="button"
+                >
+                  Explore Products
+                </a>
+                <a
+                  href="/contact"
+                  className="inline-flex items-center justify-center px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base font-semibold text-purple-100 transition-all duration-200 border-2 border-purple-400 rounded-full hover:bg-purple-900/30"
+                  role="button"
+                >
+                  Contact Us
+                </a>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="absolute inset-0 animate-pulse-slow">
+                <div className="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 rounded-lg opacity-20 blur-xl"></div>
+              </div>
+              <img className="relative w-full rounded-lg" src="https://swagilo.com/wp-content/uploads/2023/08/Brand-Banner.png" alt="Corporate Gifts" />
+            </div>
+          </div>
+        </div>
+      </section>
 
       <style>{`
         .pattern-grid {
@@ -118,15 +142,17 @@ export function Hero() {
           animation-delay: 4s;
         }
 
-        .animate-ping-slow {
-          animation: ping 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+        @keyframes pulse-slow {
+          0%, 100% {
+            opacity: 0.5;
+          }
+          50% {
+            opacity: 0.8;
+          }
         }
 
-        @keyframes ping {
-          75%, 100% {
-            transform: scale(1.2);
-            opacity: 0;
-          }
+        .animate-pulse-slow {
+          animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
         }
 
         @media (max-width: 640px) {
@@ -135,6 +161,6 @@ export function Hero() {
           }
         }
       `}</style>
-    </section>
+    </div>
   );
 }

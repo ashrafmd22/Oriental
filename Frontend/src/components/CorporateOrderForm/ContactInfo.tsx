@@ -9,18 +9,18 @@ export function ContactInfo() {
       </h3>
       <div className="space-y-2 sm:space-y-3">
         <a
-          href="tel:+919876543210"
+          href="tel:+919899987779"
           className="flex items-center justify-center text-gray-700 hover:text-blue-600 transition-colors group"
         >
           <FiPhone className="mr-2 group-hover:animate-bounce text-sm sm:text-base" />
-          <span className="font-medium text-sm sm:text-base">+91 98765 43210</span>
+          <span className="font-medium text-sm sm:text-base">+91 98999 87779</span>
         </a>
         <a
           href="mailto:info@orientalenterprises.com"
           className="flex items-center justify-center text-gray-700 hover:text-blue-600 transition-colors group"
         >
           <FiMail className="mr-2 group-hover:animate-bounce text-sm sm:text-base" />
-          <span className="font-medium text-sm sm:text-base">info@orientalenterprises.com</span>
+          <span className="font-medium text-sm sm:text-base">orientalgifting@gmail.com</span>
         </a>
       </div>
     </div>

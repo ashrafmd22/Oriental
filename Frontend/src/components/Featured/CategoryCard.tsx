@@ -6,16 +6,18 @@ interface CategoryCardProps {
   name: string;
   image: string;
   url: string;
+  bgColor: string;
 }
 
-export function CategoryCard({ name, image, url }: CategoryCardProps) {
+export function CategoryCard({ name, image, url, bgColor }: CategoryCardProps) {
   return (
     <div className="bg-white rounded-2xl shadow-lg overflow-hidden h-full flex flex-col">
       <div className="relative aspect-[4/3] overflow-hidden">
         <img
           src={image}
           alt={name}
-          className="w-full h-full object-contain bg-gray-50 p-4"
+          className="w-full h-full object-contain p-4 transition-transform duration-300 hover:scale-105"
+          style={{ backgroundColor: bgColor }}
           loading="lazy"
         />
       </div>

@@ -26,20 +26,20 @@ export function ContactInfo() {
       <div className="space-y-4 sm:space-y-5">
         <ContactItem icon={<MapPin className="w-5 h-5" />} title="Visit Us">
           <p>
-            123 Business District<br />
-            New Delhi, India 110001
+            8769/14-B, Shidipura Karol Bagh <br />
+            New Delhi, India 110005
           </p>
         </ContactItem>
 
         <ContactItem icon={<Phone className="w-5 h-5" />} title="Call Us">
           <a href="tel:+919876543210" className="hover:text-blue-600 transition-colors">
-            +91 98765 43210
+            +91 98999 87779
           </a>
         </ContactItem>
 
         <ContactItem icon={<Mail className="w-5 h-5" />} title="Email Us">
-          <a href="mailto:info@orientalenterprises.com" className="hover:text-blue-600 transition-colors">
-            info@orientalenterprises.com
+          <a href="mailto:orientalgifting@gmail.com" className="hover:text-blue-600 transition-colors">
+            orientalgifting@gmail.com
           </a>
         </ContactItem>
 
