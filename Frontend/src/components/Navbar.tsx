@@ -66,7 +66,7 @@ export function Navbar() {
               </Link>
             ))}
             <a
-              href="/catalogue"
+              href="https://drive.google.com/file/d/1wecIqYRkne8okA_vznkpJrop26xtFksp/view?usp=drive_link"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-2.5 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold hover:from-purple-600 hover:to-indigo-600 transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg text-sm"
@@ -101,7 +101,7 @@ export function Navbar() {
               </Link>
             ))}
             <a
-              href="/catalogue"
+              href="https://drive.google.com/file/d/1wecIqYRkne8okA_vznkpJrop26xtFksp/view?usp=drive_link"
               target="_blank"
               rel="noopener noreferrer"
               className="block px-4 py-2 text-center rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold hover:from-purple-600 hover:to-indigo-600 transition-all duration-300 shadow-md"

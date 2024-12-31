@@ -10,8 +10,11 @@ interface ProductDetailsProps {
 
 export function ProductDetails({ name, description, features, code }: ProductDetailsProps) {
   const handleWhatsAppClick = () => {
-    const text = `Hello! I'm interested in the following product:%0A%0AName: ${name}%0ACode: ${code}%0A%0AIf you have more details, please share.`;
-    window.open(`https://wa.me/+919899987779?text=${text}`, '_blank');
+    // Properly encode the text for WhatsApp URL
+    const encodedText = encodeURIComponent(
+      `Hello! I'm interested in the following product:\n\nName: ${name}\nCode: ${code}\n\nIf you have more details, please share.`
+    );
+    window.open(`https://wa.me/+919899987779?text=${encodedText}`, '_blank');
   };
 
   return (
