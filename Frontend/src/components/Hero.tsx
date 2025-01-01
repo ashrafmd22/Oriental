@@ -82,7 +82,7 @@ export function Hero() {
               <div className="absolute inset-0 animate-pulse-slow">
                 <div className="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 rounded-lg opacity-20 blur-xl"></div>
               </div>
-              <img className="relative w-full rounded-lg" src="https://swagilo.com/wp-content/uploads/2023/08/Brand-Banner.png" alt="Corporate Gifts" />
+              <img className="relative w-full rounded-lg" src="/assets/Home Hero/1.png" alt="Corporate Gifts" />
             </div>
           </div>
         </div>
