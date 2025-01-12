@@ -23,7 +23,7 @@ export function ClientLogos() {
         {/* Trust Indicators */}
         <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 gap-4 text-center max-w-3xl mx-auto">
           <div className="p-4">
-            <div className="text-2xl sm:text-3xl font-bold text-blue-800">500+</div>
+            <div className="text-2xl sm:text-3xl font-bold text-blue-800">1000+</div>
             <div className="text-sm sm:text-base text-gray-600">Happy Clients</div>
           </div>
           <div className="p-4">
@@ -31,7 +31,7 @@ export function ClientLogos() {
             <div className="text-sm sm:text-base text-gray-600">Satisfaction Rate</div>
           </div>
           <div className="p-4 col-span-2 sm:col-span-1">
-            <div className="text-2xl sm:text-3xl font-bold text-blue-800">10+ Years</div>
+            <div className="text-2xl sm:text-3xl font-bold text-blue-800">30+ Years</div>
             <div className="text-sm sm:text-base text-gray-600">Industry Experience</div>
           </div>
         </div>
