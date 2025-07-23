@@ -78,7 +78,7 @@ export default function TermsPage() {
           <div className="bg-gray-50 rounded-xl p-6">
             <h3 className="font-semibold mb-3">Jurisdiction:</h3>
             <p className="text-gray-700">
-              These terms and conditions are governed by the laws of [Your Country/Region]. Any disputes arising from these terms will be resolved in the competent courts of [Your City/Region].
+              These terms and conditions shall be governed by and construed in accordance with applicable law. Any disputes arising hereunder shall be subject to the exclusive jurisdiction of the competent courts.
             </p>
           </div>
         </section>
