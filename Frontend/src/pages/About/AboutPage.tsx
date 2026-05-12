@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { HeroSection } from './HeroSection';
 import { LegacySection } from './LegacySection';
 import { CoreValuesSection } from './CoreValuesSection';
-import { TestimonialsSection } from './TestimonialsSection';
+import { BusinessSupportSection } from './BusinessSupportSection';
 
 export function AboutPage() {
   useEffect(() => {
@@ -10,11 +10,11 @@ export function AboutPage() {
   }, []);
 
   return (
-    <div className="pt-16 sm:pt-20  scroll-smooth" >
+    <div className="pt-20 sm:pt-24 scroll-smooth">
       <HeroSection />
       <LegacySection />
       <CoreValuesSection />
-      <TestimonialsSection />
-    </div >
+      <BusinessSupportSection />
+    </div>
   );
 }

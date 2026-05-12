@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { Gift, Menu, X } from 'lucide-react';
+import { Link, NavLink } from 'react-router-dom';
+import { Gift, Menu, X, PhoneCall, Package } from 'lucide-react';
+import { trackEvent } from '../utils/analytics';
+import { getGiftBoxIds } from '../utils/giftBox';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [giftBoxCount, setGiftBoxCount] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,21 +17,29 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const syncGiftBoxCount = () => setGiftBoxCount(getGiftBoxIds().length);
+    syncGiftBoxCount();
+    window.addEventListener('giftbox-updated', syncGiftBoxCount);
+    return () => window.removeEventListener('giftbox-updated', syncGiftBoxCount);
+  }, []);
+
   const navLinks = [
     { label: 'Home', path: '/' },
-    { label: 'About Us', path: '/about' },
-    { label: 'All Products', path: '/products' },
-    { label: 'Branded Collection', path: '/branded-collection' },
-    { label: 'Contact Us', path: '/contact' },
+    { label: 'About', path: '/about' },
+    { label: 'Products', path: '/products' },
+    { label: 'Brands', path: '/branded-collection' },
+    { label: 'Contact', path: '/contact' },
   ];
+  const mobileNavLinks = [...navLinks, { label: 'Gift Box', path: '/gift-box' }];
+
+  const getLinkClasses = ({ isActive }: { isActive: boolean }) =>
+    `relative group text-[15px] xl:text-[16px] 2xl:text-[19px] font-semibold transition-colors duration-300 ${isActive ? 'text-indigo-600' : 'text-gray-600 hover:text-indigo-600'}`;
 
   return (
-    <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'shadow-lg' : ''
-        } bg-white`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+    <nav className={`fixed w-full z-50 border-b border-indigo-100/80 transition-all duration-300 ${scrolled ? 'shadow-md bg-white/95 backdrop-blur-md' : 'bg-white'}`}>
+      <div className="mx-auto w-full max-w-[1500px] 2xl:max-w-[2200px] px-4 sm:px-6 lg:px-8 2xl:px-16">
+        <div className="flex justify-between items-center h-16 sm:h-[72px] xl:h-[82px] 2xl:h-[96px]">
           {/* Logo Section */}
           <Link
             to="/"
@@ -38,47 +49,80 @@ export function Navbar() {
             <div className="relative flex items-center justify-center">
               <Gift
                 strokeWidth={2}
-                className="h-8 w-8 sm:h-10 sm:w-10 text-indigo-600 transition-transform hover:scale-110 duration-300"
+                className="h-8 w-8 sm:h-10 sm:w-10 xl:h-11 xl:w-11 2xl:h-14 2xl:w-14 text-indigo-600 transition-transform hover:scale-110 duration-300"
               />
             </div>
-            <div className="ml-3">
-              <h1 className="text-lg sm:text-xl md:text-2xl font-black tracking-tight">
+            <div className="ml-2 sm:ml-3">
+              <h1 className="text-base sm:text-lg lg:text-xl xl:text-2xl 2xl:text-[36px] font-black tracking-tight leading-tight">
                 <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">
                   Oriental Enterprises
                 </span>
               </h1>
-              <p className="text-xs sm:text-sm text-gray-600 font-medium tracking-wide">
+              <p className="block text-[9px] sm:text-[10px] lg:text-[11px] xl:text-[12px] 2xl:text-[16px] font-semibold text-slate-600 tracking-[0.01em] leading-tight mt-0.5 max-w-[170px] sm:max-w-none xl:whitespace-nowrap">
                 Thoughtful Gifts, Exceptional Quality
               </p>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden xl:flex items-center space-x-7 2xl:space-x-12">
             {navLinks.map(({ label, path }) => (
-              <Link
+              <NavLink
                 key={label}
                 to={path}
-                className="relative group text-gray-700 hover:text-indigo-600 font-medium transition-colors duration-300"
+                className={getLinkClasses}
+                end={path === '/'}
               >
-                <span>{label}</span>
-                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-indigo-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-              </Link>
+                {({ isActive }) => (
+                  <>
+                    <span>{label}</span>
+                    <span
+                      className={`absolute -bottom-1 left-0 h-0.5 bg-indigo-600 transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`}
+                    />
+                  </>
+                )}
+              </NavLink>
             ))}
-            <a
-              href="https://drive.google.com/file/d/1om2PXA6SUJCAnlGQ6vZg5TC-spYEGFkI/view?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-2.5 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold hover:from-purple-600 hover:to-indigo-600 transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg text-sm"
-            >
-              View Catalogue
-            </a>
+            <div className="flex items-center gap-3">
+              <NavLink
+                to="/gift-box"
+                className="relative inline-flex items-center justify-center rounded-full border border-indigo-200 p-2.5 2xl:p-3.5 text-indigo-700 hover:bg-indigo-50 transition"
+                aria-label="View Gift Box"
+              >
+                <Package className="h-4 w-4 2xl:h-6 2xl:w-6" />
+                {giftBoxCount > 0 && (
+                  <span className="absolute -top-1 -right-1 rounded-full bg-indigo-600 px-1.5 py-0.5 text-[10px] font-bold text-white">
+                    {giftBoxCount}
+                  </span>
+                )}
+              </NavLink>
+              <a
+                href="tel:+919899987779"
+                onClick={() => trackEvent('nav_call_click', { location: 'desktop' })}
+                className="inline-flex items-center gap-1.5 rounded-full border border-indigo-200 px-4 py-2 2xl:px-7 2xl:py-3 text-[15px] 2xl:text-[19px] font-semibold text-indigo-700 transition hover:bg-indigo-50"
+              >
+                <PhoneCall className="h-4 w-4 2xl:h-[21px] 2xl:w-[21px]" />
+                Call Now
+              </a>
+              <a
+                href="https://drive.google.com/file/d/1om2PXA6SUJCAnlGQ6vZg5TC-spYEGFkI/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackEvent('nav_catalog_click', { location: 'desktop' })}
+                className="px-5 py-2 2xl:px-8 2xl:py-3 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold hover:from-purple-600 hover:to-indigo-600 transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg text-[15px] 2xl:text-[19px]"
+              >
+                View Catalogue
+              </a>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors duration-200 focus:outline-none"
+            className="xl:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors duration-200 focus:outline-none"
+            aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={isOpen}
+            aria-controls="mobile-navigation"
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -86,24 +130,43 @@ export function Navbar() {
 
         {/* Mobile Navigation */}
         <div
-          className={`lg:hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100 visible' : 'max-h-0 opacity-0 invisible'
+          id="mobile-navigation"
+          className={`xl:hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[32rem] opacity-100 visible' : 'max-h-0 opacity-0 invisible'
             }`}
         >
           <div className="py-4 space-y-4 px-2">
-            {navLinks.map(({ label, path }) => (
-              <Link
+            {mobileNavLinks.map(({ label, path }) => (
+              <NavLink
                 key={label}
                 to={path}
                 onClick={() => setIsOpen(false)}
-                className="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 rounded-lg transition-colors duration-200"
+                end={path === '/'}
+                className={({ isActive }) =>
+                  `block px-4 py-2 rounded-lg transition-colors duration-200 ${isActive ? 'bg-indigo-50 text-indigo-700 font-semibold' : 'text-gray-700 hover:bg-indigo-50 hover:text-indigo-600'}`
+                }
               >
-                {label}
-              </Link>
+                <span className="inline-flex items-center gap-2">
+                  {label}
+                  {path === '/gift-box' && giftBoxCount > 0 && (
+                    <span className="rounded-full bg-indigo-100 px-1.5 py-0.5 text-[10px] font-bold text-indigo-700">
+                      {giftBoxCount}
+                    </span>
+                  )}
+                </span>
+              </NavLink>
             ))}
+            <a
+              href="tel:+919899987779"
+              onClick={() => trackEvent('nav_call_click', { location: 'mobile_menu' })}
+              className="block px-4 py-2 text-center rounded-lg border border-indigo-200 text-indigo-700 font-semibold hover:bg-indigo-50 transition-all duration-300"
+            >
+              Call Now
+            </a>
             <a
               href="https://drive.google.com/file/d/1om2PXA6SUJCAnlGQ6vZg5TC-spYEGFkI/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackEvent('nav_catalog_click', { location: 'mobile_menu' })}
               className="block px-4 py-2 text-center rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold hover:from-purple-600 hover:to-indigo-600 transition-all duration-300 shadow-md"
             >
               View Catalogue

@@ -4,6 +4,7 @@ import { ContactForm } from './ContactForm';
 import { ContactInfo } from './ContactInfo';
 import { Notification } from './Notification';
 import { validateForm } from './FormValidation';
+import { trackEvent } from '../../utils/analytics';
 
 type NotificationType = 'success' | 'error';
 
@@ -66,6 +67,7 @@ export function Contact() {
     const hasErrors = Object.values(validationErrors).some(error => error !== '');
 
     if (hasErrors) {
+      trackEvent('contact_form_validation_error');
       setErrors(validationErrors);
       setNotification({
         show: true,
@@ -78,6 +80,7 @@ export function Contact() {
     setIsLoading(true);
 
     try {
+      trackEvent('contact_form_submit_attempt');
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
@@ -99,6 +102,7 @@ export function Contact() {
       const result = await response.json();
 
       if (result.success) {
+        trackEvent('contact_form_submit_success');
         setFormData({ fullName: '', email: '', phone: '', message: '' });
         setPhoneBorderColor('');
         setEmailBorderColor('');
@@ -111,6 +115,7 @@ export function Contact() {
         throw new Error('Failed to send message');
       }
     } catch (error) {
+      trackEvent('contact_form_submit_failed');
       setNotification({
         show: true,
         type: 'error',
@@ -131,7 +136,7 @@ export function Contact() {
   }, [notification.show]);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 pt-20 sm:pt-24">
       <ContactHero />
 
       <section className="py-8 sm:py-12 lg:py-16">

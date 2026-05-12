@@ -1,7 +1,18 @@
 import React from 'react';
-import { Gift, Package, Award, Trophy, Star, Briefcase } from "lucide-react";
+import { Link } from 'react-router-dom';
+import { Gift, Package, Award, Trophy, Star, Briefcase, CheckCircle2 } from "lucide-react";
+import { trackEvent } from '../utils/analytics';
 
 export function Hero() {
+  const whatsappQuoteLink =
+    "https://wa.me/+919899987779?text=Hi%2C%20I%20need%20a%20quick%20corporate%20gifting%20quote.%20Please%20assist.";
+
+  const quickStats = [
+    { value: "Decades", label: "Industry Experience" },
+    { value: "Pan-India", label: "Business Delivery Support" },
+    { value: "Custom", label: "Branding and Packaging" },
+  ];
+
   return (
     <div className="relative bg-gradient-to-br from-purple-900 via-indigo-900 to-fuchsia-900 overflow-hidden">
       {/* Animated Background Pattern */}
@@ -24,57 +35,59 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Header */}
-      <header className="relative z-10">
-        <div className="px-4 mx-auto sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-14 lg:h-20">
-            <div className="hidden lg:flex lg:items-center lg:justify-center lg:space-x-10">
-              <a href="#" title="" className="text-base text-purple-100 transition-all duration-200 hover:text-white">Products</a>
-              <a href="#" title="" className="text-base text-purple-100 transition-all duration-200 hover:text-white">Solutions</a>
-              <a href="#" title="" className="text-base text-purple-100 transition-all duration-200 hover:text-white">About Us</a>
-              <a href="#" title="" className="text-base text-purple-100 transition-all duration-200 hover:text-white">Contact</a>
-            </div>
-
-            <a href="#" title="" className="hidden lg:inline-flex items-center justify-center px-5 py-2.5 text-base transition-all duration-200 bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white rounded-full" role="button">
-              Get Started
-            </a>
-          </div>
-        </div>
-      </header>
-
-      {/* Hero Section - Added more top padding */}
-      <section className="relative z-10 py-6 sm:py-16 lg:py-24 mt-8 sm:mt-12 lg:mt-16">
+      <section className="relative z-10 pt-28 pb-12 sm:pt-32 sm:pb-16 lg:pt-30 lg:pb-16 xl:pt-36 xl:pb-24">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="grid items-center grid-cols-1 gap-6 lg:gap-12 lg:grid-cols-2">
-            <div>
-              <div className="flex items-center gap-2">
+          <div className="grid items-center grid-cols-1 gap-6 lg:gap-8 xl:gap-12 lg:grid-cols-2">
+            <div className="max-w-xl">
+              <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2">
                 <Gift className="w-6 h-6 sm:w-8 sm:h-8 text-pink-300" />
-                <p className="text-base sm:text-lg lg:text-2xl font-semibold tracking-wider text-pink-300 uppercase">Premium Corporate</p>
+                <p className="text-xs sm:text-sm lg:text-base font-semibold tracking-wider text-pink-200 uppercase">Premium Corporate Gifting</p>
               </div>
-              <h1 className="mt-3 sm:mt-4 text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold">
+              <h1 className="mt-3 sm:mt-4 text-3xl sm:text-5xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-200 via-purple-200 to-indigo-200">
-                  Gift Solutions
+                  Corporate Gift Solutions for Modern Brands
                 </span>
               </h1>
-              <p className="mt-3 sm:mt-4 text-sm sm:text-base lg:text-xl text-purple-100">
-                Elevate your brand with our exceptional collection of corporate gifts, crafted to leave lasting impressions since 1990.
+              <p className="mt-3 sm:mt-4 text-sm sm:text-base lg:text-lg xl:text-xl text-purple-100 max-w-xl">
+                From onboarding kits to premium gifting, we source, brand, and deliver across corporate categories.
               </p>
+
+              <div className="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-3">
+                {quickStats.map((stat) => (
+                  <div key={stat.label} className="rounded-xl border border-white/15 bg-white/10 px-4 py-3 backdrop-blur-sm">
+                    <p className="text-lg sm:text-xl font-bold text-white">{stat.value}</p>
+                    <p className="text-xs sm:text-sm text-purple-100">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8 lg:mt-12">
                 <a
-                  href="/products"
+                  href={whatsappQuoteLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackEvent('hero_primary_cta_click', { cta: 'whatsapp_quote' })}
                   className="inline-flex items-center justify-center px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base font-semibold text-white transition-all duration-200 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full hover:from-pink-600 hover:to-purple-600"
-                  role="button"
+                >
+                  Get Instant Quote on WhatsApp
+                </a>
+                <Link
+                  to="/products"
+                  onClick={() => trackEvent('hero_secondary_cta_click', { cta: 'explore_products' })}
+                  className="inline-flex items-center justify-center px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base font-semibold text-purple-100 transition-all duration-200 border-2 border-purple-400 rounded-full hover:bg-purple-900/30"
                 >
                   Explore Products
-                </a>
-                <a
-                  href="/contact"
-                  className="inline-flex items-center justify-center px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base font-semibold text-purple-100 transition-all duration-200 border-2 border-purple-400 rounded-full hover:bg-purple-900/30"
-                  role="button"
-                >
-                  Contact Us
-                </a>
+                </Link>
+              </div>
+              <p className="mt-3 text-xs sm:text-sm text-purple-200">
+                Fast response for corporate queries during business hours.
+              </p>
+
+              <div className="mt-5 space-y-2">
+                <div className="flex items-center gap-2 text-sm text-purple-100">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-300" />
+                  All categories covered, including custom-sourced items
+                </div>
               </div>
             </div>
 
@@ -82,7 +95,7 @@ export function Hero() {
               <div className="absolute inset-0 animate-pulse-slow">
                 <div className="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 rounded-lg opacity-20 blur-xl"></div>
               </div>
-              <img className="relative w-full rounded-lg" src="/assets/Home Hero/1.png" alt="Corporate Gifts" />
+              <img className="relative w-full rounded-2xl" src="/assets/Home Hero/1.png" alt="Corporate gifting collection display" />
             </div>
           </div>
         </div>

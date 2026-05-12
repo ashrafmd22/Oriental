@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
-import { useParams, useLocation } from 'react-router-dom';
+import React, { useEffect, useMemo } from 'react';
+import { Link, useParams, useLocation } from 'react-router-dom';
 import { products } from '../../data/products';
 import { ImageGallery } from './ImageGallery/ImageGallery';
 import { ProductDetails } from './ProductDetails';
+import { trackEvent } from '../../utils/analytics';
 
 export function ProductPage() {
   const { id } = useParams();
@@ -16,14 +17,36 @@ export function ProductPage() {
     ? category.charAt(0).toUpperCase() + category.slice(1)
     : 'Products';
 
+  const relatedProducts = useMemo(() => {
+    if (!product) {
+      return [];
+    }
+
+    return products
+      .filter((item) => item.id !== product.id && item.category === product.category)
+      .slice(0, 4);
+  }, [product]);
+
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+    if (product) {
+      trackEvent('product_view', {
+        product_id: product.id,
+        product_name: product.name,
+        category: category || 'unknown',
+      });
+    }
+  }, [product, category]);
 
   if (!product) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <p className="text-xl text-gray-600">Product not found</p>
+      <div className="min-h-screen flex items-center justify-center px-4">
+        <div className="text-center">
+          <p className="text-xl text-gray-600">Product not found.</p>
+          <Link to="/products" className="mt-4 inline-flex rounded-full bg-indigo-600 px-5 py-2 text-white font-semibold">
+            Back to Products
+          </Link>
+        </div>
       </div>
     );
   }
@@ -35,11 +58,11 @@ export function ProductPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-4 sm:p-6 lg:p-8">
             {/* Breadcrumb */}
             <div className="lg:col-span-2 flex items-center space-x-2 text-sm text-gray-500 overflow-x-auto whitespace-nowrap">
-              <span>Home</span>
+              <Link to="/" className="hover:text-indigo-600 transition-colors">Home</Link>
               <span>/</span>
-              <span>Products</span>
+              <Link to="/products" className="hover:text-indigo-600 transition-colors">Products</Link>
               <span>/</span>
-              <span>{displayCategory}</span>
+              <Link to={`/products/${category}`} className="hover:text-indigo-600 transition-colors">{displayCategory}</Link>
               <span>/</span>
               <span className="text-gray-900">{product.name}</span>
             </div>
@@ -56,6 +79,39 @@ export function ProductPage() {
             />
           </div>
         </div>
+
+        {relatedProducts.length > 0 && (
+          <section className="mt-8 sm:mt-10">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-xl sm:text-2xl font-bold text-slate-900">Similar Products</h2>
+              <Link
+                to={`/products/${product.category.toLowerCase()}`}
+                className="text-sm font-semibold text-indigo-600 hover:text-indigo-700"
+              >
+                View all
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+              {relatedProducts.map((item) => (
+                <Link
+                  key={item.id}
+                  to={`/products/${item.category.toLowerCase()}/${item.id}`}
+                  className="rounded-xl border border-slate-200 bg-white p-3 shadow-sm transition hover:shadow-md"
+                >
+                  <div className="aspect-square overflow-hidden rounded-lg bg-slate-50">
+                    <img
+                      src={item.images[0]}
+                      alt={item.name}
+                      className="h-full w-full object-contain p-2"
+                    />
+                  </div>
+                  <p className="mt-3 line-clamp-2 text-sm font-semibold text-slate-800">{item.name}</p>
+                  <p className="mt-1 text-xs text-slate-500">{item.code}</p>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
       </div>
     </div>
   );

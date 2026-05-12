@@ -21,6 +21,9 @@ export const ProductsHeader: React.FC<ProductsHeaderProps> = ({
       <p className="text-sm sm:text-base text-gray-600">
         Showing {start}–{end} of {totalProducts} results
       </p>
+      <p className="mt-2 text-xs sm:text-sm font-medium text-indigo-700">
+        These are featured categories. We also source many more corporate gifting items on request.
+      </p>
     </div>
   );
 };

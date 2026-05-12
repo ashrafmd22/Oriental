@@ -7,13 +7,13 @@ export default function PrivacyPage() {
       title="Privacy Policy"
       icon="https://cdn-icons-png.flaticon.com/512/1642/1642911.png"
     >
-      <div className="space-y-8 overflow-x-hidden px-4 sm:px-6 lg:px-8">
-        <p className="text-xl text-gray-700 leading-relaxed">
+      <div className="space-y-8 overflow-x-hidden px-1 sm:px-4 lg:px-8">
+        <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
           Your privacy is of utmost importance to us. We understand the significance of protecting your personal information and are committed to maintaining its confidentiality.
         </p>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-gray-800">1. Information Collection</h2>
+          <h2 className="text-xl sm:text-2xl font-semibold text-gray-800">1. Information Collection</h2>
           <p className="text-gray-700">
             We collect information that you provide directly to us when using our services, including:
           </p>
@@ -26,8 +26,8 @@ export default function PrivacyPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-gray-800">2. Use of Information</h2>
-          <div className="bg-blue-50 rounded-xl p-6">
+          <h2 className="text-xl sm:text-2xl font-semibold text-gray-800">2. Use of Information</h2>
+          <div className="bg-blue-50 rounded-xl p-4 sm:p-6">
             <p className="text-gray-700">
               The information we collect is used to provide and improve our services, including:
             </p>
@@ -41,8 +41,8 @@ export default function PrivacyPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-gray-800">3. Data Sharing</h2>
-          <div className="bg-green-50 rounded-xl p-6">
+          <h2 className="text-xl sm:text-2xl font-semibold text-gray-800">3. Data Sharing</h2>
+          <div className="bg-green-50 rounded-xl p-4 sm:p-6">
             <p className="text-gray-700">
               We may share your information with third parties in the following cases:
             </p>
@@ -55,8 +55,8 @@ export default function PrivacyPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-gray-800">4. Data Security</h2>
-          <div className="bg-yellow-50 rounded-xl p-6">
+          <h2 className="text-xl sm:text-2xl font-semibold text-gray-800">4. Data Security</h2>
+          <div className="bg-yellow-50 rounded-xl p-4 sm:p-6">
             <p className="text-gray-700">
               We take the security of your personal data seriously and implement measures to protect it from unauthorized access, alteration, or disclosure. These measures include:
             </p>
@@ -69,8 +69,8 @@ export default function PrivacyPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-gray-800">5. Cookies and Tracking Technologies</h2>
-          <div className="bg-red-50 rounded-xl p-6">
+          <h2 className="text-xl sm:text-2xl font-semibold text-gray-800">5. Cookies and Tracking Technologies</h2>
+          <div className="bg-red-50 rounded-xl p-4 sm:p-6">
             <p className="text-gray-700">
               We use cookies and similar tracking technologies to enhance user experience. These technologies may collect information such as:
             </p>
@@ -85,8 +85,8 @@ export default function PrivacyPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-gray-800">6. Your Rights</h2>
-          <div className="bg-purple-50 rounded-xl p-6">
+          <h2 className="text-xl sm:text-2xl font-semibold text-gray-800">6. Your Rights</h2>
+          <div className="bg-purple-50 rounded-xl p-4 sm:p-6">
             <p className="text-gray-700">
               You have the following rights regarding your personal data:
             </p>
@@ -103,8 +103,8 @@ export default function PrivacyPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-gray-800">7. Changes to This Privacy Policy</h2>
-          <div className="bg-gray-50 rounded-xl p-6">
+          <h2 className="text-xl sm:text-2xl font-semibold text-gray-800">7. Changes to This Privacy Policy</h2>
+          <div className="bg-gray-50 rounded-xl p-4 sm:p-6">
             <p className="text-gray-700">
               We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. Any changes will be posted on this page with an updated effective date.
             </p>

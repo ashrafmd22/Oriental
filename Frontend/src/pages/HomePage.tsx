@@ -9,6 +9,12 @@ import { CorporateOrderForm } from '../components/CorporateOrderForm/Index';
 import { ClientLogos } from '../components/Clients/ClientLogos';
 
 import { About } from '../components/About';
+import { ValueHighlights } from '../components/ValueHighlights';
+import { BusinessFaqSection } from '../components/BusinessFaqSection';
+import { SmartGiftFinder } from '../components/SmartGiftFinder';
+import { TrustStrip } from '../components/TrustStrip';
+import { AllCategoryCoverage } from '../components/AllCategoryCoverage';
+import { IndustryUseCases } from '../components/IndustryUseCases';
 
 export function HomePage() {
   // useEffect hook to scroll to the top on page refresh
@@ -19,9 +25,15 @@ export function HomePage() {
   return (
     <>
       <Hero />
+      <TrustStrip />
+      <AllCategoryCoverage />
+      <IndustryUseCases />
       <FeaturedProducts />
-      <About />
+      <SmartGiftFinder />
       <CorporateOrderForm />
+      <ValueHighlights />
+      <About />
+      <BusinessFaqSection />
       <ClientLogos />
     </>
   );

@@ -10,7 +10,7 @@ export const HeroSection: React.FC = () => {
   };
 
   return (
-    <section className="relative h-[300px] sm:h-[350px] md:h-[400px] bg-gradient-to-r from-blue-700 to-blue-900 text-white">
+    <section className="relative h-[320px] sm:h-[380px] md:h-[420px] bg-gradient-to-r from-blue-700 to-blue-900 text-white">
       <div className="absolute inset-0 bg-black opacity-40"></div>
       <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-center text-center">
         <div className="z-10">

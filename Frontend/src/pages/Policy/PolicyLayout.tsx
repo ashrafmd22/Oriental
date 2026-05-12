@@ -13,10 +13,10 @@ export function PolicyLayout({ title, icon, children }: PolicyLayoutProps) {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-16 px-4 sm:px-6 lg:px-8 mt-12"> {/* Added mt-12 here */}
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-14 sm:py-16 px-4 sm:px-6 lg:px-8 mt-16 sm:mt-20">
       <div className="max-w-4xl mx-auto">
         {/* Header Card */}
-        <div className="bg-white rounded-2xl shadow-xl mb-8 p-6 sm:p-8 transform -translate-y-6 hover:translate-y-0 transition-transform duration-300">
+        <div className="bg-white rounded-2xl shadow-xl mb-6 sm:mb-8 p-5 sm:p-8 transform -translate-y-4 sm:-translate-y-6 hover:translate-y-0 transition-transform duration-300">
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8">
             <div className="w-24 h-24 rounded-2xl bg-blue-50 p-4 flex items-center justify-center">
               <img
@@ -25,15 +25,15 @@ export function PolicyLayout({ title, icon, children }: PolicyLayoutProps) {
                 className="w-16 h-16 object-contain"
               />
             </div>
-            <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 text-center sm:text-left">
+            <h1 className="text-2xl sm:text-4xl font-bold text-gray-800 text-center sm:text-left">
               {title}
             </h1>
           </div>
         </div>
 
         {/* Main Content Card */}
-        <div className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 lg:p-10">
-          <div className="prose prose-lg max-w-none">
+        <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-8 lg:p-10">
+          <div className="prose prose-base sm:prose-lg max-w-none">
             {children}
           </div>
 

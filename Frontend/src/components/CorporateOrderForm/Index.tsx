@@ -4,6 +4,7 @@ import { Notification } from './Notification';
 import { ContactInfo } from './ContactInfo';
 import { SubmitButton } from './SubmitButton';
 import type { FormData, Errors } from './types';
+import { trackEvent } from '../../utils/analytics';
 
 export function CorporateOrderForm() {
   const [formData, setFormData] = useState<FormData>({
@@ -11,6 +12,9 @@ export function CorporateOrderForm() {
     contactPerson: '',
     email: '',
     phone: '',
+    quantity: '',
+    budgetRange: '',
+    deliveryDate: '',
     productRequirements: '',
   });
 
@@ -19,6 +23,9 @@ export function CorporateOrderForm() {
     phone: '',
     companyName: '',
     contactPerson: '',
+    quantity: '',
+    budgetRange: '',
+    deliveryDate: '',
     productRequirements: '',
   });
 
@@ -34,11 +41,15 @@ export function CorporateOrderForm() {
   });
 
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    setErrors((prev) => ({ ...prev, [name]: '' }));
+    setErrors((prev) => ({
+      ...prev,
+      [name]: '',
+      ...(name === 'email' || name === 'phone' ? { email: '', phone: '' } : {}),
+    }));
   };
 
   const validateForm = () => {
@@ -47,14 +58,12 @@ export function CorporateOrderForm() {
       phone: '',
       companyName: '',
       contactPerson: '',
+      quantity: '',
+      budgetRange: '',
+      deliveryDate: '',
       productRequirements: '',
     };
     let isValid = true;
-
-    if (!formData.companyName.trim()) {
-      newErrors.companyName = 'Company name is required';
-      isValid = false;
-    }
 
     if (!formData.contactPerson.trim()) {
       newErrors.contactPerson = 'Contact person is required';
@@ -62,12 +71,15 @@ export function CorporateOrderForm() {
     }
 
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(formData.email)) {
+    if (formData.email.trim() && !emailPattern.test(formData.email)) {
       newErrors.email = 'Please enter a valid email';
       isValid = false;
     }
 
-    if (!/^\d{10}$/.test(formData.phone)) {
+    if (!formData.phone.trim()) {
+      newErrors.phone = 'Phone number is required';
+      isValid = false;
+    } else if (!/^\d{10}$/.test(formData.phone)) {
       newErrors.phone = 'Please enter a valid 10-digit number';
       isValid = false;
     }
@@ -85,6 +97,7 @@ export function CorporateOrderForm() {
     e.preventDefault();
 
     if (!validateForm()) {
+      trackEvent('corporate_form_validation_error');
       setNotification({
         show: true,
         type: 'error',
@@ -95,6 +108,7 @@ export function CorporateOrderForm() {
 
     setIsLoading(true);
     try {
+      trackEvent('corporate_form_submit_attempt');
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
@@ -107,6 +121,9 @@ export function CorporateOrderForm() {
           contact_person: formData.contactPerson,
           email: formData.email,
           phone: formData.phone,
+          quantity: formData.quantity,
+          budget_range: formData.budgetRange,
+          expected_delivery_date: formData.deliveryDate,
           product_requirements: formData.productRequirements,
           subject: `New Corporate Order Inquiry from ${formData.companyName}`,
         }),
@@ -115,11 +132,15 @@ export function CorporateOrderForm() {
       const result = await response.json();
 
       if (result.success) {
+        trackEvent('corporate_form_submit_success');
         setFormData({
           companyName: '',
           contactPerson: '',
           email: '',
           phone: '',
+          quantity: '',
+          budgetRange: '',
+          deliveryDate: '',
           productRequirements: '',
         });
         setNotification({
@@ -131,6 +152,7 @@ export function CorporateOrderForm() {
         throw new Error('Failed to submit form');
       }
     } catch (error) {
+      trackEvent('corporate_form_submit_failed');
       setNotification({
         show: true,
         type: 'error',
@@ -151,7 +173,7 @@ export function CorporateOrderForm() {
   }, [notification.show]);
 
   return (
-    <section className="min-h-screen py-8 sm:py-12 lg:py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+    <section className="py-8 sm:py-10 lg:py-14 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
       <div className="max-w-3xl mx-auto px-3 sm:px-6 lg:px-8">
         <div className="text-center mb-6 sm:mb-10">
           <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 mb-3">
@@ -167,7 +189,7 @@ export function CorporateOrderForm() {
           className="bg-white rounded-xl sm:rounded-2xl shadow-lg p-4 sm:p-8 backdrop-blur-sm bg-white/90"
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 mb-6">
-            <FormField label="Company Name" error={errors.companyName}>
+            <FormField label="Company Name (Optional)" error={errors.companyName}>
               <input
                 type="text"
                 name="companyName"
@@ -179,7 +201,7 @@ export function CorporateOrderForm() {
               />
             </FormField>
 
-            <FormField label="Contact Person" error={errors.contactPerson}>
+            <FormField label="Contact Person (Required)" error={errors.contactPerson}>
               <input
                 type="text"
                 name="contactPerson"
@@ -191,7 +213,7 @@ export function CorporateOrderForm() {
               />
             </FormField>
 
-            <FormField label="Email Address" error={errors.email}>
+            <FormField label="Email Address (Optional)" error={errors.email}>
               <input
                 type="email"
                 name="email"
@@ -203,14 +225,12 @@ export function CorporateOrderForm() {
               />
             </FormField>
 
-            <FormField label="Phone Number" error={errors.phone}>
+            <FormField label="Phone Number (Required)" error={errors.phone}>
               <div className="flex">
                 <div className="hidden sm:flex items-center bg-gray-100 px-3 rounded-l-lg border border-r-0 border-gray-300">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/1200px-Flag_of_India.svg.png"
-                    alt="India Flag"
-                    className="w-5 h-3 mr-1"
-                  />
+                  <span className="mr-1 text-sm leading-none" role="img" aria-label="India flag">
+                    🇮🇳
+                  </span>
                   <span className="text-gray-600 text-sm">+91</span>
                 </div>
                 <div className="flex sm:hidden items-center bg-gray-100 px-2 rounded-l-lg border border-r-0 border-gray-300">
@@ -227,9 +247,51 @@ export function CorporateOrderForm() {
                 />
               </div>
             </FormField>
+
+            <FormField label="Estimated Quantity (Optional)" error={errors.quantity}>
+              <input
+                type="number"
+                min="1"
+                name="quantity"
+                value={formData.quantity}
+                onChange={handleInputChange}
+                disabled={isLoading}
+                placeholder="e.g. 250"
+                className="w-full px-3 py-2 sm:px-4 sm:py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200 text-sm sm:text-base disabled:bg-gray-50 disabled:cursor-not-allowed"
+              />
+            </FormField>
+
+            <FormField label="Budget Range (Optional)" error={errors.budgetRange}>
+              <select
+                name="budgetRange"
+                value={formData.budgetRange}
+                onChange={handleInputChange}
+                disabled={isLoading}
+                className="w-full px-3 py-2 sm:px-4 sm:py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200 text-sm sm:text-base bg-white disabled:bg-gray-50 disabled:cursor-not-allowed"
+              >
+                <option value="">Select budget range</option>
+                <option value="Below 25k">Below 25k</option>
+                <option value="25k - 50k">25k - 50k</option>
+                <option value="50k - 1L">50k - 1L</option>
+                <option value="1L - 5L">1L - 5L</option>
+                <option value="5L+">5L+</option>
+              </select>
+            </FormField>
+
           </div>
 
-          <FormField label="Product Requirements" error={errors.productRequirements}>
+          <FormField label="Expected Delivery Date (Optional)" error={errors.deliveryDate}>
+            <input
+              type="date"
+              name="deliveryDate"
+              value={formData.deliveryDate}
+              onChange={handleInputChange}
+              disabled={isLoading}
+              className="w-full px-3 py-2 sm:px-4 sm:py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200 text-sm sm:text-base disabled:bg-gray-50 disabled:cursor-not-allowed"
+            />
+          </FormField>
+
+          <FormField label="Product Requirements (Required)" error={errors.productRequirements}>
             <textarea
               name="productRequirements"
               value={formData.productRequirements}

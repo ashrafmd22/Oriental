@@ -14,11 +14,11 @@ export const Pagination: React.FC<PaginationProps> = ({
   onPageChange,
 }) => {
   return (
-    <div className="flex justify-between items-center mt-8 bg-white py-3 px-4 sm:px-6 rounded-lg shadow-md">
+    <div className="mt-8 bg-white py-3 px-4 sm:px-6 rounded-lg shadow-md flex flex-wrap sm:flex-nowrap items-center gap-2 sm:gap-4 justify-between">
       <button
         onClick={() => onPageChange('prev')}
         disabled={currentPage === 1}
-        className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-200
+        className={`flex items-center space-x-2 px-3 sm:px-4 py-2 rounded-lg transition-all duration-200
           ${currentPage === 1
             ? 'text-gray-400 cursor-not-allowed'
             : 'text-blue-600 hover:bg-blue-50'
@@ -28,14 +28,14 @@ export const Pagination: React.FC<PaginationProps> = ({
         <span className="hidden sm:inline">Previous</span>
       </button>
 
-      <span className="text-sm text-gray-600">
+      <span className="text-sm text-gray-600 w-full sm:w-auto text-center order-first sm:order-none">
         Page {currentPage} of {Math.ceil(totalProducts / productsPerPage)}
       </span>
 
       <button
         onClick={() => onPageChange('next')}
         disabled={currentPage * productsPerPage >= totalProducts}
-        className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-200
+        className={`flex items-center space-x-2 px-3 sm:px-4 py-2 rounded-lg transition-all duration-200
           ${currentPage * productsPerPage >= totalProducts
             ? 'text-gray-400 cursor-not-allowed'
             : 'text-blue-600 hover:bg-blue-50'

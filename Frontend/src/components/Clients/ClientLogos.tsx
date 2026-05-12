@@ -9,7 +9,7 @@ export function ClientLogos() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
           title="Trusted by Leading Brands"
-          subtitle="Join the ranks of industry leaders who have chosen our services for their success"
+          subtitle="Selected brands and teams we have supported through corporate gifting requirements"
         />
 
         <div className="relative">
@@ -23,16 +23,16 @@ export function ClientLogos() {
         {/* Trust Indicators */}
         <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 gap-4 text-center max-w-3xl mx-auto">
           <div className="p-4">
-            <div className="text-2xl sm:text-3xl font-bold text-blue-800">1000+</div>
-            <div className="text-sm sm:text-base text-gray-600">Happy Clients</div>
+            <div className="text-2xl sm:text-3xl font-bold text-blue-800">Trusted Support</div>
+            <div className="text-sm sm:text-base text-gray-600">Corporate Gifting Partner</div>
           </div>
           <div className="p-4">
-            <div className="text-2xl sm:text-3xl font-bold text-blue-800">98%</div>
-            <div className="text-sm sm:text-base text-gray-600">Satisfaction Rate</div>
+            <div className="text-2xl sm:text-3xl font-bold text-blue-800">Custom Branding</div>
+            <div className="text-sm sm:text-base text-gray-600">Packaging Support</div>
           </div>
           <div className="p-4 col-span-2 sm:col-span-1">
-            <div className="text-2xl sm:text-3xl font-bold text-blue-800">30+ Years</div>
-            <div className="text-sm sm:text-base text-gray-600">Industry Experience</div>
+            <div className="text-2xl sm:text-3xl font-bold text-blue-800">On-Time Delivery</div>
+            <div className="text-sm sm:text-base text-gray-600">Delivery Planning</div>
           </div>
         </div>
       </div>

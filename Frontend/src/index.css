@@ -6,4 +6,15 @@
 
 body {
   font-family: 'Outfit', sans-serif;
+  color: #0f172a;
+  background: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: #c7d2fe;
+  color: #1f2937;
 }

@@ -25,16 +25,27 @@ import PrivacyPage from "./pages/PrivacyPage";
 import TermsPage from "./pages/TermsPage";
 import RefundPage from "./pages/RefundPage";
 import WarrantyPage from "./pages/WarrantyPage";
+import { ScrollToTop } from "./components/ScrollToTop";
+import { NotFoundPage } from "./pages/NotFoundPage";
+import { MobileStickyCta } from "./components/MobileStickyCta";
+import { GiftBoxFloating } from "./components/GiftBoxFloating";
+import { GiftBoxPage } from "./pages/GiftBoxPage";
+import { RouteMetaManager } from "./components/RouteMetaManager";
+import { CorporateGiftsDelhiPage } from "./pages/CorporateGiftsDelhiPage";
+import { EmployeeWelcomeKitsPage } from "./pages/EmployeeWelcomeKitsPage";
+import { FestiveCorporateGiftingPage } from "./pages/FestiveCorporateGiftingPage";
 
 export function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
+      <RouteMetaManager />
       <div className="min-h-screen flex flex-col">
         {/* Navbar */}
         <Navbar />
 
         {/* Main content area */}
-        <main className="flex-grow">
+        <main className="flex-grow pb-16 md:pb-0">
           <Routes>
             {/* Home page */}
             <Route path="/" element={<HomePage />} />
@@ -44,8 +55,8 @@ export function App() {
 
             {/* Products routes - Order matters! */}
             <Route path="/products" element={<ProductsPageBase category="All" />} />
-            <Route path="/products/All" element={<ProductsPageBase category="All" />} />
-            <Route path="/products/All/:id" element={<ProductPage />} />
+            <Route path="/products/all" element={<ProductsPageBase category="All" />} />
+            <Route path="/products/all/:id" element={<ProductPage />} />
             <Route path="/products/bags" element={<BagsPage />} />
             <Route path="/products/bags/:id" element={<ProductPage />} />
             <Route path="/products/caps" element={<CapsPage />} />
@@ -66,6 +77,10 @@ export function App() {
 
             {/* Contact */}
             <Route path="/contact" element={<Contact />} />
+            <Route path="/gift-box" element={<GiftBoxPage />} />
+            <Route path="/corporate-gifts-delhi" element={<CorporateGiftsDelhiPage />} />
+            <Route path="/employee-welcome-kits" element={<EmployeeWelcomeKitsPage />} />
+            <Route path="/festive-corporate-gifting" element={<FestiveCorporateGiftingPage />} />
 
             {/* Policies */}
             <Route path="/privacy" element={<PrivacyPage />} />
@@ -74,12 +89,14 @@ export function App() {
             <Route path="/warranty" element={<WarrantyPage />} />
 
             {/* Default/fallback */}
-            <Route path="*" element={<HomePage />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </main>
 
         {/* Footer */}
         <Footer />
+        <GiftBoxFloating />
+        <MobileStickyCta />
       </div>
     </BrowserRouter>
   );

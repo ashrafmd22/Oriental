@@ -19,8 +19,8 @@ export function Footer() {
       links: [
         { label: 'Bags', href: '/products/bags' },
         { label: 'Caps', href: '/products/caps' },
-        { label: 'Drinkware', href: '/products/Drinkware' },
-        { label: 'Diaries', href: '/products/Diaries' },
+        { label: 'Drinkware', href: '/products/drinkware' },
+        { label: 'Diaries', href: '/products/diaries' },
         { label: 'Jackets', href: '/products/jackets' },
         { label: 'T-shirts', href: '/products/tshirts' },
         { label: 'Accessories', href: '/products/accessories' },
@@ -35,12 +35,20 @@ export function Footer() {
         { label: 'Warranty Policy', href: '/warranty' },
       ],
     },
+    {
+      title: 'Popular Searches',
+      links: [
+        { label: 'Corporate Gifts Delhi', href: '/corporate-gifts-delhi' },
+        { label: 'Employee Welcome Kits', href: '/employee-welcome-kits' },
+        { label: 'Festive Corporate Gifting', href: '/festive-corporate-gifting' },
+      ],
+    },
   ];
 
   return (
     <footer className="bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800 text-white relative">
       <div className="max-w-7xl mx-auto px-4 pt-16 pb-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
           {/* About Section */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-white/90 relative inline-block">
@@ -50,6 +58,12 @@ export function Footer() {
             <p className="text-gray-400">
               Oriental Enterprises - Your trusted partner for premium corporate gifting solutions since 1990.
             </p>
+            <a href="tel:+919899987779" className="block text-sm text-indigo-300 hover:text-indigo-200 transition-colors">
+              +91 98999 87779
+            </a>
+            <a href="mailto:orientalgifting@gmail.com" className="block text-sm text-indigo-300 hover:text-indigo-200 transition-colors">
+              orientalgifting@gmail.com
+            </a>
             <address className="text-gray-400 not-italic">
               8769/14-B, Shidipura Karol Bagh <br />
               New Delhi, India 110005

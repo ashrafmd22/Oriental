@@ -1,5 +1,7 @@
 import React from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import { trackEvent } from '../../utils/analytics';
 
 interface ProductDetailsProps {
   name: string;
@@ -14,6 +16,10 @@ export function ProductDetails({ name, description, features, code }: ProductDet
     const encodedText = encodeURIComponent(
       `Hello! I'm interested in the following product:\n\nName: ${name}\nCode: ${code}\n\nIf you have more details, please share.`
     );
+    trackEvent('product_whatsapp_click', {
+      product_name: name,
+      product_code: code,
+    });
     window.open(`https://wa.me/+919899987779?text=${encodedText}`, '_blank');
   };
 
@@ -22,6 +28,9 @@ export function ProductDetails({ name, description, features, code }: ProductDet
       <div className="space-y-6 flex-grow">
         <div>
           <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">{name}</h1>
+          <p className="mt-2 inline-block rounded-full bg-indigo-50 px-3 py-1 text-sm font-semibold text-indigo-700">
+            Product Code: {code}
+          </p>
         </div>
 
         <div className="prose prose-gray max-w-none">
@@ -41,26 +50,35 @@ export function ProductDetails({ name, description, features, code }: ProductDet
           </ul>
         </div>
 
-        {/* Product Code */}
-        <div className="space-y-2">
-          <h2 className="text-lg sm:text-xl font-semibold text-gray-900">Product Code</h2>
-          <p className="text-gray-600 font-mono bg-gray-50 px-3 py-1 rounded-md inline-block">{code}</p>
+        <div className="rounded-xl bg-amber-50 border border-amber-100 p-4">
+          <p className="text-sm sm:text-base text-amber-900">
+            Need bulk quantity or logo customization? Share your budget and timeline, and our team will suggest the best options.
+          </p>
         </div>
       </div>
 
       {/* Contact Section */}
       <div className="mt-8 space-y-4 bg-gray-50 p-4 rounded-xl">
-        <h2 className="text-lg sm:text-xl font-semibold text-gray-900">Need Help?</h2>
+        <h2 className="text-lg sm:text-xl font-semibold text-gray-900">Need Pricing Or Samples?</h2>
         <p className="text-gray-600 text-justify">
-          If you have any questions about this product, feel free to contact us on WhatsApp!
+          Connect with our team for MOQ details, branding options, and delivery timelines.
         </p>
-        <button
-          onClick={handleWhatsAppClick}
-          className="w-full sm:w-auto bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition-all duration-200 flex items-center justify-center gap-3 hover:shadow-lg"
-        >
-          <FaWhatsapp className="w-6 h-6" />
-          Contact on WhatsApp
-        </button>
+        <div className="flex flex-col sm:flex-row gap-3">
+          <button
+            onClick={handleWhatsAppClick}
+            className="w-full sm:w-auto bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition-all duration-200 flex items-center justify-center gap-3 hover:shadow-lg font-semibold"
+          >
+            <FaWhatsapp className="w-6 h-6" />
+            WhatsApp Now
+          </button>
+          <Link
+            to="/contact"
+            onClick={() => trackEvent('product_callback_click', { product_name: name, product_code: code })}
+            className="w-full sm:w-auto bg-white border border-gray-300 text-gray-700 px-6 py-3 rounded-lg transition-all duration-200 flex items-center justify-center hover:bg-gray-100 font-semibold"
+          >
+            Request Callback
+          </Link>
+        </div>
       </div>
     </div>
   );
