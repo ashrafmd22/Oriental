@@ -24,7 +24,7 @@ export function FooterLinks({ section }: FooterLinksProps) {
           <li key={label}>
             <Link
               to={href}
-              className="text-gray-400 hover:text-white transition-colors duration-200 inline-flex min-h-10 items-center py-1"
+              className="text-slate-400 hover:text-white transition-colors duration-200 inline-flex min-h-10 items-center py-1"
             >
               {label}
             </Link>

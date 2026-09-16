@@ -1,4 +1,3 @@
-import React from 'react';
 import { CheckCircle, XCircle, X } from 'lucide-react';
 
 interface NotificationProps {

@@ -1,4 +1,3 @@
-import React from 'react';
 import { FiX } from 'react-icons/fi';
 
 interface NotificationProps {
@@ -15,7 +14,7 @@ export function Notification({ type, message, onClose }: NotificationProps) {
       <span className="text-xs sm:text-sm font-medium pr-3 sm:pr-4">{message}</span>
       <button
         onClick={onClose}
-        className="text-white hover:text-gray-200 transition-colors"
+        className="text-white hover:text-slate-200 transition-colors"
         aria-label="Close notification"
       >
         <FiX className="w-4 h-4 sm:w-5 sm:h-5" />

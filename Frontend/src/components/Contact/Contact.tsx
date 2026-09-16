@@ -49,14 +49,14 @@ export function Contact() {
     setErrors(prev => ({ ...prev, [name]: '' }));
 
     if (name === 'phone') {
-      setPhoneBorderColor(/^\d{10}$/.test(value) ? 'border-green-500' : 'border-red-500');
+      setPhoneBorderColor(/^\d{10}$/.test(value) ? 'border-green-500' : '');
     }
 
     if (name === 'email') {
       setEmailBorderColor(
         /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value)
           ? 'border-green-500'
-          : 'border-red-500'
+          : ''
       );
     }
   };
@@ -136,7 +136,7 @@ export function Contact() {
   }, [notification.show]);
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-20 sm:pt-24">
+    <div className="min-h-screen bg-slate-50 pt-16 sm:pt-[72px] xl:pt-20">
       <ContactHero />
 
       <section className="py-8 sm:py-12 lg:py-16">

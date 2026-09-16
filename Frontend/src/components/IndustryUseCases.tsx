@@ -26,11 +26,11 @@ export function IndustryUseCases() {
           </h2>
         </div>
 
-        <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-6 grid grid-cols-2 gap-2.5 sm:gap-3 md:grid-cols-3">
           {industries.map((industry) => (
             <div
               key={industry.label}
-              className="flex items-center gap-2.5 rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700"
+              className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-3 sm:px-4 text-xs sm:text-sm font-semibold text-slate-700"
             >
               <industry.icon className="h-4 w-4 text-indigo-600 shrink-0" />
               <span>{industry.label}</span>
@@ -38,9 +38,9 @@ export function IndustryUseCases() {
           ))}
         </div>
 
-        <div className="mt-5 flex flex-wrap gap-2.5">
+        <div className="mt-5 flex flex-wrap justify-center gap-2 sm:gap-2.5">
           {deliveryHighlights.map((item) => (
-            <div key={item} className="rounded-full border border-indigo-100 bg-indigo-50/70 px-4 py-2 text-sm font-semibold text-slate-700">
+            <div key={item} className="rounded-full border border-indigo-100 bg-indigo-50/70 px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold text-slate-700">
               {item}
             </div>
           ))}

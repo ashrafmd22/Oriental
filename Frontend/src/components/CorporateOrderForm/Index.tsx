@@ -5,30 +5,15 @@ import { ContactInfo } from './ContactInfo';
 import { SubmitButton } from './SubmitButton';
 import type { FormData, Errors } from './types';
 import { trackEvent } from '../../utils/analytics';
+import { PhoneInput } from '../Contact/PhoneInput';
+import { borderFor, formCardClass, inputClass } from '../formStyles';
+
+const emptyForm: FormData = { name: '', phone: '', requirement: '', quantity: '' };
+const emptyErrors: Errors = { name: '', phone: '', requirement: '', quantity: '' };
 
 export function CorporateOrderForm() {
-  const [formData, setFormData] = useState<FormData>({
-    companyName: '',
-    contactPerson: '',
-    email: '',
-    phone: '',
-    quantity: '',
-    budgetRange: '',
-    deliveryDate: '',
-    productRequirements: '',
-  });
-
-  const [errors, setErrors] = useState<Errors>({
-    email: '',
-    phone: '',
-    companyName: '',
-    contactPerson: '',
-    quantity: '',
-    budgetRange: '',
-    deliveryDate: '',
-    productRequirements: '',
-  });
-
+  const [formData, setFormData] = useState<FormData>(emptyForm);
+  const [errors, setErrors] = useState<Errors>(emptyErrors);
   const [isLoading, setIsLoading] = useState(false);
   const [notification, setNotification] = useState<{
     show: boolean;
@@ -45,47 +30,29 @@ export function CorporateOrderForm() {
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    setErrors((prev) => ({
-      ...prev,
-      [name]: '',
-      ...(name === 'email' || name === 'phone' ? { email: '', phone: '' } : {}),
-    }));
+    setErrors((prev) => ({ ...prev, [name]: '' }));
   };
 
   const validateForm = () => {
-    const newErrors: Errors = {
-      email: '',
-      phone: '',
-      companyName: '',
-      contactPerson: '',
-      quantity: '',
-      budgetRange: '',
-      deliveryDate: '',
-      productRequirements: '',
-    };
+    const newErrors: Errors = { ...emptyErrors };
     let isValid = true;
 
-    if (!formData.contactPerson.trim()) {
-      newErrors.contactPerson = 'Contact person is required';
+    if (!formData.name.trim()) {
+      newErrors.name = 'Please enter your name';
       isValid = false;
     }
 
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (formData.email.trim() && !emailPattern.test(formData.email)) {
-      newErrors.email = 'Please enter a valid email';
-      isValid = false;
-    }
-
-    if (!formData.phone.trim()) {
+    const phone = formData.phone.trim();
+    if (!phone) {
       newErrors.phone = 'Phone number is required';
       isValid = false;
-    } else if (!/^\d{10}$/.test(formData.phone)) {
+    } else if (!/^\d{10}$/.test(phone)) {
       newErrors.phone = 'Please enter a valid 10-digit number';
       isValid = false;
     }
 
-    if (!formData.productRequirements.trim()) {
-      newErrors.productRequirements = 'Please describe your requirements';
+    if (!formData.requirement.trim()) {
+      newErrors.requirement = 'Tell us what you are looking for';
       isValid = false;
     }
 
@@ -98,11 +65,6 @@ export function CorporateOrderForm() {
 
     if (!validateForm()) {
       trackEvent('corporate_form_validation_error');
-      setNotification({
-        show: true,
-        type: 'error',
-        message: 'Please fix the errors in the form',
-      });
       return;
     }
 
@@ -117,15 +79,11 @@ export function CorporateOrderForm() {
         },
         body: JSON.stringify({
           access_key: `${import.meta.env.VITE_WEB3FORMS_KEY}`,
-          company_name: formData.companyName,
-          contact_person: formData.contactPerson,
-          email: formData.email,
-          phone: formData.phone,
+          contact_person: formData.name,
+          phone: formData.phone.replace(/\D/g, ''),
+          product_requirements: formData.requirement,
           quantity: formData.quantity,
-          budget_range: formData.budgetRange,
-          expected_delivery_date: formData.deliveryDate,
-          product_requirements: formData.productRequirements,
-          subject: `New Corporate Order Inquiry from ${formData.companyName}`,
+          subject: `New Quote Request from ${formData.name}`,
         }),
       });
 
@@ -133,20 +91,11 @@ export function CorporateOrderForm() {
 
       if (result.success) {
         trackEvent('corporate_form_submit_success');
-        setFormData({
-          companyName: '',
-          contactPerson: '',
-          email: '',
-          phone: '',
-          quantity: '',
-          budgetRange: '',
-          deliveryDate: '',
-          productRequirements: '',
-        });
+        setFormData(emptyForm);
         setNotification({
           show: true,
           type: 'success',
-          message: 'Your inquiry has been submitted successfully!',
+          message: 'Thank you! Our team will call you shortly.',
         });
       } else {
         throw new Error('Failed to submit form');
@@ -156,7 +105,7 @@ export function CorporateOrderForm() {
       setNotification({
         show: true,
         type: 'error',
-        message: 'Failed to submit the form. Please try again.',
+        message: 'Failed to submit the form. Please try again or call us.',
       });
     } finally {
       setIsLoading(false);
@@ -173,137 +122,86 @@ export function CorporateOrderForm() {
   }, [notification.show]);
 
   return (
-    <section className="py-8 sm:py-10 lg:py-14 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
-      <div className="max-w-3xl mx-auto px-3 sm:px-6 lg:px-8">
-        <div className="text-center mb-6 sm:mb-10">
-          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 mb-3">
-            Corporate Order Form
-          </h1>
-          <p className="text-gray-600 text-xs sm:text-base max-w-xl mx-auto">
-            Share your requirements with us, and our team will create the perfect corporate gifting solution for your business.
+    <section className="py-10 sm:py-14 lg:py-16 bg-gradient-to-br from-indigo-50 via-indigo-50 to-purple-50">
+      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-6 sm:mb-8">
+          <h2 className="text-2xl sm:text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 mb-3">
+            Get a Quick Quote
+          </h2>
+          <p className="text-slate-600 text-sm sm:text-base max-w-lg mx-auto">
+            Share a few details and our team will call you back with options and pricing.
           </p>
         </div>
 
         <form
           onSubmit={handleSubmit}
-          className="bg-white rounded-xl sm:rounded-2xl shadow-lg p-4 sm:p-8 backdrop-blur-sm bg-white/90"
+          noValidate
+          className={`${formCardClass} p-5 sm:p-8`}
         >
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 mb-6">
-            <FormField label="Company Name (Optional)" error={errors.companyName}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+            <FormField label="Your Name" htmlFor="quote-name" error={errors.name}>
               <input
+                id="quote-name"
                 type="text"
-                name="companyName"
-                value={formData.companyName}
-                onChange={handleInputChange}
-                disabled={isLoading}
-                placeholder="Enter company name"
-                className="w-full px-3 py-2 sm:px-4 sm:py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200 text-sm sm:text-base disabled:bg-gray-50 disabled:cursor-not-allowed"
-              />
-            </FormField>
-
-            <FormField label="Contact Person (Required)" error={errors.contactPerson}>
-              <input
-                type="text"
-                name="contactPerson"
-                value={formData.contactPerson}
+                name="name"
+                autoComplete="name"
+                value={formData.name}
                 onChange={handleInputChange}
                 disabled={isLoading}
                 placeholder="Enter your name"
-                className="w-full px-3 py-2 sm:px-4 sm:py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200 text-sm sm:text-base disabled:bg-gray-50 disabled:cursor-not-allowed"
+                className={`${inputClass} ${borderFor(errors.name)}`}
               />
             </FormField>
 
-            <FormField label="Email Address (Optional)" error={errors.email}>
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleInputChange}
-                disabled={isLoading}
-                placeholder="Enter email address"
-                className="w-full px-3 py-2 sm:px-4 sm:py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200 text-sm sm:text-base disabled:bg-gray-50 disabled:cursor-not-allowed"
-              />
-            </FormField>
+            <PhoneInput
+              id="quote-phone"
+              value={formData.phone}
+              onChange={handleInputChange}
+              error={errors.phone}
+              disabled={isLoading}
+            />
 
-            <FormField label="Phone Number (Required)" error={errors.phone}>
-              <div className="flex">
-                <div className="hidden sm:flex items-center bg-gray-100 px-3 rounded-l-lg border border-r-0 border-gray-300">
-                  <span className="mr-1 text-sm leading-none" role="img" aria-label="India flag">
-                    🇮🇳
-                  </span>
-                  <span className="text-gray-600 text-sm">+91</span>
-                </div>
-                <div className="flex sm:hidden items-center bg-gray-100 px-2 rounded-l-lg border border-r-0 border-gray-300">
-                  <span className="text-gray-600 text-xs">+91</span>
-                </div>
-                <input
-                  type="tel"
-                  name="phone"
-                  value={formData.phone}
+            <div className="sm:col-span-2">
+              <FormField label="What are you looking for?" htmlFor="quote-requirement" error={errors.requirement}>
+                <textarea
+                  id="quote-requirement"
+                  name="requirement"
+                  value={formData.requirement}
                   onChange={handleInputChange}
                   disabled={isLoading}
-                  placeholder="Enter phone number"
-                  className="flex-1 px-3 py-2 sm:px-4 sm:py-3 rounded-r-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200 text-sm sm:text-base disabled:bg-gray-50 disabled:cursor-not-allowed"
+                  placeholder="e.g. Branded bottles and diaries for Diwali"
+                  rows={2}
+                  className={`${inputClass} resize-none ${borderFor(errors.requirement)}`}
                 />
-              </div>
-            </FormField>
+              </FormField>
+            </div>
 
-            <FormField label="Estimated Quantity (Optional)" error={errors.quantity}>
-              <input
-                type="number"
-                min="1"
-                name="quantity"
-                value={formData.quantity}
-                onChange={handleInputChange}
-                disabled={isLoading}
-                placeholder="e.g. 250"
-                className="w-full px-3 py-2 sm:px-4 sm:py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200 text-sm sm:text-base disabled:bg-gray-50 disabled:cursor-not-allowed"
-              />
-            </FormField>
-
-            <FormField label="Budget Range (Optional)" error={errors.budgetRange}>
-              <select
-                name="budgetRange"
-                value={formData.budgetRange}
-                onChange={handleInputChange}
-                disabled={isLoading}
-                className="w-full px-3 py-2 sm:px-4 sm:py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200 text-sm sm:text-base bg-white disabled:bg-gray-50 disabled:cursor-not-allowed"
-              >
-                <option value="">Select budget range</option>
-                <option value="Below 25k">Below 25k</option>
-                <option value="25k - 50k">25k - 50k</option>
-                <option value="50k - 1L">50k - 1L</option>
-                <option value="1L - 5L">1L - 5L</option>
-                <option value="5L+">5L+</option>
-              </select>
-            </FormField>
-
+            <div className="sm:col-span-2">
+              <FormField label="Approx. Quantity (optional)" htmlFor="quote-quantity" error={errors.quantity}>
+                <select
+                  id="quote-quantity"
+                  name="quantity"
+                  value={formData.quantity}
+                  onChange={handleInputChange}
+                  disabled={isLoading}
+                  className={`${inputClass} ${borderFor()}`}
+                >
+                  <option value="">Not sure yet</option>
+                  <option value="Under 50">Under 50</option>
+                  <option value="50 - 200">50 - 200</option>
+                  <option value="200 - 500">200 - 500</option>
+                  <option value="500+">500+</option>
+                </select>
+              </FormField>
+            </div>
           </div>
 
-          <FormField label="Expected Delivery Date (Optional)" error={errors.deliveryDate}>
-            <input
-              type="date"
-              name="deliveryDate"
-              value={formData.deliveryDate}
-              onChange={handleInputChange}
-              disabled={isLoading}
-              className="w-full px-3 py-2 sm:px-4 sm:py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200 text-sm sm:text-base disabled:bg-gray-50 disabled:cursor-not-allowed"
-            />
-          </FormField>
-
-          <FormField label="Product Requirements (Required)" error={errors.productRequirements}>
-            <textarea
-              name="productRequirements"
-              value={formData.productRequirements}
-              onChange={handleInputChange}
-              disabled={isLoading}
-              placeholder="Please describe your requirements in detail..."
-              rows={3}
-              className="w-full px-3 py-2 sm:px-4 sm:py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200 resize-none text-sm sm:text-base disabled:bg-gray-50 disabled:cursor-not-allowed"
-            />
-          </FormField>
-
-          <SubmitButton isLoading={isLoading} />
+          <div className="mt-6">
+            <SubmitButton isLoading={isLoading} />
+          </div>
+          <p className="mt-3 text-center text-xs text-slate-500">
+            We only use your number to reply to this enquiry.
+          </p>
         </form>
 
         <ContactInfo />

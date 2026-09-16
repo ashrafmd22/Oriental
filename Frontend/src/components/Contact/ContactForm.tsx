@@ -1,5 +1,7 @@
 import React from 'react';
+import { Send } from 'lucide-react';
 import { ContactFormInput } from './ContactFormInput';
+import { borderFor, formCardClass, inputClass, labelClass } from '../formStyles';
 import { PhoneInput } from './PhoneInput';
 import { SubmitButton } from './SubmitButton';
 
@@ -33,58 +35,78 @@ export function ContactForm({
   isLoading,
 }: ContactFormProps) {
   return (
-    <div className="bg-white p-4 sm:p-6 lg:p-8 rounded-xl shadow-lg transform hover:scale-100 lg:hover:scale-[1.02] transition-all duration-300" id="contact-form">
-      <h2 className="text-xl sm:text-2xl font-semibold mb-6 text-blue-600 text-center">
-        Send Us a Message
-      </h2>
-      <form className="space-y-4 sm:space-y-5" onSubmit={handleSubmit}>
-        <ContactFormInput
-          label="Full Name"
-          name="fullName"
-          type="text"
-          value={formData.fullName}
-          onChange={handleInputChange}
-          placeholder="Enter your full name"
-          error={errors.fullName}
-          disabled={isLoading}
-        />
-
-        <ContactFormInput
-          label="Email"
-          name="email"
-          type="email"
-          value={formData.email}
-          onChange={handleInputChange}
-          placeholder="Enter your email address"
-          error={errors.email}
-          borderColor={emailBorderColor}
-          disabled={isLoading}
-        />
-
-        <PhoneInput
-          value={formData.phone}
-          onChange={handleInputChange}
-          error={errors.phone}
-          borderColor={phoneBorderColor}
-          disabled={isLoading}
-        />
-
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1.5">Message</label>
-          <textarea
-            name="message"
-            value={formData.message}
-            onChange={handleInputChange}
-            rows={4}
-            placeholder="Write your message here"
-            disabled={isLoading}
-            className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500 p-3 text-sm transition duration-200 disabled:bg-gray-50 disabled:cursor-not-allowed"
-          />
-          {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message}</p>}
+    <div
+      id="contact-form"
+      className={`${formCardClass} scroll-mt-24`}
+    >
+      <div className="p-5 sm:p-8">
+        <div className="mb-6 flex items-start gap-3">
+          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600">
+            <Send className="h-5 w-5" />
+          </div>
+          <div>
+            <h2 className="text-xl sm:text-2xl font-bold text-slate-900">Send Us a Message</h2>
+            <p className="mt-0.5 text-sm text-slate-500">We usually reply within a few business hours.</p>
+          </div>
         </div>
 
-        <SubmitButton isLoading={isLoading} />
-      </form>
+        <form className="space-y-4 sm:space-y-5" onSubmit={handleSubmit} noValidate>
+          <div className="grid gap-4 sm:gap-5 sm:grid-cols-2">
+            <ContactFormInput
+              label="Full Name"
+              name="fullName"
+              type="text"
+              autoComplete="name"
+              value={formData.fullName}
+              onChange={handleInputChange}
+              placeholder="Your name"
+              error={errors.fullName}
+              disabled={isLoading}
+            />
+
+            <PhoneInput
+              value={formData.phone}
+              onChange={handleInputChange}
+              error={errors.phone}
+              borderColor={phoneBorderColor}
+              disabled={isLoading}
+            />
+          </div>
+
+          <ContactFormInput
+            label="Email"
+            name="email"
+            type="email"
+            autoComplete="email"
+            optional
+            value={formData.email}
+            onChange={handleInputChange}
+            placeholder="you@company.com"
+            error={errors.email}
+            borderColor={emailBorderColor}
+            disabled={isLoading}
+          />
+
+          <div>
+            <label htmlFor="contact-message" className={labelClass}>
+              How can we help?
+            </label>
+            <textarea
+              id="contact-message"
+              name="message"
+              value={formData.message}
+              onChange={handleInputChange}
+              rows={4}
+              placeholder="e.g. Need 150 branded bottles and diaries for a client event next month"
+              disabled={isLoading}
+              className={`${inputClass} resize-none ${borderFor(errors.message)}`}
+            />
+            {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message}</p>}
+          </div>
+
+          <SubmitButton isLoading={isLoading} />
+        </form>
+      </div>
     </div>
   );
 }

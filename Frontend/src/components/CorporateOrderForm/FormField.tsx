@@ -1,15 +1,17 @@
 import React from 'react';
+import { labelClass } from '../formStyles';
 
 interface FormFieldProps {
   label: string;
+  htmlFor?: string;
   error?: string;
   children: React.ReactNode;
 }
 
-export function FormField({ label, error, children }: FormFieldProps) {
+export function FormField({ label, htmlFor, error, children }: FormFieldProps) {
   return (
     <div>
-      <label className="block text-xs sm:text-sm font-semibold text-gray-700 mb-1.5">
+      <label htmlFor={htmlFor} className={labelClass}>
         {label}
       </label>
       {children}

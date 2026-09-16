@@ -21,15 +21,15 @@ const faqs = [
 
 export function BusinessFaqSection() {
   return (
-    <section className="bg-slate-50 py-14 sm:py-16">
+    <section className="bg-slate-50 py-10 sm:py-16">
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
         <div className="text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-indigo-600">FAQ</p>
-          <h2 className="mt-3 text-3xl sm:text-4xl font-black text-slate-900">
+          <h2 className="mt-3 text-2xl sm:text-4xl font-black text-slate-900">
             Common Questions Before You Place A Bulk Order
           </h2>
         </div>
-        <div className="mt-8 space-y-3">
+        <div className="mt-6 sm:mt-8 space-y-3">
           {faqs.map((item) => (
             <details key={item.question} className="group rounded-xl border border-slate-200 bg-white p-4 sm:p-5">
               <summary className="flex cursor-pointer list-none items-center justify-between gap-3 text-left text-sm sm:text-base font-semibold text-slate-900">

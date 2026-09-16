@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { ShoppingBag } from 'lucide-react';
 
@@ -23,13 +22,13 @@ export function CategoryCard({ name, image, url, bgColor }: CategoryCardProps) {
       </div>
 
       <div className="p-4 sm:p-6 flex flex-col flex-grow">
-        <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-4">
+        <h3 className="text-lg sm:text-xl font-semibold text-slate-800 mb-4">
           {name}
         </h3>
         <div className="mt-auto">
           <Link
             to={url}
-            className="w-full inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2.5 rounded-lg text-sm font-medium transition-colors"
+            className="w-full inline-flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2.5 rounded-lg text-sm font-medium transition-colors"
           >
             <ShoppingBag className="w-4 h-4" />
             <span>View Collection</span>

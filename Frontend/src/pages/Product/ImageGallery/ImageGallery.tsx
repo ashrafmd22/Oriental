@@ -2,7 +2,6 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { ZoomIn } from 'lucide-react';
 import { ImageControls } from './ImageControls';
 import { Thumbnails } from './Thumbnails';
-import { ImagePreloader } from './ImagePreloader';
 
 interface ImageGalleryProps {
   images: string[];
@@ -51,8 +50,6 @@ export function ImageGallery({ images, productName }: ImageGalleryProps) {
 
   return (
     <div className="w-full space-y-4">
-      <ImagePreloader images={images} />
-
       <div className="relative w-full aspect-square mt-16 sm:mt-0">
         <ImageControls
           onPrevious={() => handleArrowClick('left')}
@@ -60,7 +57,7 @@ export function ImageGallery({ images, productName }: ImageGalleryProps) {
         />
 
         <div
-          className="relative w-full h-full overflow-hidden rounded-xl bg-gray-50"
+          className="relative w-full h-full overflow-hidden rounded-xl bg-slate-50"
           onMouseEnter={() => !isMobile && setIsZoomed(true)}
           onMouseLeave={() => setIsZoomed(false)}
           onMouseMove={handleMouseMove}

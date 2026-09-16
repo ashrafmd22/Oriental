@@ -54,11 +54,11 @@ export function AllCategoryCoverage() {
             </span>
           </div>
 
-          <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-3">
+          <div className="mt-4 grid grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3">
             {categories.map((item, index) => (
               <div
                 key={item}
-                className={`flex items-center gap-2 rounded-xl border border-indigo-100 bg-white px-3 py-2 text-sm font-semibold text-slate-700 ${
+                className={`flex items-center gap-2 rounded-xl border border-indigo-100 bg-white px-2.5 py-2 sm:px-3 text-xs sm:text-sm font-semibold text-slate-700 ${
                   index > 5 ? "hidden sm:flex" : ""
                 }`}
               >
@@ -66,7 +66,7 @@ export function AllCategoryCoverage() {
                 <span>{item}</span>
               </div>
             ))}
-            <div className="flex items-center gap-2 rounded-xl border border-indigo-200 bg-indigo-50/70 px-3 py-2 text-sm font-semibold text-indigo-800 sm:col-span-2 lg:col-span-1">
+            <div className="flex items-center gap-2 rounded-xl border border-indigo-200 bg-indigo-50/70 px-3 py-2 text-xs sm:text-sm font-semibold text-indigo-800 col-span-2 lg:col-span-1">
               <BadgeCheck className="h-4 w-4 shrink-0 text-indigo-600" />
               <span>Need something else? We source custom items on request.</span>
             </div>

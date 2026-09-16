@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { HeroSection } from './HeroSection';
 import { LegacySection } from './LegacySection';
 import { CoreValuesSection } from './CoreValuesSection';
@@ -10,7 +10,7 @@ export function AboutPage() {
   }, []);
 
   return (
-    <div className="pt-20 sm:pt-24 scroll-smooth">
+    <div className="pt-16 sm:pt-[72px] xl:pt-20">
       <HeroSection />
       <LegacySection />
       <CoreValuesSection />

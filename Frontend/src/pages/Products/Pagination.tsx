@@ -20,15 +20,15 @@ export const Pagination: React.FC<PaginationProps> = ({
         disabled={currentPage === 1}
         className={`flex items-center space-x-2 px-3 sm:px-4 py-2 rounded-lg transition-all duration-200
           ${currentPage === 1
-            ? 'text-gray-400 cursor-not-allowed'
-            : 'text-blue-600 hover:bg-blue-50'
+            ? 'text-slate-400 cursor-not-allowed'
+            : 'text-indigo-600 hover:bg-indigo-50'
           }`}
       >
         <span>←</span>
         <span className="hidden sm:inline">Previous</span>
       </button>
 
-      <span className="text-sm text-gray-600 w-full sm:w-auto text-center order-first sm:order-none">
+      <span className="text-sm text-slate-600 w-full sm:w-auto text-center order-first sm:order-none">
         Page {currentPage} of {Math.ceil(totalProducts / productsPerPage)}
       </span>
 
@@ -37,8 +37,8 @@ export const Pagination: React.FC<PaginationProps> = ({
         disabled={currentPage * productsPerPage >= totalProducts}
         className={`flex items-center space-x-2 px-3 sm:px-4 py-2 rounded-lg transition-all duration-200
           ${currentPage * productsPerPage >= totalProducts
-            ? 'text-gray-400 cursor-not-allowed'
-            : 'text-blue-600 hover:bg-blue-50'
+            ? 'text-slate-400 cursor-not-allowed'
+            : 'text-indigo-600 hover:bg-indigo-50'
           }`}
       >
         <span className="hidden sm:inline">Next</span>

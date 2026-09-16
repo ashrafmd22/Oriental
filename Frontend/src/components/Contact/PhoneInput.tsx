@@ -1,4 +1,11 @@
 import React from 'react';
+import {
+  borderFor,
+  labelClass,
+  phoneInputClass,
+  phonePrefixClass,
+  phoneWrapperClass,
+} from '../formStyles';
 
 interface PhoneInputProps {
   value: string;
@@ -6,30 +13,29 @@ interface PhoneInputProps {
   error?: string;
   borderColor?: string;
   disabled?: boolean;
+  id?: string;
 }
 
-export function PhoneInput({ value, onChange, error, borderColor, disabled }: PhoneInputProps) {
+export function PhoneInput({ value, onChange, error, borderColor, disabled, id = 'contact-phone' }: PhoneInputProps) {
   return (
     <div>
-      <label className="block text-sm font-medium text-gray-700 mb-1.5">Phone</label>
-      <div className="flex items-center border rounded-lg shadow-sm focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-blue-500">
-        <div className="hidden sm:flex items-center bg-gray-50 px-3 py-2 border-r border-gray-300 rounded-l-lg">
-          <span className="mr-1 text-sm leading-none" role="img" aria-label="India flag">
-            🇮🇳
-          </span>
-          <span className="text-gray-600 text-sm">+91</span>
-        </div>
-        <div className="flex sm:hidden items-center bg-gray-50 px-2 py-2 border-r border-gray-300 rounded-l-lg">
-          <span className="text-gray-600 text-xs">+91</span>
-        </div>
+      <label htmlFor={id} className={labelClass}>
+        Phone Number
+      </label>
+      <div className={`${phoneWrapperClass} ${borderFor(error, borderColor)}`}>
+        <span className={phonePrefixClass}>+91</span>
         <input
+          id={id}
           type="tel"
           name="phone"
+          inputMode="numeric"
+          autoComplete="tel-national"
+          maxLength={10}
           value={value}
           onChange={onChange}
           disabled={disabled}
-          placeholder="Enter your phone number"
-          className={`flex-1 rounded-r-lg border-0 p-3 text-sm focus:ring-0 ${borderColor} disabled:bg-gray-50 disabled:cursor-not-allowed`}
+          placeholder="10-digit mobile number"
+          className={phoneInputClass}
         />
       </div>
       {error && <p className="text-red-500 text-xs mt-1">{error}</p>}

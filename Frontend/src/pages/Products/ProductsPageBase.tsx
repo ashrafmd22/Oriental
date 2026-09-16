@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom'; // useNavigate for React Router v6
 import { CategoryFilter } from './CategoryFilter';
 import { ProductsHeader } from './ProductsHeader';
@@ -57,7 +57,7 @@ export function ProductsPageBase({ category }: ProductsPageBaseProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-16 sm:pt-20 pb-12">
+    <div className="min-h-screen bg-slate-50 pt-16 sm:pt-20 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <CategoryFilter
           categories={categories}
@@ -66,7 +66,6 @@ export function ProductsPageBase({ category }: ProductsPageBaseProps) {
 
         <div className="mt-8">
           <ProductsHeader
-            category={category}
             totalProducts={totalProducts}
             currentPage={currentPage}
             productsPerPage={productsPerPage}

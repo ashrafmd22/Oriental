@@ -1,4 +1,3 @@
-import React from 'react';
 import Marquee from 'react-fast-marquee';
 import type { Client } from './data';
 import { LogoSlide } from './LogoSlide';

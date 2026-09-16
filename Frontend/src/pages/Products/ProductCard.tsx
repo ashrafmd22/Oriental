@@ -26,10 +26,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, category }) =
       {/* Image Container */}
       <div className="relative w-full pt-[100%]"> {/* Creates a square aspect ratio */}
         <div className="absolute inset-0 overflow-hidden group">
-          <img
+          <img loading="lazy" decoding="async"
             src={product.images[0]}
             alt={product.name}
-            className="w-full h-full object-contain p-4 bg-gray-50 transition-transform duration-300 group-hover:scale-105"
+            className="w-full h-full object-contain p-4 bg-slate-50 transition-transform duration-300 group-hover:scale-105"
             style={{
               aspectRatio: '1/1',
             }}
@@ -43,14 +43,14 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, category }) =
 
       {/* Content */}
       <div className="p-4 sm:p-5 flex flex-col flex-grow">
-        <h3 className="text-sm sm:text-base font-semibold text-gray-800 mb-2 line-clamp-2 min-h-[2.5rem]">
+        <h3 className="text-sm sm:text-base font-semibold text-slate-800 mb-2 line-clamp-2 min-h-[2.5rem]">
           {product.name}
         </h3>
 
         <div className="mt-auto">
           <div className="flex flex-col gap-2 mb-3">
             <div className="flex items-center gap-2">
-              <span className="px-2 py-1 bg-gray-100 text-gray-800 text-xs font-medium rounded">
+              <span className="px-2 py-1 bg-slate-100 text-slate-800 text-xs font-medium rounded">
                 Code: {product.code}
               </span>
             </div>

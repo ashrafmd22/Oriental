@@ -1,4 +1,3 @@
-import React from 'react';
 
 interface ThumbnailsProps {
   images: string[];
@@ -17,12 +16,12 @@ export function Thumbnails({ images, selectedIndex, productName, onSelect }: Thu
           className={`
             relative aspect-square rounded-lg overflow-hidden
             ${index === selectedIndex
-              ? 'ring-2 ring-blue-500'
+              ? 'ring-2 ring-indigo-500'
               : 'opacity-70 hover:opacity-100 transition-opacity'
             }
           `}
         >
-          <div className="absolute inset-0 w-full h-full flex items-center justify-center bg-gray-50">
+          <div className="absolute inset-0 w-full h-full flex items-center justify-center bg-slate-50">
             <img
               src={image}
               alt={`${productName} thumbnail ${index + 1}`}

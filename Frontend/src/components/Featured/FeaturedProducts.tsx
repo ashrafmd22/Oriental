@@ -1,4 +1,3 @@
-import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -37,17 +36,17 @@ export function FeaturedProducts() {
       </div>
     ),
     customPaging: () => (
-      <div className="w-2 h-2 bg-blue-200 rounded-full transition-all duration-300 hover:bg-blue-400" />
+      <div className="w-2 h-2 bg-indigo-200 rounded-full transition-all duration-300 hover:bg-indigo-400" />
     ),
   };
 
   return (
-    <section className="py-12 px-4 max-w-7xl mx-auto">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold text-blue-600 mb-4">
+    <section className="py-10 sm:py-14 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div className="text-center mb-6 sm:mb-10">
+        <h2 className="text-2xl sm:text-4xl font-black text-slate-900 mb-3">
           Personalized Corporate Gifts
         </h2>
-        <p className="text-gray-600">
+        <p className="text-sm sm:text-base text-slate-600">
           Discover our exclusive collection of customizable corporate merchandise
         </p>
       </div>

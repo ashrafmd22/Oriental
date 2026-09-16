@@ -142,7 +142,7 @@ export function GiftBoxPage() {
             {selectedProducts.map((item) => (
               <article key={item?.id} className="rounded-xl border border-slate-200 bg-white p-3 shadow-sm">
                 <div className="aspect-square rounded-lg bg-slate-50 overflow-hidden">
-                  <img src={item?.images[0]} alt={item?.name} className="h-full w-full object-contain p-2" />
+                  <img loading="lazy" decoding="async" src={item?.images[0]} alt={item?.name} className="h-full w-full object-contain p-2" />
                 </div>
                 <p className="mt-3 text-sm font-semibold text-slate-800 line-clamp-2">{item?.name}</p>
                 <p className="mt-1 text-xs text-slate-500">{item?.code}</p>

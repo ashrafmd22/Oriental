@@ -1,4 +1,3 @@
-import React from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { trackEvent } from '../../utils/analytics';
@@ -27,23 +26,23 @@ export function ProductDetails({ name, description, features, code }: ProductDet
     <div className="flex flex-col h-full">
       <div className="space-y-6 flex-grow">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">{name}</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold text-slate-900">{name}</h1>
           <p className="mt-2 inline-block rounded-full bg-indigo-50 px-3 py-1 text-sm font-semibold text-indigo-700">
             Product Code: {code}
           </p>
         </div>
 
         <div className="prose prose-gray max-w-none">
-          <p className="text-gray-600 text-justify leading-relaxed">{description}</p>
+          <p className="text-slate-600 text-justify leading-relaxed">{description}</p>
         </div>
 
         {/* Features */}
         <div className="space-y-3">
-          <h2 className="text-lg sm:text-xl font-semibold text-gray-900">Features</h2>
+          <h2 className="text-lg sm:text-xl font-semibold text-slate-900">Features</h2>
           <ul className="space-y-2 pl-4">
             {features.map((feature, index) => (
-              <li key={index} className="text-gray-600 relative pl-4">
-                <span className="absolute left-0 top-2 w-1.5 h-1.5 bg-blue-500 rounded-full" />
+              <li key={index} className="text-slate-600 relative pl-4">
+                <span className="absolute left-0 top-2 w-1.5 h-1.5 bg-indigo-500 rounded-full" />
                 <span className="block text-justify leading-relaxed">{feature}</span>
               </li>
             ))}
@@ -58,9 +57,9 @@ export function ProductDetails({ name, description, features, code }: ProductDet
       </div>
 
       {/* Contact Section */}
-      <div className="mt-8 space-y-4 bg-gray-50 p-4 rounded-xl">
-        <h2 className="text-lg sm:text-xl font-semibold text-gray-900">Need Pricing Or Samples?</h2>
-        <p className="text-gray-600 text-justify">
+      <div className="mt-8 space-y-4 bg-slate-50 p-4 rounded-xl">
+        <h2 className="text-lg sm:text-xl font-semibold text-slate-900">Need Pricing Or Samples?</h2>
+        <p className="text-slate-600 text-justify">
           Connect with our team for MOQ details, branding options, and delivery timelines.
         </p>
         <div className="flex flex-col sm:flex-row gap-3">
@@ -74,7 +73,7 @@ export function ProductDetails({ name, description, features, code }: ProductDet
           <Link
             to="/contact"
             onClick={() => trackEvent('product_callback_click', { product_name: name, product_code: code })}
-            className="w-full sm:w-auto bg-white border border-gray-300 text-gray-700 px-6 py-3 rounded-lg transition-all duration-200 flex items-center justify-center hover:bg-gray-100 font-semibold"
+            className="w-full sm:w-auto bg-white border border-slate-300 text-slate-700 px-6 py-3 rounded-lg transition-all duration-200 flex items-center justify-center hover:bg-slate-100 font-semibold"
           >
             Request Callback
           </Link>

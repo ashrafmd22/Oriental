@@ -1,14 +1,12 @@
 import React from 'react';
 
 interface ProductsHeaderProps {
-  category: string;
   totalProducts: number;
   currentPage: number;
   productsPerPage: number;
 }
 
 export const ProductsHeader: React.FC<ProductsHeaderProps> = ({
-  category,
   totalProducts,
   currentPage,
   productsPerPage,
@@ -18,7 +16,7 @@ export const ProductsHeader: React.FC<ProductsHeaderProps> = ({
 
   return (
     <div className="text-center mb-8">
-      <p className="text-sm sm:text-base text-gray-600">
+      <p className="text-sm sm:text-base text-slate-600">
         Showing {start}–{end} of {totalProducts} results
       </p>
       <p className="mt-2 text-xs sm:text-sm font-medium text-indigo-700">

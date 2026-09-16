@@ -27,9 +27,7 @@ export function validateForm(formData: FormData): FormErrors {
     errors.fullName = 'Full name is required';
   }
 
-  if (!formData.email.trim()) {
-    errors.email = 'Email is required';
-  } else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(formData.email)) {
+  if (formData.email.trim() && !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(formData.email)) {
     errors.email = 'Please enter a valid email address';
   }
 
@@ -40,7 +38,7 @@ export function validateForm(formData: FormData): FormErrors {
   }
 
   if (!formData.message.trim()) {
-    errors.message = 'Message is required';
+    errors.message = 'Please tell us what you need';
   }
 
   return errors;

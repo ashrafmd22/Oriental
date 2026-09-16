@@ -1,21 +1,8 @@
 export interface FormData {
-  companyName: string;
-  contactPerson: string;
-  email: string;
+  name: string;
   phone: string;
+  requirement: string;
   quantity: string;
-  budgetRange: string;
-  deliveryDate: string;
-  productRequirements: string;
 }
 
-export interface Errors {
-  email: string;
-  phone: string;
-  companyName: string;
-  contactPerson: string;
-  quantity: string;
-  budgetRange: string;
-  deliveryDate: string;
-  productRequirements: string;
-}
+export type Errors = Record<keyof FormData, string>;

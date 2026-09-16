@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Gift, Menu, X, PhoneCall, Package } from 'lucide-react';
 import { trackEvent } from '../utils/analytics';
@@ -34,38 +34,38 @@ export function Navbar() {
   const mobileNavLinks = [...navLinks, { label: 'Gift Box', path: '/gift-box' }];
 
   const getLinkClasses = ({ isActive }: { isActive: boolean }) =>
-    `relative group text-[15px] xl:text-[16px] 2xl:text-[19px] font-semibold transition-colors duration-300 ${isActive ? 'text-indigo-600' : 'text-gray-600 hover:text-indigo-600'}`;
+    `relative group whitespace-nowrap text-[15px] 2xl:text-[17px] font-semibold transition-colors duration-300 ${isActive ? 'text-indigo-600' : 'text-slate-600 hover:text-indigo-600'}`;
 
   return (
     <nav className={`fixed w-full z-50 border-b border-indigo-100/80 transition-all duration-300 ${scrolled ? 'shadow-md bg-white/95 backdrop-blur-md' : 'bg-white'}`}>
-      <div className="mx-auto w-full max-w-[1500px] 2xl:max-w-[2200px] px-4 sm:px-6 lg:px-8 2xl:px-16">
-        <div className="flex justify-between items-center h-16 sm:h-[72px] xl:h-[82px] 2xl:h-[96px]">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center gap-6 2xl:gap-10 h-16 sm:h-[72px] xl:h-20">
           {/* Logo Section */}
           <Link
             to="/"
-            className="flex items-center select-none"
+            className="flex shrink-0 items-center select-none"
             style={{ WebkitTapHighlightColor: 'transparent' }}
           >
             <div className="relative flex items-center justify-center">
               <Gift
                 strokeWidth={2}
-                className="h-8 w-8 sm:h-10 sm:w-10 xl:h-11 xl:w-11 2xl:h-14 2xl:w-14 text-indigo-600 transition-transform hover:scale-110 duration-300"
+                className="h-8 w-8 sm:h-10 sm:w-10 text-indigo-600 transition-transform hover:scale-110 duration-300"
               />
             </div>
             <div className="ml-2 sm:ml-3">
-              <h1 className="text-base sm:text-lg lg:text-xl xl:text-2xl 2xl:text-[36px] font-black tracking-tight leading-tight">
+              <h1 className="text-base sm:text-lg lg:text-xl 2xl:text-2xl font-black tracking-tight leading-tight">
                 <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">
                   Oriental Enterprises
                 </span>
               </h1>
-              <p className="block text-[9px] sm:text-[10px] lg:text-[11px] xl:text-[12px] 2xl:text-[16px] font-semibold text-slate-600 tracking-[0.01em] leading-tight mt-0.5 max-w-[170px] sm:max-w-none xl:whitespace-nowrap">
+              <p className="block text-[9px] sm:text-[10px] lg:text-[11px] 2xl:text-[12px] font-semibold text-slate-600 tracking-[0.01em] leading-tight mt-0.5 max-w-[170px] sm:max-w-none xl:whitespace-nowrap">
                 Thoughtful Gifts, Exceptional Quality
               </p>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden xl:flex items-center space-x-7 2xl:space-x-12">
+          <div className="hidden xl:flex flex-1 items-center justify-center gap-7 2xl:gap-10">
             {navLinks.map(({ label, path }) => (
               <NavLink
                 key={label}
@@ -83,13 +83,16 @@ export function Navbar() {
                 )}
               </NavLink>
             ))}
-            <div className="flex items-center gap-3">
+          </div>
+
+          {/* Desktop Actions */}
+          <div className="hidden xl:flex shrink-0 items-center gap-3">
               <NavLink
                 to="/gift-box"
-                className="relative inline-flex items-center justify-center rounded-full border border-indigo-200 p-2.5 2xl:p-3.5 text-indigo-700 hover:bg-indigo-50 transition"
+                className="relative inline-flex items-center justify-center rounded-full border border-indigo-200 p-2.5 text-indigo-700 hover:bg-indigo-50 transition"
                 aria-label="View Gift Box"
               >
-                <Package className="h-4 w-4 2xl:h-6 2xl:w-6" />
+                <Package className="h-4 w-4" />
                 {giftBoxCount > 0 && (
                   <span className="absolute -top-1 -right-1 rounded-full bg-indigo-600 px-1.5 py-0.5 text-[10px] font-bold text-white">
                     {giftBoxCount}
@@ -99,9 +102,9 @@ export function Navbar() {
               <a
                 href="tel:+919899987779"
                 onClick={() => trackEvent('nav_call_click', { location: 'desktop' })}
-                className="inline-flex items-center gap-1.5 rounded-full border border-indigo-200 px-4 py-2 2xl:px-7 2xl:py-3 text-[15px] 2xl:text-[19px] font-semibold text-indigo-700 transition hover:bg-indigo-50"
+                className="inline-flex items-center gap-1.5 rounded-full border border-indigo-200 whitespace-nowrap px-4 py-2 text-[15px] font-semibold text-indigo-700 transition hover:bg-indigo-50"
               >
-                <PhoneCall className="h-4 w-4 2xl:h-[21px] 2xl:w-[21px]" />
+                <PhoneCall className="h-4 w-4" />
                 Call Now
               </a>
               <a
@@ -109,17 +112,16 @@ export function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackEvent('nav_catalog_click', { location: 'desktop' })}
-                className="px-5 py-2 2xl:px-8 2xl:py-3 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold hover:from-purple-600 hover:to-indigo-600 transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg text-[15px] 2xl:text-[19px]"
+                className="whitespace-nowrap px-5 py-2 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold hover:from-purple-600 hover:to-indigo-600 transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg text-[15px]"
               >
                 View Catalogue
               </a>
-            </div>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="xl:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors duration-200 focus:outline-none"
+            className="xl:hidden ml-auto p-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors duration-200 focus:outline-none"
             aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
             aria-expanded={isOpen}
             aria-controls="mobile-navigation"
@@ -142,7 +144,7 @@ export function Navbar() {
                 onClick={() => setIsOpen(false)}
                 end={path === '/'}
                 className={({ isActive }) =>
-                  `block px-4 py-2 rounded-lg transition-colors duration-200 ${isActive ? 'bg-indigo-50 text-indigo-700 font-semibold' : 'text-gray-700 hover:bg-indigo-50 hover:text-indigo-600'}`
+                  `block px-4 py-2 rounded-lg transition-colors duration-200 ${isActive ? 'bg-indigo-50 text-indigo-700 font-semibold' : 'text-slate-700 hover:bg-indigo-50 hover:text-indigo-600'}`
                 }
               >
                 <span className="inline-flex items-center gap-2">

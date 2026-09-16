@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { MessageCircle, PhoneCall, FileText } from "lucide-react";
+import { PhoneCall, FileText } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { trackEvent } from "../utils/analytics";
 
 export function MobileStickyCta() {
@@ -21,7 +22,7 @@ export function MobileStickyCta() {
           onClick={() => trackEvent("mobile_cta_whatsapp_click", { source: "sticky_bar" })}
           className="inline-flex min-h-11 items-center justify-center gap-1 rounded-lg bg-green-500 text-xs font-semibold text-white"
         >
-          <MessageCircle className="h-4 w-4" />
+          <FaWhatsapp className="h-4 w-4" />
           WhatsApp
         </a>
         <Link

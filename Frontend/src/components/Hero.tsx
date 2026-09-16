@@ -1,6 +1,6 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import { Gift, Package, Award, Trophy, Star, Briefcase, CheckCircle2 } from "lucide-react";
+import { Gift, Package, Award, Trophy, Star, Briefcase, CheckCircle2, ArrowRight } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { trackEvent } from '../utils/analytics';
 
 export function Hero() {
@@ -35,9 +35,9 @@ export function Hero() {
         </div>
       </div>
 
-      <section className="relative z-10 pt-28 pb-12 sm:pt-32 sm:pb-16 lg:pt-30 lg:pb-16 xl:pt-36 xl:pb-24">
+      <section className="relative z-10 pt-24 pb-10 sm:pt-32 sm:pb-16 xl:pt-36 xl:pb-24">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="grid items-center grid-cols-1 gap-6 lg:gap-8 xl:gap-12 lg:grid-cols-2">
+          <div className="grid items-center grid-cols-1 gap-8 lg:gap-8 xl:gap-12 lg:grid-cols-[1.1fr_0.9fr] xl:grid-cols-2">
             <div className="max-w-xl">
               <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2">
                 <Gift className="w-6 h-6 sm:w-8 sm:h-8 text-pink-300" />
@@ -52,31 +52,33 @@ export function Hero() {
                 From onboarding kits to premium gifting, we source, brand, and deliver across corporate categories.
               </p>
 
-              <div className="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <div className="mt-5 grid grid-cols-3 gap-2 sm:gap-3">
                 {quickStats.map((stat) => (
-                  <div key={stat.label} className="rounded-xl border border-white/15 bg-white/10 px-4 py-3 backdrop-blur-sm">
-                    <p className="text-lg sm:text-xl font-bold text-white">{stat.value}</p>
-                    <p className="text-xs sm:text-sm text-purple-100">{stat.label}</p>
+                  <div key={stat.label} className="rounded-xl border border-white/15 bg-white/10 px-2.5 py-2.5 sm:px-4 sm:py-3 backdrop-blur-sm">
+                    <p className="text-base sm:text-xl font-bold text-white">{stat.value}</p>
+                    <p className="text-[11px] leading-snug sm:text-sm text-purple-100">{stat.label}</p>
                   </div>
                 ))}
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8 lg:mt-12">
+              <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 mt-6 sm:mt-8 lg:mt-10">
                 <a
                   href={whatsappQuoteLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => trackEvent('hero_primary_cta_click', { cta: 'whatsapp_quote' })}
-                  className="inline-flex items-center justify-center px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base font-semibold text-white transition-all duration-200 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full hover:from-pink-600 hover:to-purple-600"
+                  className="inline-flex items-center justify-center gap-2 whitespace-nowrap px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-pink-500/20 transition-all duration-200 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full hover:from-pink-600 hover:to-purple-600"
                 >
-                  Get Instant Quote on WhatsApp
+                  <FaWhatsapp className="h-5 w-5" />
+                  Get Quote on WhatsApp
                 </a>
                 <Link
                   to="/products"
                   onClick={() => trackEvent('hero_secondary_cta_click', { cta: 'explore_products' })}
-                  className="inline-flex items-center justify-center px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base font-semibold text-purple-100 transition-all duration-200 border-2 border-purple-400 rounded-full hover:bg-purple-900/30"
+                  className="inline-flex items-center justify-center gap-2 whitespace-nowrap px-6 py-3.5 text-base font-semibold text-purple-100 transition-all duration-200 border-2 border-purple-400 rounded-full hover:bg-purple-900/30"
                 >
                   Explore Products
+                  <ArrowRight className="h-5 w-5" />
                 </Link>
               </div>
               <p className="mt-3 text-xs sm:text-sm text-purple-200">
@@ -84,18 +86,21 @@ export function Hero() {
               </p>
 
               <div className="mt-5 space-y-2">
-                <div className="flex items-center gap-2 text-sm text-purple-100">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-300" />
+                <div className="flex items-start gap-2 text-sm text-purple-100">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-300" />
                   All categories covered, including custom-sourced items
                 </div>
               </div>
             </div>
 
-            <div className="relative">
+            <div className="relative mx-auto w-full max-w-md sm:max-w-lg lg:max-w-none">
               <div className="absolute inset-0 animate-pulse-slow">
                 <div className="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 rounded-lg opacity-20 blur-xl"></div>
               </div>
-              <img className="relative w-full rounded-2xl" src="/assets/Home Hero/1.png" alt="Corporate gifting collection display" />
+              <picture>
+                <source srcSet="/assets/Home Hero/1.webp" type="image/webp" />
+                <img className="relative w-full rounded-2xl" src="/assets/Home Hero/1.png" alt="Corporate gifting collection display" width={1010} height={748} />
+              </picture>
             </div>
           </div>
         </div>

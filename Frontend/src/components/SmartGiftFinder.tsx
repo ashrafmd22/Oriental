@@ -96,21 +96,21 @@ export function SmartGiftFinder() {
   const canShowResult = Boolean(occasion && audience && budget);
 
   return (
-    <section className="bg-slate-900 py-14 sm:py-16">
+    <section className="bg-slate-900 py-10 sm:py-16">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-slate-800 to-slate-900 p-5 sm:p-8">
           <div className="flex items-center gap-2 text-indigo-300">
             <Sparkles className="h-5 w-5" />
             <p className="text-sm font-semibold uppercase tracking-widest">Smart Gift Finder</p>
           </div>
-          <h2 className="mt-3 text-3xl sm:text-4xl font-black text-white">
+          <h2 className="mt-3 text-2xl sm:text-4xl font-black text-white">
             Build the right gifting shortlist in 30 seconds
           </h2>
           <p className="mt-3 text-slate-300 text-sm sm:text-base max-w-3xl">
             Select your campaign context and get an instant recommendation to help your team move faster.
           </p>
 
-          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-6 grid gap-3 sm:gap-4 md:grid-cols-3">
             <SelectorCard
               title="1) Occasion"
               options={occasions}

@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { Link, useParams, useLocation } from 'react-router-dom';
 import { products } from '../../data/products';
 import { ImageGallery } from './ImageGallery/ImageGallery';
@@ -42,7 +42,7 @@ export function ProductPage() {
     return (
       <div className="min-h-screen flex items-center justify-center px-4">
         <div className="text-center">
-          <p className="text-xl text-gray-600">Product not found.</p>
+          <p className="text-xl text-slate-600">Product not found.</p>
           <Link to="/products" className="mt-4 inline-flex rounded-full bg-indigo-600 px-5 py-2 text-white font-semibold">
             Back to Products
           </Link>
@@ -52,19 +52,19 @@ export function ProductPage() {
   }
 
   return (
-    <div className="bg-gradient-to-b from-gray-50 to-white min-h-screen pt-20 sm:pt-24 pb-8 sm:pb-12">
+    <div className="bg-gradient-to-b from-slate-50 to-white min-h-screen pt-20 sm:pt-24 pb-8 sm:pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+        <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-100">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-4 sm:p-6 lg:p-8">
             {/* Breadcrumb */}
-            <div className="lg:col-span-2 flex items-center space-x-2 text-sm text-gray-500 overflow-x-auto whitespace-nowrap">
+            <div className="lg:col-span-2 flex items-center space-x-2 text-sm text-slate-500 overflow-x-auto whitespace-nowrap">
               <Link to="/" className="hover:text-indigo-600 transition-colors">Home</Link>
               <span>/</span>
               <Link to="/products" className="hover:text-indigo-600 transition-colors">Products</Link>
               <span>/</span>
               <Link to={`/products/${category}`} className="hover:text-indigo-600 transition-colors">{displayCategory}</Link>
               <span>/</span>
-              <span className="text-gray-900">{product.name}</span>
+              <span className="text-slate-900">{product.name}</span>
             </div>
 
             <ImageGallery
@@ -99,7 +99,7 @@ export function ProductPage() {
                   className="rounded-xl border border-slate-200 bg-white p-3 shadow-sm transition hover:shadow-md"
                 >
                   <div className="aspect-square overflow-hidden rounded-lg bg-slate-50">
-                    <img
+                    <img loading="lazy" decoding="async"
                       src={item.images[0]}
                       alt={item.name}
                       className="h-full w-full object-contain p-2"

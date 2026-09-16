@@ -1,39 +1,34 @@
-import React from "react";
+import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
-// import { Footer } from "./components/Footer";
 import { Footer } from "./components/Footer/Footer";
 import { HomePage } from "./pages/HomePage";
-// import { AboutPage } from "./pages/AboutPage";
-import { AboutPage } from "./pages/About/AboutPage";
-//import { ProductPage } from "./pages/ProductPage"; // Handles single product details
-import { ProductPage } from "./pages/Product/ProductPage";
-// import { ProductsPageBase } from "./pages/ProductsPageBase";
-import { ProductsPageBase } from "./pages/Products/ProductsPageBase";
-import { BagsPage } from './pages/BagsPage';
-import { CapsPage } from './pages/CapsPage';
-import { AccessoriesPage } from './pages/AccessoriesPage';
-import { TshirtsPage } from './pages/TshirtsPage';
-import { JacketsPage } from './pages/JacketsPage';
-import { DrinkwarePage } from './pages/DrinkwarePage';
-import { DiariesPage } from './pages/DiariesPage';
+const AboutPage = lazy(() => import("./pages/About/AboutPage").then((m) => ({ default: m.AboutPage })));
+const ProductPage = lazy(() => import("./pages/Product/ProductPage").then((m) => ({ default: m.ProductPage })));
+const ProductsPageBase = lazy(() => import("./pages/Products/ProductsPageBase").then((m) => ({ default: m.ProductsPageBase })));
+const BagsPage = lazy(() => import('./pages/BagsPage').then((m) => ({ default: m.BagsPage })));
+const CapsPage = lazy(() => import('./pages/CapsPage').then((m) => ({ default: m.CapsPage })));
+const AccessoriesPage = lazy(() => import('./pages/AccessoriesPage').then((m) => ({ default: m.AccessoriesPage })));
+const TshirtsPage = lazy(() => import('./pages/TshirtsPage').then((m) => ({ default: m.TshirtsPage })));
+const JacketsPage = lazy(() => import('./pages/JacketsPage').then((m) => ({ default: m.JacketsPage })));
+const DrinkwarePage = lazy(() => import('./pages/DrinkwarePage').then((m) => ({ default: m.DrinkwarePage })));
+const DiariesPage = lazy(() => import('./pages/DiariesPage').then((m) => ({ default: m.DiariesPage })));
 
-import { BrandedCollection } from './pages/Branded Collection/BrandedCollection';
-// import { Contact } from "./components/Contact";
-import { Contact } from "./components/Contact/Contact";
-import PrivacyPage from "./pages/PrivacyPage";
-import TermsPage from "./pages/TermsPage";
-import RefundPage from "./pages/RefundPage";
-import WarrantyPage from "./pages/WarrantyPage";
+const BrandedCollection = lazy(() => import('./pages/Branded Collection/BrandedCollection').then((m) => ({ default: m.BrandedCollection })));
+const Contact = lazy(() => import("./components/Contact/Contact").then((m) => ({ default: m.Contact })));
+const PrivacyPage = lazy(() => import("./pages/PrivacyPage"));
+const TermsPage = lazy(() => import("./pages/TermsPage"));
+const RefundPage = lazy(() => import("./pages/RefundPage"));
+const WarrantyPage = lazy(() => import("./pages/WarrantyPage"));
 import { ScrollToTop } from "./components/ScrollToTop";
-import { NotFoundPage } from "./pages/NotFoundPage";
+const NotFoundPage = lazy(() => import("./pages/NotFoundPage").then((m) => ({ default: m.NotFoundPage })));
 import { MobileStickyCta } from "./components/MobileStickyCta";
 import { GiftBoxFloating } from "./components/GiftBoxFloating";
-import { GiftBoxPage } from "./pages/GiftBoxPage";
+const GiftBoxPage = lazy(() => import("./pages/GiftBoxPage").then((m) => ({ default: m.GiftBoxPage })));
 import { RouteMetaManager } from "./components/RouteMetaManager";
-import { CorporateGiftsDelhiPage } from "./pages/CorporateGiftsDelhiPage";
-import { EmployeeWelcomeKitsPage } from "./pages/EmployeeWelcomeKitsPage";
-import { FestiveCorporateGiftingPage } from "./pages/FestiveCorporateGiftingPage";
+const CorporateGiftsDelhiPage = lazy(() => import("./pages/CorporateGiftsDelhiPage").then((m) => ({ default: m.CorporateGiftsDelhiPage })));
+const EmployeeWelcomeKitsPage = lazy(() => import("./pages/EmployeeWelcomeKitsPage").then((m) => ({ default: m.EmployeeWelcomeKitsPage })));
+const FestiveCorporateGiftingPage = lazy(() => import("./pages/FestiveCorporateGiftingPage").then((m) => ({ default: m.FestiveCorporateGiftingPage })));
 
 export function App() {
   return (
@@ -46,6 +41,7 @@ export function App() {
 
         {/* Main content area */}
         <main className="flex-grow pb-16 md:pb-0">
+          <Suspense fallback={<div className="min-h-[60vh]" />}>
           <Routes>
             {/* Home page */}
             <Route path="/" element={<HomePage />} />
@@ -91,6 +87,7 @@ export function App() {
             {/* Default/fallback */}
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
+          </Suspense>
         </main>
 
         {/* Footer */}

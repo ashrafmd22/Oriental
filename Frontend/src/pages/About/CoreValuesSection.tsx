@@ -5,42 +5,44 @@ const values = [
   {
     title: 'Quality First',
     description: 'Premium materials and expert craftsmanship in every product.',
-    icon: CheckCircle
+    icon: CheckCircle,
+    tint: 'from-indigo-500 to-indigo-600',
   },
   {
     title: 'Innovation',
     description: 'Constantly evolving with market trends and client needs.',
-    icon: Target
+    icon: Target,
+    tint: 'from-purple-500 to-fuchsia-600',
   },
   {
     title: 'Client Focus',
     description: 'Building lasting relationships through exceptional service.',
-    icon: Heart
-  }
+    icon: Heart,
+    tint: 'from-pink-500 to-rose-500',
+  },
 ];
 
 export const CoreValuesSection: React.FC = () => {
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-r from-blue-50 to-blue-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-center text-gray-800 mb-8 sm:mb-12 tracking-tight">
-          Our Core Values
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-12">
-          {values.map((value, index) => (
+    <section className="py-14 sm:py-20 bg-slate-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center">
+          <p className="text-sm font-semibold uppercase tracking-widest text-indigo-600">What Drives Us</p>
+          <h2 className="mt-3 text-3xl sm:text-4xl font-black text-slate-900">Our Core Values</h2>
+        </div>
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+          {values.map((value) => (
             <div
-              key={index}
-              className="bg-white p-6 sm:p-8 md:p-10 rounded-xl shadow-lg text-center transform transition duration-300 hover:scale-105 hover:shadow-2xl group"
+              key={value.title}
+              className="group rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 text-center transition duration-300 hover:-translate-y-1 hover:shadow-xl"
             >
-              <div className="group-hover:animate-bounce">
-                <value.icon className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 text-blue-600 mx-auto mb-4 sm:mb-6" />
+              <div
+                className={`mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${value.tint} text-white shadow-lg transition group-hover:scale-110`}
+              >
+                <value.icon className="h-7 w-7" />
               </div>
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-3 sm:mb-4 group-hover:text-blue-600 transition duration-300">
-                {value.title}
-              </h3>
-              <p className="text-sm sm:text-base text-gray-600 group-hover:text-gray-800 transition duration-300">
-                {value.description}
-              </p>
+              <h3 className="mt-5 text-xl font-bold text-slate-900">{value.title}</h3>
+              <p className="mt-2 text-sm sm:text-base text-slate-600">{value.description}</p>
             </div>
           ))}
         </div>

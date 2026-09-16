@@ -1,51 +1,69 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { HeroSection } from './HeroSection';
 import { BrandCard } from './BrandCard';
-import { brands } from './brands';
+import { brands, brandGroups } from './brands';
+
+type Filter = 'All' | (typeof brandGroups)[number];
 
 export const BrandedCollection: React.FC = () => {
+  const [filter, setFilter] = useState<Filter>('All');
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  const visibleBrands = useMemo(
+    () => (filter === 'All' ? brands : brands.filter((brand) => brand.group === filter)),
+    [filter]
+  );
+
+  const filters: Filter[] = ['All', ...brandGroups];
+
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="pt-20 sm:pt-24">
+    <div className="min-h-screen bg-slate-50">
+      <div className="pt-16 sm:pt-[72px] xl:pt-20">
         <HeroSection
-          title="Premium Brand Partners"
-          description="Explore our exclusive collection of world-renowned brands, carefully curated for corporate excellence."
+          title="Branded Corporate Gifts"
+          description={`Gift from ${brands.length}+ trusted brands across tech, travel, drinkware, apparel and gourmet, with your logo and packaging.`}
         />
       </div>
 
-      <div id="brands-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-        <div className="mb-8 rounded-2xl border border-blue-100 bg-blue-50/60 p-4 sm:p-5">
-          <p className="text-sm sm:text-base font-semibold text-slate-800">
-            Looking for a specific brand not listed here?
+      <div id="brands-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 scroll-mt-20">
+        <div className="text-center">
+          <h2 className="text-2xl sm:text-3xl font-black text-slate-900">Brands We Supply</h2>
+          <p className="mt-2 text-sm sm:text-base text-slate-600">
+            Pick a category to find the right brand for your budget and audience.
           </p>
-          <p className="mt-1 text-sm text-slate-600">
-            Share your requirement and we will help curate brand options based on your budget and gifting objective.
-          </p>
-          <div className="mt-3 flex flex-col sm:flex-row gap-2.5">
-            <Link
-              to="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700 transition-colors"
-            >
-              Get Brand Suggestions
-            </Link>
-            <a
-              href="https://wa.me/+919899987779?text=Hi%2C%20I%20need%20brand-based%20corporate%20gifting%20suggestions."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full border border-blue-200 bg-white px-4 py-2 text-sm font-semibold text-blue-700 hover:bg-blue-50 transition-colors"
-            >
-              WhatsApp Requirement
-            </a>
+        </div>
+
+        <div className="-mx-4 mt-6 overflow-x-auto px-4 pb-2 sm:mx-0 sm:px-0">
+          <div className="flex w-max gap-2 sm:w-auto sm:flex-wrap sm:justify-center">
+            {filters.map((item) => {
+              const count = item === 'All' ? brands.length : brands.filter((b) => b.group === item).length;
+              const active = filter === item;
+              return (
+                <button
+                  key={item}
+                  type="button"
+                  onClick={() => setFilter(item)}
+                  aria-pressed={active}
+                  className={`whitespace-nowrap rounded-full border px-4 py-2 text-sm font-semibold transition ${
+                    active
+                      ? 'border-indigo-600 bg-indigo-600 text-white shadow-md'
+                      : 'border-slate-200 bg-white text-slate-700 hover:border-indigo-300 hover:text-indigo-700'
+                  }`}
+                >
+                  {item}
+                  <span className={`ml-1.5 text-xs ${active ? 'text-indigo-100' : 'text-slate-400'}`}>{count}</span>
+                </button>
+              );
+            })}
           </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {brands.map((brand) => (
+        <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4">
+          {visibleBrands.map((brand) => (
             <BrandCard
               key={brand.name}
               name={brand.name}
@@ -53,6 +71,31 @@ export const BrandedCollection: React.FC = () => {
               category={brand.category}
             />
           ))}
+        </div>
+
+        <div className="mt-10 flex flex-col items-center gap-4 rounded-2xl border border-indigo-100 bg-gradient-to-r from-indigo-50 to-purple-50 p-5 text-center sm:p-8 md:flex-row md:text-left">
+          <div className="flex-1">
+            <p className="text-base sm:text-lg font-bold text-slate-900">Looking for a brand not listed here?</p>
+            <p className="mt-1 text-sm text-slate-600">
+              Share your requirement and we will suggest brand options that fit your budget, quantity and timeline.
+            </p>
+          </div>
+          <div className="flex w-full flex-col gap-2.5 sm:w-auto sm:flex-row">
+            <a
+              href="https://wa.me/+919899987779?text=Hi%2C%20I%20need%20brand-based%20corporate%20gifting%20suggestions."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-full bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-indigo-700"
+            >
+              Ask on WhatsApp
+            </a>
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center rounded-full border border-indigo-200 bg-white px-5 py-2.5 text-sm font-semibold text-indigo-700 transition-colors hover:bg-indigo-50"
+            >
+              Get Brand Suggestions
+            </Link>
+          </div>
         </div>
       </div>
     </div>
