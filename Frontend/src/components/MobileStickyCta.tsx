@@ -5,7 +5,7 @@ import { trackEvent } from "../utils/analytics";
 
 export function MobileStickyCta() {
   return (
-    <div className="fixed bottom-0 inset-x-0 z-40 border-t border-slate-200 bg-white/95 backdrop-blur-md md:hidden">
+    <div className="fixed bottom-0 inset-x-0 z-40 border-t border-slate-200 bg-white shadow-[0_-4px_12px_rgba(15,23,42,0.06)] md:hidden">
       <div className="mx-auto grid max-w-7xl grid-cols-3 gap-2 px-3 py-2">
         <a
           href="tel:+919899987779"

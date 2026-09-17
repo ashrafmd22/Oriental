@@ -54,8 +54,10 @@ export const PageHero: React.FC<PageHeroProps> = ({ title, description, primary,
         className="absolute inset-0 opacity-[0.12]"
         style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '36px 36px' }}
       />
-      <div className="absolute -top-24 left-1/4 h-72 w-72 rounded-full bg-fuchsia-500/20 blur-3xl" />
-      <div className="absolute -bottom-24 right-1/4 h-72 w-72 rounded-full bg-indigo-400/20 blur-3xl" />
+      <div
+        className="absolute inset-0"
+        style={{ backgroundImage: 'radial-gradient(35% 60% at 30% 0%, rgba(217,70,239,0.22), transparent 70%), radial-gradient(35% 60% at 70% 100%, rgba(129,140,248,0.22), transparent 70%)' }}
+      />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-14 sm:py-20 md:py-24 flex items-center justify-center text-center">
         <div className="w-full">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 sm:mb-5 leading-tight px-2">

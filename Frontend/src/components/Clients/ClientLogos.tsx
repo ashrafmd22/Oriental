@@ -15,7 +15,9 @@ export function ClientLogos() {
           {/* Logo Sliders */}
           <div className="relative z-0 space-y-4 sm:space-y-8">
             <LogoSlider clients={clients} direction="left" speed={30} />
-            <LogoSlider clients={clients} direction="right" speed={25} />
+            <div className="hidden sm:block">
+              <LogoSlider clients={clients} direction="right" speed={25} />
+            </div>
           </div>
         </div>
 

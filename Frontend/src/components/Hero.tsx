@@ -18,13 +18,11 @@ export function Hero() {
       {/* Animated Background Pattern */}
       <div className="absolute inset-0 pattern-grid opacity-20" />
 
-      {/* Glowing Orbs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-[128px] animate-blob" />
-      <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-[128px] animate-blob animation-delay-2000" />
-      <div className="absolute -bottom-8 left-1/2 w-96 h-96 bg-indigo-500 rounded-full mix-blend-multiply filter blur-[128px] animate-blob animation-delay-4000" />
+      {/* Soft glow: static gradients instead of animated blurred blobs (much cheaper to paint on phones) */}
+      <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(40% 50% at 25% 30%, rgba(236,72,153,0.35), transparent 70%), radial-gradient(40% 50% at 75% 35%, rgba(168,85,247,0.35), transparent 70%), radial-gradient(45% 45% at 50% 100%, rgba(99,102,241,0.35), transparent 70%)' }} />
 
       {/* Floating Icons */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden hidden lg:block motion-reduce:hidden">
         <div className="floating-icons">
           <Gift className="icon text-pink-200" size={32} style={{ left: '10%', top: '20%', animationDelay: '0s' }} />
           <Package className="icon text-purple-200" size={40} style={{ left: '25%', top: '25%', animationDelay: '1.5s' }} />
@@ -54,7 +52,7 @@ export function Hero() {
 
               <div className="mt-5 grid grid-cols-3 gap-2 sm:gap-3">
                 {quickStats.map((stat) => (
-                  <div key={stat.label} className="rounded-xl border border-white/15 bg-white/10 px-2.5 py-2.5 sm:px-4 sm:py-3 backdrop-blur-sm">
+                  <div key={stat.label} className="rounded-xl border border-white/15 bg-white/10 px-2.5 py-2.5 sm:px-4 sm:py-3">
                     <p className="text-base sm:text-xl font-bold text-white">{stat.value}</p>
                     <p className="text-[11px] leading-snug sm:text-sm text-purple-100">{stat.label}</p>
                   </div>
@@ -94,9 +92,6 @@ export function Hero() {
             </div>
 
             <div className="relative mx-auto w-full max-w-md sm:max-w-lg lg:max-w-none">
-              <div className="absolute inset-0 animate-pulse-slow">
-                <div className="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 rounded-lg opacity-20 blur-xl"></div>
-              </div>
               <picture>
                 <source srcSet="/assets/Home Hero/1.webp" type="image/webp" />
                 <img className="relative w-full rounded-2xl" src="/assets/Home Hero/1.png" alt="Corporate gifting collection display" width={1010} height={748} />
@@ -133,51 +128,6 @@ export function Hero() {
           }
         }
 
-        @keyframes blob {
-          0%, 100% {
-            transform: translate(0, 0) scale(1);
-          }
-          25% {
-            transform: translate(20px, -50px) scale(1.1);
-          }
-          50% {
-            transform: translate(-20px, 20px) scale(0.9);
-          }
-          75% {
-            transform: translate(-40px, -20px) scale(1.05);
-          }
-        }
-
-        .animate-blob {
-          animation: blob 10s infinite;
-        }
-
-        .animation-delay-2000 {
-          animation-delay: 2s;
-        }
-
-        .animation-delay-4000 {
-          animation-delay: 4s;
-        }
-
-        @keyframes pulse-slow {
-          0%, 100% {
-            opacity: 0.5;
-          }
-          50% {
-            opacity: 0.8;
-          }
-        }
-
-        .animate-pulse-slow {
-          animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-
-        @media (max-width: 640px) {
-          .floating-icons {
-            opacity: 0.15;
-          }
-        }
       `}</style>
     </div>
   );

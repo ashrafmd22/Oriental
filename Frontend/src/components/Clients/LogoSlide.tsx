@@ -11,7 +11,7 @@ export function LogoSlide({ client }: LogoSlideProps) {
         <img
           src={client.logo}
           alt={client.name}
-          className={`max-w-full max-h-full w-auto h-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-105 ${client.width || ''}`}
+          className={`max-w-full max-h-full w-auto h-auto object-contain sm:grayscale sm:hover:grayscale-0 transition-transform duration-300 sm:hover:scale-105 ${client.width || ''}`}
           loading="lazy"
         />
       </div>

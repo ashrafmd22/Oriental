@@ -13,7 +13,8 @@ export function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -37,7 +38,7 @@ export function Navbar() {
     `relative group whitespace-nowrap text-[15px] 2xl:text-[17px] font-semibold transition-colors duration-300 ${isActive ? 'text-indigo-600' : 'text-slate-600 hover:text-indigo-600'}`;
 
   return (
-    <nav className={`fixed w-full z-50 border-b border-indigo-100/80 transition-all duration-300 ${scrolled ? 'shadow-md bg-white/95 backdrop-blur-md' : 'bg-white'}`}>
+    <nav className={`fixed w-full z-50 border-b border-indigo-100/80 transition-all duration-300 ${scrolled ? 'shadow-md bg-white' : 'bg-white'}`}>
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-6 2xl:gap-10 h-16 sm:h-[72px] xl:h-20">
           {/* Logo Section */}
