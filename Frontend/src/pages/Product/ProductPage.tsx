@@ -57,7 +57,7 @@ export function ProductPage() {
         <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-100">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-4 sm:p-6 lg:p-8">
             {/* Breadcrumb */}
-            <div className="lg:col-span-2 flex items-center space-x-2 text-sm text-slate-500 overflow-x-auto whitespace-nowrap">
+            <div className="lg:col-span-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-slate-500">
               <Link to="/" className="hover:text-indigo-600 transition-colors">Home</Link>
               <span>/</span>
               <Link to="/products" className="hover:text-indigo-600 transition-colors">Products</Link>

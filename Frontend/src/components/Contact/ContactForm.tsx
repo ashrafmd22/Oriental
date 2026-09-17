@@ -51,7 +51,7 @@ export function ContactForm({
         </div>
 
         <form className="space-y-4 sm:space-y-5" onSubmit={handleSubmit} noValidate>
-          <div className="grid gap-4 sm:gap-5 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-4 sm:gap-5 sm:grid-cols-2">
             <ContactFormInput
               label="Full Name"
               name="fullName"

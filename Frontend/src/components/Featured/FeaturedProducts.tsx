@@ -64,7 +64,7 @@ export function FeaturedProducts() {
       <style>{`
         .slick-list { margin: 0 -8px; }
         .slick-slide > div { height: 100%; }
-        .slick-dots li.slick-active div { background-color: #2563eb; }
+        .slick-dots li.slick-active div { background-color: #4f46e5; }
       `}</style>
     </section>
   );

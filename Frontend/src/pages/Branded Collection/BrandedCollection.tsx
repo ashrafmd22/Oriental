@@ -1,5 +1,6 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 import { HeroSection } from './HeroSection';
 import { BrandCard } from './BrandCard';
 import { brands, brandGroups } from './brands';
@@ -8,9 +9,21 @@ type Filter = 'All' | (typeof brandGroups)[number];
 
 export const BrandedCollection: React.FC = () => {
   const [filter, setFilter] = useState<Filter>('All');
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
+    const handleOutsideClick = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleOutsideClick);
+    return () => document.removeEventListener('mousedown', handleOutsideClick);
   }, []);
 
   const visibleBrands = useMemo(
@@ -25,7 +38,7 @@ export const BrandedCollection: React.FC = () => {
       <div className="pt-16 sm:pt-[72px] xl:pt-20">
         <HeroSection
           title="Branded Corporate Gifts"
-          description={`Gift from ${brands.length}+ trusted brands across tech, travel, drinkware, apparel and gourmet, with your logo and packaging.`}
+          description="Gift from trusted brands across tech, travel, drinkware, apparel and gourmet, with your logo and packaging."
         />
       </div>
 
@@ -37,10 +50,47 @@ export const BrandedCollection: React.FC = () => {
           </p>
         </div>
 
-        <div className="-mx-4 mt-6 overflow-x-auto px-4 pb-2 sm:mx-0 sm:px-0">
-          <div className="flex w-max gap-2 sm:w-auto sm:flex-wrap sm:justify-center">
+        {/* Mobile / tablet: dropdown, same pattern as the Products page category filter */}
+        <div ref={dropdownRef} className="relative mx-auto mt-6 max-w-md lg:hidden">
+          <button
+            type="button"
+            onClick={() => setIsOpen((prev) => !prev)}
+            className="flex w-full items-center justify-between rounded-lg border border-slate-300 bg-white px-4 py-3 text-left font-semibold text-slate-700 shadow-sm"
+            aria-expanded={isOpen}
+            aria-label="Choose brand category"
+          >
+            <span>{filter}</span>
+            {isOpen ? (
+              <ChevronUp className="h-5 w-5 shrink-0 text-slate-500" />
+            ) : (
+              <ChevronDown className="h-5 w-5 shrink-0 text-slate-500" />
+            )}
+          </button>
+          {isOpen && (
+            <div className="absolute inset-x-0 z-20 mt-2 overflow-hidden rounded-lg border border-slate-200 bg-white shadow-lg">
+              {filters.map((item) => (
+                <button
+                  key={item}
+                  type="button"
+                  onClick={() => {
+                    setFilter(item);
+                    setIsOpen(false);
+                  }}
+                  className={`block w-full px-4 py-2.5 text-left text-sm ${
+                    filter === item ? 'bg-indigo-50 font-semibold text-indigo-700' : 'text-slate-700 hover:bg-slate-50'
+                  }`}
+                >
+                  {item}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* Desktop: chips */}
+        <div className="mt-6 hidden lg:block">
+          <div className="flex flex-wrap justify-center gap-2">
             {filters.map((item) => {
-              const count = item === 'All' ? brands.length : brands.filter((b) => b.group === item).length;
               const active = filter === item;
               return (
                 <button
@@ -55,7 +105,6 @@ export const BrandedCollection: React.FC = () => {
                   }`}
                 >
                   {item}
-                  <span className={`ml-1.5 text-xs ${active ? 'text-indigo-100' : 'text-slate-400'}`}>{count}</span>
                 </button>
               );
             })}

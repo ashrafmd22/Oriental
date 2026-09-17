@@ -19,7 +19,7 @@ function ContactItem({ icon, title, href, external, children }: ContactItemProps
       </div>
       <div className="min-w-0 flex-1">
         <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-500">{title}</h3>
-        <div className="mt-0.5 text-[15px] font-medium text-slate-800 break-words">{children}</div>
+        <div className="mt-0.5 text-[15px] font-medium text-slate-800 [overflow-wrap:anywhere]">{children}</div>
       </div>
       {href && <ArrowUpRight className="mt-1 h-4 w-4 shrink-0 text-slate-300 transition group-hover:text-indigo-600" />}
     </>
@@ -47,7 +47,7 @@ export function ContactInfo() {
       <h2 className="text-xl sm:text-2xl font-bold text-slate-900">Contact Information</h2>
       <p className="mt-1 text-sm text-slate-500">Prefer to talk? Reach us directly.</p>
 
-      <div className="mt-6 grid flex-1 content-start gap-3">
+      <div className="mt-6 grid grid-cols-1 flex-1 content-start gap-3">
         <ContactItem icon={<Phone className="h-5 w-5" />} title="Call Us" href="tel:+919899987779">
           +91 98999 87779
         </ContactItem>
